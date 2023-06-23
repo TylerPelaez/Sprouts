@@ -94,3 +94,4 @@ func set_double_jumped(val):
 
 func on_gravity_switch(direction: Vector2):
 	up_direction = -direction
+	safe_fall_cast.target_position = safe_fall_cast.target_position * direction.y
