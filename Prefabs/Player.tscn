@@ -5,6 +5,7 @@
 [ext_resource type="Shape2D" uid="uid://5sh17y8dsdi1" path="res://Prefabs/PlayerShape.tres" id="3_cm6kx"]
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 4
 collision_layer = 2
 script = ExtResource("1_3wg1m")
 SPEED = 400.0

@@ -1,0 +1,128 @@
+[gd_scene load_steps=8 format=3 uid="uid://cks2s8aa0xkm2"]
+
+[ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_60dag"]
+[ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_qan4b"]
+[ext_resource type="PackedScene" uid="uid://bvx0c80txy8rv" path="res://Prefabs/LandingPad.tscn" id="3_126nx"]
+[ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="4_rw5bo"]
+[ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="5_klksn"]
+[ext_resource type="PackedScene" uid="uid://cg03aepviau41" path="res://Prefabs/LevelEnd.tscn" id="6_htsaq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
+size = Vector2(64, 64)
+
+[node name="TylerTest" type="Node2D"]
+script = ExtResource("1_60dag")
+player_has_double_jump = true
+next_level = "res://Levels/Loki_test.tscn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(96, 288)
+drag_vertical_offset = 1.0
+editor_draw_drag_margin = true
+
+[node name="PlayerSpawnPosition" type="Marker2D" parent="."]
+position = Vector2(-96, 288)
+gizmo_extents = 20.0
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Ground" type="Node2D" parent="Environment"]
+
+[node name="TestGround" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(0, 352)
+scale = Vector2(10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/TestGround"]
+texture = ExtResource("2_qan4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround"]
+position = Vector2(-7.62939e-07, 0)
+shape = SubResource("RectangleShape2D_irls3")
+
+[node name="TestGround2" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(-128, 544)
+scale = Vector2(10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/TestGround2"]
+texture = ExtResource("2_qan4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround2"]
+position = Vector2(-7.62939e-07, 0)
+shape = SubResource("RectangleShape2D_irls3")
+
+[node name="Landing Pad" parent="Environment/Ground" instance=ExtResource("3_126nx")]
+position = Vector2(264, 17088)
+
+[node name="FallFarTest" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(272, 17152)
+scale = Vector2(20, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/FallFarTest"]
+texture = ExtResource("2_qan4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/FallFarTest"]
+position = Vector2(-7.62939e-07, 0)
+shape = SubResource("RectangleShape2D_irls3")
+
+[node name="KillAreas" type="Node2D" parent="Environment"]
+
+[node name="KillArea" parent="Environment/KillAreas" instance=ExtResource("4_rw5bo")]
+position = Vector2(-1520, 704)
+
+[node name="KillArea2" parent="Environment/KillAreas" instance=ExtResource("4_rw5bo")]
+position = Vector2(1896, 704)
+
+[node name="Hazards" type="Node2D" parent="."]
+
+[node name="SpikeEnemy" parent="Hazards" instance=ExtResource("5_klksn")]
+
+[node name="SpikeEnemy2" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(288, 712)
+
+[node name="SpikeEnemy3" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(288, 896)
+
+[node name="SpikeEnemy4" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(448, 712)
+
+[node name="SpikeEnemy5" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(448, 896)
+
+[node name="SpikeEnemy6" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(192, 1480)
+
+[node name="SpikeEnemy7" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(192, 1600)
+
+[node name="SpikeEnemy8" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(352, 1480)
+
+[node name="SpikeEnemy9" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(352, 1600)
+
+[node name="SpikeEnemy10" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(288, 2280)
+
+[node name="SpikeEnemy11" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(288, 2464)
+
+[node name="SpikeEnemy12" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(448, 2280)
+
+[node name="SpikeEnemy13" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(448, 2464)
+
+[node name="SpikeEnemy14" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(192, 3048)
+
+[node name="SpikeEnemy15" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(192, 3168)
+
+[node name="SpikeEnemy16" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(352, 3048)
+
+[node name="SpikeEnemy17" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(352, 3168)
+
+[node name="LevelEnd" parent="." instance=ExtResource("6_htsaq")]
+position = Vector2(56, 480)
