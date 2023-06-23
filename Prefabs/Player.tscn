@@ -2,19 +2,32 @@
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_3wg1m"]
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="1_307wh"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_jjucu"]
-radius = 31.1448
+[ext_resource type="Shape2D" uid="uid://5sh17y8dsdi1" path="res://Prefabs/PlayerShape.tres" id="3_cm6kx"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_3wg1m")
+SPEED = 400.0
+JUMP_VELOCITY = -500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_307wh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_jjucu")
+shape = ExtResource("3_cm6kx")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 wait_time = 0.11
 one_shot = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+update_rotation = false
+
+[node name="KillAreaCheck" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillAreaCheck"]
+shape = ExtResource("3_cm6kx")
+
+[connection signal="area_entered" from="KillAreaCheck" to="." method="_on_kill_area_check_area_entered"]
