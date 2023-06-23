@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var player_has_jump: bool = true
-@export var player_has_double_jump: bool = false
 @export var player_has_companion: bool = true
 @export_file var next_level
 
@@ -21,24 +20,30 @@ func _ready():
 	player = player_prefab.instantiate()
 	add_child(player)
 	player.has_jump = player_has_jump
-	player.has_double_jump = player_has_double_jump
+	player.has_double_jump = player_has_companion
 	player.set_camera_follow(camera)
 	player.global_position = player_spawn_pos.global_position
 	player.died.connect(_on_player_death)
 	
 	if player_has_companion:
-		companion = companion_prefab.instantiate()
-		add_child(companion)
-		companion.initialize(player)
+		spawn_companion()
 		
 	for child in get_children():
 		_initialize_child_signals(child)
+
+func spawn_companion():
+	player.has_double_jump = true
+	companion = companion_prefab.instantiate()
+	add_child(companion)
+	companion.initialize(player)
 
 func _initialize_child_signals(child: Node):
 	if child is LevelEnd:
 		child.level_ended.connect(_on_level_end)
 	elif child is Switch:
 		child.switch_hit.connect(_on_switch_hit)
+	elif child is InteractableCompanion:
+		child.start_dialog.connect(_on_dialog_started)
 	
 	if child.get_child_count() > 0:
 		for grandchild in child.get_children():
@@ -64,3 +69,14 @@ func _on_switch_hit(effect: Switch.SwitchEffect):
 			ProjectSettings.set_setting("physics/2d/default_gravity", -current_grav)
 			gravity_direction = -gravity_direction
 			player.on_gravity_switch(gravity_direction)
+
+
+func _on_dialog_started(dialog_file_path: String):
+	var file = FileAccess.open(dialog_file_path, FileAccess.READ)
+	var text = file.get_as_text()
+	var json_data = JSON.parse_string(text)
+	if json_data == null:
+		printerr("Invalid JSON!")
+	for entry in json_data:
+		print_debug(entry["text"])
+	

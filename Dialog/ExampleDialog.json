@@ -1,0 +1,12 @@
+[
+	{
+		"text": "This is Example Dialog."
+	},
+	{
+		"text": "I can even change my face",
+		"icon": "res://Art/White.png"
+	},
+	{
+		"text": "I am the best bean."
+	},
+]
