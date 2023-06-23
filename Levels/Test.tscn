@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cks2s8aa0xkm2"]
+[gd_scene load_steps=6 format=3 uid="uid://cks2s8aa0xkm2"]
 
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="1_5gv2b"]
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_l31fv"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="3_moir8"]
+[ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="4_syw1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
 size = Vector2(64, 64)
@@ -14,6 +15,7 @@ player_has_double_jump = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(96, 288)
 drag_vertical_offset = 1.0
+editor_draw_drag_margin = true
 
 [node name="TestGround" type="StaticBody2D" parent="."]
 position = Vector2(0, 352)
@@ -42,3 +44,57 @@ position = Vector2(-96, 288)
 gizmo_extents = 20.0
 
 [node name="KillArea" parent="." instance=ExtResource("3_moir8")]
+position = Vector2(-1520, 704)
+
+[node name="KillArea2" parent="." instance=ExtResource("3_moir8")]
+position = Vector2(1896, 704)
+
+[node name="SpikeEnemy" parent="." instance=ExtResource("4_syw1v")]
+
+[node name="SpikeEnemy2" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(288, 712)
+
+[node name="SpikeEnemy3" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(288, 896)
+
+[node name="SpikeEnemy4" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(448, 712)
+
+[node name="SpikeEnemy5" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(448, 896)
+
+[node name="SpikeEnemy6" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(192, 1480)
+
+[node name="SpikeEnemy7" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(192, 1600)
+
+[node name="SpikeEnemy8" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(352, 1480)
+
+[node name="SpikeEnemy9" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(352, 1600)
+
+[node name="SpikeEnemy10" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(288, 2280)
+
+[node name="SpikeEnemy11" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(288, 2464)
+
+[node name="SpikeEnemy12" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(448, 2280)
+
+[node name="SpikeEnemy13" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(448, 2464)
+
+[node name="SpikeEnemy14" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(192, 3048)
+
+[node name="SpikeEnemy15" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(192, 3168)
+
+[node name="SpikeEnemy16" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(352, 3048)
+
+[node name="SpikeEnemy17" parent="." instance=ExtResource("4_syw1v")]
+position = Vector2(352, 3168)

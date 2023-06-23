@@ -5,6 +5,7 @@ signal died
 
 @export var SPEED: float = 300.0
 @export var JUMP_VELOCITY: float = -400.0
+@export var MAX_FALL_SPEED: float = 1800.0
 
 @export var has_jump: bool = true
 @export var has_double_jump: bool = false
@@ -20,6 +21,7 @@ var double_jumped := false
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		velocity.y = min(velocity.y, MAX_FALL_SPEED)
 	else:
 		coyote_timer.start()
 		jumped = false

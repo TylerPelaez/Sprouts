@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bucqxfshflxln"]
+
+[ext_resource type="Texture2D" uid="uid://c1voi4mbtyr5t" path="res://Art/Test/White16.png" id="1_10yj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yhsa"]
+size = Vector2(15, 15)
+
+[node name="SpikeEnemy" type="Node2D"]
+position = Vector2(160, 288)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_2yhsa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.388235, 0.321569, 1)
+texture = ExtResource("1_10yj2")
