@@ -25,6 +25,10 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
 
+[editor]
+
+movie_writer/movie_file="C:/Users/Loki/Documents/GitHub/Sprouts/Movies/test.avi"
+
 [input]
 
 Left={
