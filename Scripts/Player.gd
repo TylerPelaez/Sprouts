@@ -40,6 +40,7 @@ func _physics_process(delta):
 		if fall_is_deadly and !safe_fall_cast.is_colliding():
 			die()
 			return
+		fall_timer.stop()
 		coyote_timer.start()
 		jumped = false
 		double_jumped = false
