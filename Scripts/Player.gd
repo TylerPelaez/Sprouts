@@ -2,6 +2,8 @@ extends CharacterBody2D
 class_name Player
 
 signal died
+signal double_jump
+signal double_jump_restored
 
 @export var SPEED: float = 300.0
 @export var JUMP_VELOCITY: float = -400.0
@@ -20,10 +22,8 @@ signal died
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var jumped: bool = false
-var double_jumped: bool = false
-
+var double_jumped: bool = false : set = set_double_jumped
 var was_on_ground: bool = true
-
 var fall_is_deadly: bool = false
 
 func _physics_process(delta):
@@ -43,7 +43,7 @@ func _physics_process(delta):
 		fall_timer.stop()
 		coyote_timer.start()
 		jumped = false
-		double_jumped = false
+		self.double_jumped = false
 		was_on_ground = true
 		fall_is_deadly = false
 		
@@ -56,10 +56,10 @@ func _physics_process(delta):
 				do_jump = true
 			elif !double_jumped and has_double_jump:
 				# Handle someone hitting double jump reaaaly soon after first jump
-				double_jumped = true
+				self.double_jumped = true
 				do_jump = true
 		elif !double_jumped and has_double_jump:
-			double_jumped = true
+			self.double_jumped = true
 			do_jump = true
 	
 	if do_jump:
@@ -85,3 +85,10 @@ func _on_kill_area_check_area_entered(area):
 
 func _on_fall_timer_timeout():
 	fall_is_deadly = true
+
+func set_double_jumped(val):
+	double_jumped = val
+	if double_jumped:
+		double_jump.emit()
+	else:
+		double_jump_restored.emit()
