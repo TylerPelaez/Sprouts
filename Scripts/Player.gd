@@ -24,6 +24,9 @@ var double_jumped: bool = false : set = set_double_jumped
 var was_on_ground: bool = true
 var fall_is_deadly: bool = false
 
+func _ready():
+	set_floor_snap_length(32)
+
 func _physics_process(delta):
 	var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 	if not is_on_floor():

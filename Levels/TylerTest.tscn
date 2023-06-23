@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cks2s8aa0xkm2"]
+[gd_scene load_steps=10 format=3 uid="uid://cks2s8aa0xkm2"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_60dag"]
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_qan4b"]
 [ext_resource type="PackedScene" uid="uid://bvx0c80txy8rv" path="res://Prefabs/LandingPad.tscn" id="3_126nx"]
+[ext_resource type="PackedScene" uid="uid://6iwmsrnv047f" path="res://Prefabs/MovingPlatform.tscn" id="3_fm4aq"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="4_rw5bo"]
 [ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="5_klksn"]
 [ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="5_n852e"]
@@ -62,16 +63,10 @@ texture = ExtResource("2_qan4b")
 position = Vector2(-7.62939e-07, 0)
 shape = SubResource("RectangleShape2D_irls3")
 
-[node name="TestGround5" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(1328, 160)
-scale = Vector2(10, 1)
+[node name="MovingPlatform" parent="Environment/Ground" instance=ExtResource("3_fm4aq")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/TestGround5"]
-texture = ExtResource("2_qan4b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround5"]
-position = Vector2(-7.62939e-07, 0)
-shape = SubResource("RectangleShape2D_irls3")
+[node name="Position2" parent="Environment/Ground/MovingPlatform" index="2"]
+position = Vector2(1144, 0)
 
 [node name="TestGround4" type="StaticBody2D" parent="Environment/Ground"]
 position = Vector2(824, -136)
@@ -113,7 +108,7 @@ position = Vector2(1896, 704)
 position = Vector2(1048, -80)
 
 [node name="LevelEnd" parent="Environment/Interactive" instance=ExtResource("6_htsaq")]
-position = Vector2(1528, 96)
+position = Vector2(2768, 96)
 
 [node name="Hazards" type="Node2D" parent="."]
 
@@ -166,3 +161,5 @@ position = Vector2(352, 3048)
 
 [node name="SpikeEnemy17" parent="Hazards" instance=ExtResource("5_klksn")]
 position = Vector2(352, 3168)
+
+[editable path="Environment/Ground/MovingPlatform"]
