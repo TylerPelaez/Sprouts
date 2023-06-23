@@ -24,6 +24,5 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func _on_player_death():
 	get_tree().reload_current_scene()

@@ -13,21 +13,39 @@ signal died
 @onready var coyote_timer := $CoyoteTimer
 @onready var remote_transform := $RemoteTransform2D
 
+@onready var fall_timer: Timer = $FallTimer
+
+@onready var safe_fall_cast: RayCast2D = $SafeFallCast
+
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var jumped := false
-var double_jumped := false
+var jumped: bool = false
+var double_jumped: bool = false
+
+var was_on_ground: bool = true
+
+var fall_is_deadly: bool = false
 
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		velocity.y = min(velocity.y, MAX_FALL_SPEED)
+		
+		if was_on_ground:
+			fall_timer.start()
+		
+
+		was_on_ground = false
 	else:
+		if fall_is_deadly and !safe_fall_cast.is_colliding():
+			die()
+			return
 		coyote_timer.start()
 		jumped = false
 		double_jumped = false
-
-	# Handle Jump.
+		was_on_ground = true
+		fall_is_deadly = false
+		
 	
 	var do_jump: bool = false
 	if has_jump and Input.is_action_just_pressed("Jump"):
@@ -62,3 +80,7 @@ func die():
 
 func _on_kill_area_check_area_entered(area):
 	die()
+
+
+func _on_fall_timer_timeout():
+	fall_is_deadly = true
