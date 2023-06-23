@@ -19,17 +19,16 @@ signal double_jump_restored
 
 @onready var safe_fall_cast: RayCast2D = $SafeFallCast
 
-var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
-
 var jumped: bool = false
 var double_jumped: bool = false : set = set_double_jumped
 var was_on_ground: bool = true
 var fall_is_deadly: bool = false
 
 func _physics_process(delta):
+	var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		velocity.y = min(velocity.y, MAX_FALL_SPEED)
+		velocity.y = sign(velocity.y) *  min(abs(velocity.y), MAX_FALL_SPEED)
 		
 		if was_on_ground:
 			fall_timer.start()
@@ -63,7 +62,7 @@ func _physics_process(delta):
 			do_jump = true
 	
 	if do_jump:
-		velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY * -up_direction.y
 
 	var direction = Input.get_axis("Left", "Right")
 	if direction:
@@ -92,3 +91,6 @@ func set_double_jumped(val):
 		double_jump.emit()
 	else:
 		double_jump_restored.emit()
+
+func on_gravity_switch(direction: Vector2):
+	up_direction = -direction
