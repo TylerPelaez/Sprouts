@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk5j2w78ju833"]
+
+[ext_resource type="Script" path="res://pill.gd" id="1_gxa8h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r6pu6"]
+radius = 1.0
+height = 10.0
+
+[node name="Area2D16" type="Area2D"]
+position = Vector2(62, 174)
+script = ExtResource("1_gxa8h")
+
+[node name="Pill_Test" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_r6pu6")
+debug_color = Color(0.784314, 0.0196078, 0.0862745, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
