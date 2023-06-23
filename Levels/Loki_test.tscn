@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://difkx236nk5ej"]
+[gd_scene load_steps=8 format=3 uid="uid://difkx236nk5ej"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_k2wap"]
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_ub2av"]
 [ext_resource type="PackedScene" uid="uid://bvx0c80txy8rv" path="res://Prefabs/LandingPad.tscn" id="3_6kl3m"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="4_br8gs"]
 [ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="5_yt0rx"]
+[ext_resource type="PackedScene" uid="uid://bk5j2w78ju833" path="res://Prefabs/pills.tscn" id="6_enc4c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
 size = Vector2(64, 64)
 
-[node name="Test" type="Node2D"]
+[node name="Loki_Test" type="Node2D"]
 script = ExtResource("1_k2wap")
 player_has_double_jump = true
 
@@ -69,6 +70,9 @@ position = Vector2(-1520, 704)
 
 [node name="KillArea2" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
 position = Vector2(1896, 704)
+
+[node name="Area2D16" parent="Environment" instance=ExtResource("6_enc4c")]
+position = Vector2(-224, 463)
 
 [node name="Hazards" type="Node2D" parent="."]
 
