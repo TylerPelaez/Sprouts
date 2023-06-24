@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://difkx236nk5ej"]
+[gd_scene load_steps=16 format=3 uid="uid://difkx236nk5ej"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_k2wap"]
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_ub2av"]
@@ -28,22 +28,6 @@ _data = {
 }
 point_count = 7
 
-[sub_resource type="Curve2D" id="Curve2D_a501h"]
-resource_local_to_scene = true
-resource_name = "Bat"
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 88, 304, 0, 0, 0, 0, 632, 304, 0, 0, 0, 0, 632, 376, 0, 0, 0, 0, -16, 376, 0, 0, 0, 0, -16, 304, 0, 0, 0, 0, 88, 304)
-}
-point_count = 6
-
-[sub_resource type="Curve2D" id="Curve2D_dfba8"]
-resource_local_to_scene = true
-resource_name = "Bat"
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 88, 304, 0, 0, 0, 0, 632, 304, 0, 0, 0, 0, 632, 376, 0, 0, 0, 0, -16, 376, 0, 0, 0, 0, -16, 304, 0, 0, 0, 0, 88, 304)
-}
-point_count = 6
-
 [sub_resource type="Curve2D" id="Curve2D_hv7h8"]
 resource_local_to_scene = true
 resource_name = "Bat"
@@ -54,7 +38,6 @@ point_count = 6
 
 [node name="Air_level_1" type="Node2D"]
 script = ExtResource("1_k2wap")
-player_has_double_jump = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(96, 288)
@@ -62,7 +45,7 @@ drag_vertical_offset = 1.0
 editor_draw_drag_margin = true
 
 [node name="PlayerSpawnPosition" type="Marker2D" parent="."]
-position = Vector2(-96, 288)
+position = Vector2(1712, 5072)
 gizmo_extents = 20.0
 
 [node name="Environment" type="Node2D" parent="."]
@@ -134,7 +117,7 @@ position = Vector2(104, 656)
 shape = SubResource("RectangleShape2D_irls3")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Environment/Ground/TestGround16"]
-position = Vector2(120, 872)
+position = Vector2(120.8, 872)
 shape = SubResource("RectangleShape2D_irls3")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Environment/Ground/TestGround16"]
@@ -1008,6 +991,7 @@ position = Vector2(352, 3168)
 
 [node name="Node2D" parent="." instance=ExtResource("7_1ja6j")]
 position = Vector2(1456, 200)
+num_bats = 4
 
 [node name="Path2D" parent="Node2D" index="0"]
 curve = SubResource("Curve2D_kmfnv")
@@ -1034,50 +1018,20 @@ position = Vector2(1760, 6328)
 [node name="Position2" parent="MovingPlatform" index="2"]
 position = Vector2(672, 0)
 
-[node name="Node2D2" parent="." instance=ExtResource("7_1ja6j")]
-position = Vector2(1336, 6504)
-
-[node name="Path2D" parent="Node2D2" index="0"]
-curve = SubResource("Curve2D_a501h")
-
-[node name="PathFollow2D" parent="Node2D2/Path2D" index="0"]
-position = Vector2(632, 343.778)
-rotation = 1.5708
-progress = 583.776
-
-[node name="Node2D3" parent="." instance=ExtResource("7_1ja6j")]
-position = Vector2(1336, 6712)
-
-[node name="Path2D" parent="Node2D3" index="0"]
-curve = SubResource("Curve2D_dfba8")
-
-[node name="PathFollow2D" parent="Node2D3/Path2D" index="0"]
-position = Vector2(-16, 342.706)
-rotation = -1.5708
-progress = 1297.3
-
 [node name="Node2D4" parent="." instance=ExtResource("7_1ja6j")]
-position = Vector2(1336, 6944)
+position = Vector2(1328, 6728)
 
 [node name="Path2D" parent="Node2D4" index="0"]
 curve = SubResource("Curve2D_hv7h8")
 
-[node name="PathFollow2D" parent="Node2D4/Path2D" index="0"]
-position = Vector2(586.334, 376)
-rotation = 3.14159
-progress = 661.68
-
 [node name="Node2D5" parent="." instance=ExtResource("7_1ja6j")]
-position = Vector2(1336, 6544)
-
-[node name="Node2D6" parent="." instance=ExtResource("7_1ja6j")]
-position = Vector2(1336, 6776)
+position = Vector2(1336, 6504)
+spacing = 2
 
 [node name="Node2D7" parent="." instance=ExtResource("7_1ja6j")]
-position = Vector2(1336, 7016)
+position = Vector2(1336, 6944)
+num_bats = 1
 
 [editable path="Node2D"]
 [editable path="MovingPlatform"]
-[editable path="Node2D2"]
-[editable path="Node2D3"]
 [editable path="Node2D4"]

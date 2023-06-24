@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://sm5n8ljv3sdn"]
+[gd_scene load_steps=3 format=3 uid="uid://sm5n8ljv3sdn"]
 
-[ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="1_p74uu"]
 [ext_resource type="Script" path="res://Scripts/Bat.gd" id="1_rewk0"]
 
 [sub_resource type="Curve2D" id="Curve2D_immsu"]
@@ -14,12 +13,8 @@ point_count = 6
 [node name="Node2D" type="Node2D"]
 modulate = Color(0.196078, 0, 0.662745, 1)
 script = ExtResource("1_rewk0")
+num_bats = 2
+spacing = 300
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_immsu")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(88, 304)
-
-[node name="SpikeEnemy" parent="Path2D/PathFollow2D" instance=ExtResource("1_p74uu")]
-position = Vector2(0, -32)

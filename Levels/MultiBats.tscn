@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://be7ic5tmyky20"]
+
+[ext_resource type="PackedScene" uid="uid://sm5n8ljv3sdn" path="res://Prefabs/BatTest.tscn" id="1_bvl5w"]
+[ext_resource type="Script" path="res://PathSpawner.gd" id="2_qmrrk"]
+
+[sub_resource type="Curve2D" id="Curve2D_a6jrj"]
+resource_local_to_scene = true
+resource_name = "Bat"
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 88, 304, 0, 0, 0, 0, 632, 304, 0, 0, 0, 0, 632, 376, 0, 0, 0, 0, -16, 376, 0, 0, 0, 0, -16, 304, 0, 0, 0, 0, 88, 304)
+}
+point_count = 6
+
+[node name="Node2D" instance=ExtResource("1_bvl5w")]
+
+[node name="Path2D" parent="." index="0"]
+curve = SubResource("Curve2D_a6jrj")
+script = ExtResource("2_qmrrk")

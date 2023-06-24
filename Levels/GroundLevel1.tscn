@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://evg4mo1jtqj0"]
+
+[ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_xnj5y"]
+[ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_npm4k"]
+[ext_resource type="PackedScene" uid="uid://bk5j2w78ju833" path="res://Prefabs/pills.tscn" id="5_pvs2g"]
+[ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="6_6hxw7"]
+[ext_resource type="PackedScene" uid="uid://sm5n8ljv3sdn" path="res://Prefabs/BatTest.tscn" id="7_77syx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
+size = Vector2(64, 64)
+
+[sub_resource type="Curve2D" id="Curve2D_im51u"]
+resource_local_to_scene = true
+resource_name = "Bat"
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 88, 304, 0, 0, 0, 0, 632, 304, 0, 0, 0, 0, 816, 368, 0, 0, 0, 0, 632, 376, 0, 0, 0, 0, -1280, 368, 0, 0, 0, 0, -1280, 304, 0, 0, 0, 0, -16, 304, 0, 0, 0, 0, 88, 304)
+}
+point_count = 8
+
+[node name="Ground_level_1" type="Node2D"]
+script = ExtResource("1_xnj5y")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(96, 288)
+drag_vertical_offset = 1.0
+editor_draw_drag_margin = true
+
+[node name="PlayerSpawnPosition" type="Marker2D" parent="."]
+position = Vector2(-96, 288)
+gizmo_extents = 20.0
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Ground" type="Node2D" parent="Environment"]
+
+[node name="TestGround" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(0, 352)
+scale = Vector2(10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/TestGround"]
+texture = ExtResource("2_npm4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround"]
+position = Vector2(-7.62939e-07, 0)
+shape = SubResource("RectangleShape2D_irls3")
+
+[node name="TestGround3" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(843, 545)
+scale = Vector2(10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/TestGround3"]
+texture = ExtResource("2_npm4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround3"]
+position = Vector2(-7.62939e-07, 0)
+shape = SubResource("RectangleShape2D_irls3")
+
+[node name="TestGround6" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(1256, 608)
+scale = Vector2(10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/TestGround6"]
+texture = ExtResource("2_npm4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround6"]
+position = Vector2(-7.62939e-07, 0)
+shape = SubResource("RectangleShape2D_irls3")
+
+[node name="TestGround4" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(1760, 544)
+scale = Vector2(10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/TestGround4"]
+texture = ExtResource("2_npm4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround4"]
+position = Vector2(-9.53674e-07, 0)
+shape = SubResource("RectangleShape2D_irls3")
+
+[node name="TestGround2" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(-432, 544)
+scale = Vector2(10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/TestGround2"]
+texture = ExtResource("2_npm4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround2"]
+position = Vector2(-7.62939e-07, 0)
+shape = SubResource("RectangleShape2D_irls3")
+
+[node name="TestGround5" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(208, 544)
+scale = Vector2(10, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/TestGround5"]
+texture = ExtResource("2_npm4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround5"]
+position = Vector2(-7.62939e-07, 0)
+shape = SubResource("RectangleShape2D_irls3")
+
+[node name="KillAreas" type="Node2D" parent="Environment"]
+
+[node name="Area2D16" parent="Environment" instance=ExtResource("5_pvs2g")]
+position = Vector2(-192, 472)
+
+[node name="Area2D17" parent="Environment" instance=ExtResource("5_pvs2g")]
+position = Vector2(640, 472)
+
+[node name="Area2D18" parent="Environment" instance=ExtResource("5_pvs2g")]
+position = Vector2(1472, 472)
+
+[node name="Area2D19" parent="Environment" instance=ExtResource("5_pvs2g")]
+position = Vector2(1024, 472)
+
+[node name="Area2D20" parent="Environment" instance=ExtResource("5_pvs2g")]
+position = Vector2(1152, 472)
+
+[node name="Hazards" type="Node2D" parent="."]
+
+[node name="SpikeEnemy" parent="Hazards" instance=ExtResource("6_6hxw7")]
+
+[node name="Node2D" parent="." instance=ExtResource("7_77syx")]
+position = Vector2(1456, 200)
+
+[node name="Node2D2" parent="." instance=ExtResource("7_77syx")]
+position = Vector2(528, 208)
+num_bats = 5
+
+[node name="Path2D" parent="Node2D2" index="0"]
+curve = SubResource("Curve2D_im51u")
+
+[editable path="Node2D2"]
