@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cks2s8aa0xkm2"]
+[gd_scene load_steps=12 format=3 uid="uid://cks2s8aa0xkm2"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_60dag"]
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_qan4b"]
@@ -9,9 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="5_n852e"]
 [ext_resource type="PackedScene" uid="uid://cg03aepviau41" path="res://Prefabs/LevelEnd.tscn" id="6_htsaq"]
 [ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="9_o51mv"]
-[ext_resource type="Script" path="res://Scripts/UIController.gd" id="11_o3pxj"]
-[ext_resource type="Texture2D" uid="uid://cwa1mktwt6kv8" path="res://Art/Test/TestChickpea1.png" id="12_pcicj"]
-[ext_resource type="Theme" uid="uid://cy8uik3hm8t3u" path="res://UITheme.tres" id="12_qnqxo"]
+[ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="10_h1xg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
 size = Vector2(64, 64)
@@ -172,77 +170,6 @@ position = Vector2(352, 3168)
 position = Vector2(736, 480)
 dialog_file_path = "res://Dialog/ExampleDialog.json"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-process_mode = 3
-script = ExtResource("11_o3pxj")
-
-[node name="DialogContainer" type="Control" parent="CanvasLayer"]
-process_mode = 3
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("12_qnqxo")
-
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/DialogContainer"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.2
-anchor_top = 0.45
-anchor_right = 0.8
-anchor_bottom = 0.8
-grow_horizontal = 2
-texture = ExtResource("2_qan4b")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DialogContainer/NinePatchRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/DialogContainer/NinePatchRect/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource("12_pcicj")
-expand_mode = 4
-
-[node name="DialogTextRect" type="NinePatchRect" parent="CanvasLayer/DialogContainer"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.85
-anchor_right = 0.9
-anchor_bottom = 0.95
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("2_qan4b")
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DialogContainer/DialogTextRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 10
-
-[node name="DialogText" type="RichTextLabel" parent="CanvasLayer/DialogContainer/DialogTextRect/MarginContainer"]
-layout_mode = 2
-bbcode_enabled = true
-text = "Testing My Text... What do you think?"
-fit_content = true
+[node name="UIController" parent="." instance=ExtResource("10_h1xg2")]
 
 [editable path="Environment/Ground/MovingPlatform"]

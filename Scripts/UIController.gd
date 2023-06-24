@@ -6,6 +6,7 @@ signal dialog_complete
 @onready var dialog_container = $DialogContainer
 @onready var dialog_text = $DialogContainer/DialogTextRect/MarginContainer/DialogText
 @onready var dialog_image = $DialogContainer/NinePatchRect/MarginContainer/TextureRect
+@onready var audio_player = $AudioStreamPlayer
 
 var default_icon = preload("res://Art/Test/TestChickpea1.png")
 var dialog_data = []
@@ -20,6 +21,7 @@ func set_dialog_data(data: Array):
 func show_dialog(data: Dictionary):
 	dialog_text.text = data["text"]
 	dialog_image.texture = load(data["icon"]) if data.has("icon") else default_icon
+	audio_player.play_string(data["text"])
 
 func _input(event):
 	if event.is_action_pressed("Hit Switch") and dialog_container.visible:

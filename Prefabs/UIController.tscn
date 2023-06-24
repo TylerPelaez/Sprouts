@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://c46a44f3l7cm0"]
+
+[ext_resource type="Script" path="res://Scripts/UIController.gd" id="1_uj38h"]
+[ext_resource type="Theme" uid="uid://cy8uik3hm8t3u" path="res://UITheme.tres" id="2_tysbo"]
+[ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="3_7oo4m"]
+[ext_resource type="Texture2D" uid="uid://cwa1mktwt6kv8" path="res://Art/Test/TestChickpea1.png" id="4_5tdk0"]
+[ext_resource type="Script" path="res://Scripts/VoiceSoundPlayer.gd" id="5_0602t"]
+
+[node name="UIController" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_uj38h")
+
+[node name="DialogContainer" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_tysbo")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="DialogContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.45
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+texture = ExtResource("3_7oo4m")
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TextureRect" type="TextureRect" parent="DialogContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_5tdk0")
+expand_mode = 4
+
+[node name="DialogTextRect" type="NinePatchRect" parent="DialogContainer"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.85
+anchor_right = 0.9
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_7oo4m")
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogContainer/DialogTextRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="DialogText" type="RichTextLabel" parent="DialogContainer/DialogTextRect/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Testing My Text... What do you think?"
+fit_content = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -4.0
+script = ExtResource("5_0602t")
+base_pitch_scale = 4.0
