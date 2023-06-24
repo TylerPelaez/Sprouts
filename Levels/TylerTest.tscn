@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://cks2s8aa0xkm2"]
+[gd_scene load_steps=12 format=3 uid="uid://cks2s8aa0xkm2"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_60dag"]
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_qan4b"]
 [ext_resource type="PackedScene" uid="uid://bvx0c80txy8rv" path="res://Prefabs/LandingPad.tscn" id="3_126nx"]
-[ext_resource type="PackedScene" uid="uid://6iwmsrnv047f" path="res://Prefabs/MovingPlatform.tscn" id="3_fm4aq"]
+[ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="3_fm4aq"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="4_rw5bo"]
 [ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="5_klksn"]
 [ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="5_n852e"]
 [ext_resource type="PackedScene" uid="uid://cg03aepviau41" path="res://Prefabs/LevelEnd.tscn" id="6_htsaq"]
 [ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="9_o51mv"]
+[ext_resource type="PackedScene" uid="uid://sm5n8ljv3sdn" path="res://Prefabs/BatTest.tscn" id="10_ylfpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
 size = Vector2(64, 64)
@@ -114,6 +115,7 @@ position = Vector2(2768, 96)
 [node name="Hazards" type="Node2D" parent="."]
 
 [node name="SpikeEnemy" parent="Hazards" instance=ExtResource("5_klksn")]
+position = Vector2(160, 24)
 
 [node name="SpikeEnemy2" parent="Hazards" instance=ExtResource("5_klksn")]
 position = Vector2(288, 712)
@@ -166,5 +168,9 @@ position = Vector2(352, 3168)
 [node name="InteractableCompanion" parent="." instance=ExtResource("9_o51mv")]
 position = Vector2(736, 480)
 dialog_file_path = "res://Dialog/ExampleDialog.json"
+
+[node name="Node2D" parent="." instance=ExtResource("10_ylfpf")]
+position = Vector2(232, -72)
+num_bats = 20
 
 [editable path="Environment/Ground/MovingPlatform"]

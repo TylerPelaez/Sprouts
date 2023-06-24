@@ -15,19 +15,15 @@ run/main_scene="res://Levels/AirLevel1.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Util="*res://Scripts/Util.gd"
-
 [display]
 
 window/size/viewport_width=720
 window/size/viewport_height=1280
 window/size/window_width_override=480
 window/size/window_height_override=854
+window/handheld/orientation=1
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/handheld/orientation=1
 
 [editor]
 

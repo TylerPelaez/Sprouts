@@ -26,7 +26,7 @@ func change_target():
 	else:
 		current_target = position_1.global_position
 		current_origin = position_2.global_position
-	var tween = get_tree().create_tween()
+	var tween = get_tree().create_tween().bind_node(self)
 	tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	tween.tween_property(body, "global_position", current_target, travel_time_seconds)
-	tween.tween_callback(func(): Util.call_delayed(change_target, wait_time))
+	tween.tween_callback(change_target).set_delay(wait_time)
