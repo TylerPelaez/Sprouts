@@ -17,6 +17,7 @@ var gravity_direction: Vector2 = Vector2(0, 1)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	ProjectSettings.set_setting("physics/2d/default_gravity", 1200)
 	player = player_prefab.instantiate()
 	add_child(player)
 	player.has_jump = player_has_jump
