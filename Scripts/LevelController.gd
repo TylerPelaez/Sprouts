@@ -12,6 +12,7 @@ extends Node2D
 
 var player: Player
 var companion: Companion
+var ui_controller: UIController
 
 var gravity_direction: Vector2 = Vector2(0, 1)
 
@@ -45,6 +46,9 @@ func _initialize_child_signals(child: Node):
 		child.switch_hit.connect(_on_switch_hit)
 	elif child is InteractableCompanion:
 		child.start_dialog.connect(_on_dialog_started)
+	elif child is UIController:
+		ui_controller = child
+		ui_controller.dialog_complete.connect(on_dialog_complete)
 	
 	if child.get_child_count() > 0:
 		for grandchild in child.get_children():
@@ -72,12 +76,16 @@ func _on_switch_hit(effect: Switch.SwitchEffect):
 			player.on_gravity_switch(gravity_direction)
 
 
-func _on_dialog_started(dialog_file_path: String):
+func _on_dialog_started(caller: InteractableCompanion, dialog_file_path: String):
 	var file = FileAccess.open(dialog_file_path, FileAccess.READ)
 	var text = file.get_as_text()
 	var json_data = JSON.parse_string(text)
 	if json_data == null:
 		printerr("Invalid JSON!")
-	for entry in json_data:
-		print_debug(entry["text"])
+	get_tree().paused = true
+	ui_controller.set_dialog_data(json_data)
+	caller.complete = true
+	caller.queue_free()
 	
+func on_dialog_complete():
+	get_tree().paused = false

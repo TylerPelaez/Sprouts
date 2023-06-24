@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cy8uik3hm8t3u"]
+
+[ext_resource type="FontFile" uid="uid://n2ucbn5g7j22" path="res://Oxygen-Regular.ttf" id="1_428p6"]
+
+[resource]
+default_font = ExtResource("1_428p6")
+default_font_size = 40
+Label/colors/font_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
