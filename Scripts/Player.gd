@@ -19,12 +19,16 @@ signal double_jump_restored
 
 @onready var safe_fall_cast: RayCast2D = $SafeFallCast
 
+@onready var animation_tree := $AnimationTree
+@onready var animation_state = animation_tree.get("parameters/playback")
+
 var jumped: bool = false
 var double_jumped: bool = false : set = set_double_jumped
 var was_on_ground: bool = true
 var fall_is_deadly: bool = false
 
 func _ready():
+	animation_tree.active = true
 	set_floor_snap_length(32)
 
 func _physics_process(delta):
@@ -70,8 +74,12 @@ func _physics_process(delta):
 	var direction = Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
+		animation_state.travel("Run")
+		animation_tree.set("parameters/Run/blend_position", velocity.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	
 
 	move_and_slide()
 

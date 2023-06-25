@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cks2s8aa0xkm2"]
+[gd_scene load_steps=13 format=3 uid="uid://cks2s8aa0xkm2"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_60dag"]
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_qan4b"]
@@ -6,10 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="3_fm4aq"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="4_rw5bo"]
 [ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="5_klksn"]
-[ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="5_n852e"]
-[ext_resource type="PackedScene" uid="uid://jjukmdme6xcg" path="res://Prefabs/LevelEnd.tscn" id="6_htsaq"]
-[ext_resource type="PackedScene" path="res://Prefabs/InteractableCompanion.tscn" id="9_o51mv"]
-[ext_resource type="PackedScene" path="res://Prefabs/UIController.tscn" id="10_h1xg2"]
+
+
+[ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="5_n852e"]
+[ext_resource type="PackedScene" uid="uid://cg03aepviau41" path="res://Prefabs/LevelEnd.tscn" id="6_htsaq"]
+[ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="9_o51mv"]
+[ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="10_h1xg2"]
+[ext_resource type="PackedScene" uid="uid://b7sodh70kw41p" path="res://Prefabs/Platform/UnderLeft.tscn" id="11_yoasu"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
 size = Vector2(64, 64)
@@ -26,23 +30,12 @@ drag_vertical_offset = 1.0
 editor_draw_drag_margin = true
 
 [node name="PlayerSpawnPosition" type="Marker2D" parent="."]
-position = Vector2(-96, 288)
+position = Vector2(-96, 240)
 gizmo_extents = 20.0
 
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Ground" type="Node2D" parent="Environment"]
-
-[node name="TestGround" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(0, 352)
-scale = Vector2(10, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/TestGround"]
-texture = ExtResource("2_qan4b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround"]
-position = Vector2(-7.62939e-07, 0)
-shape = SubResource("RectangleShape2D_irls3")
 
 [node name="TestGround2" type="StaticBody2D" parent="Environment/Ground"]
 position = Vector2(-128, 544)
@@ -171,5 +164,8 @@ position = Vector2(736, 480)
 dialog_file_path = "res://Dialog/ExampleDialog.json"
 
 [node name="UIController" parent="." instance=ExtResource("10_h1xg2")]
+
+[node name="UnderLeft" parent="." instance=ExtResource("11_yoasu")]
+position = Vector2(64, 360)
 
 [editable path="Environment/Ground/MovingPlatform"]

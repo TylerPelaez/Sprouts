@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7sodh70kw41p"]
+
+[ext_resource type="Texture2D" uid="uid://h6lueodtntle" path="res://Art/Platforms/lower right large platform.png" id="1_t0bhs"]
+
+[node name="UnderLeft" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_t0bhs")
+offset = Vector2(96, 144)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(30, -34, 99, -49, 196, -55, 293, -47, 324, -34, 324, -27, 210, -19, -6, 22, -361, 88, -361, -23, -294, -47, -194, -54, -68, -41, -30, -31)

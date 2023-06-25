@@ -51,6 +51,7 @@ texture = ExtResource("4_5tdk0")
 expand_mode = 4
 
 [node name="DialogTextRect" type="NinePatchRect" parent="DialogContainer"]
+self_modulate = Color(0.486275, 0.486275, 0.486275, 0.560784)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1
@@ -75,6 +76,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="DialogText" type="RichTextLabel" parent="DialogContainer/DialogTextRect/MarginContainer"]
 layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 bbcode_enabled = true
 text = "Testing My Text... What do you think?"
 fit_content = true
