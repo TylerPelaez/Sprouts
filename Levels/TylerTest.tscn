@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cks2s8aa0xkm2"]
+[gd_scene load_steps=15 format=3 uid="uid://cks2s8aa0xkm2"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_60dag"]
 [ext_resource type="Texture2D" uid="uid://m0xbwp81g6i5" path="res://Art/Background/sky BG.png" id="2_46ei5"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="9_o51mv"]
 [ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="10_h1xg2"]
 [ext_resource type="PackedScene" uid="uid://b7sodh70kw41p" path="res://Prefabs/Platform/UnderLeft.tscn" id="11_yoasu"]
+[ext_resource type="PackedScene" uid="uid://cptcj4qinijgl" path="res://Prefabs/Checkpoint.tscn" id="13_d8ykd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
 size = Vector2(64, 64)
@@ -196,5 +197,8 @@ position = Vector2(944, 6552)
 
 [node name="UnderLeft7" parent="." instance=ExtResource("11_yoasu")]
 position = Vector2(888, 7376)
+
+[node name="Checkpoint" parent="." instance=ExtResource("13_d8ykd")]
+position = Vector2(600, 448)
 
 [editable path="Environment/Ground/MovingPlatform"]

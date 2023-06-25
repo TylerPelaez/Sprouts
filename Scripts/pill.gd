@@ -1,5 +1,5 @@
 extends Node
-class_name Pill
+class_name Collectible
 
 signal collected
 

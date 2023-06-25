@@ -14,17 +14,18 @@ var player: Player
 var companion: Companion
 var ui_controller: UIController
 
-var gravity_direction: Vector2 = Vector2(0, 1)
+var checkpoints_index = 0
 
-# Called when the node enters the scene tree for the first time.
+var gravity_direction: Vector2 = Vector2(0, 1)
 func _ready():
+	checkpoints_index = 0
 	ProjectSettings.set_setting("physics/2d/default_gravity", 1200)
 	player = player_prefab.instantiate()
 	add_child(player)
 	player.has_jump = player_has_jump
 	player.has_double_jump = player_has_companion
 	player.set_camera_follow(camera)
-	player.global_position = player_spawn_pos.global_position
+	player.global_position = CollectibleTracker.last_checkpoint_position if CollectibleTracker.last_checkpoint_position != null else player_spawn_pos.global_position
 	player.died.connect(_on_player_death)
 	
 	if player_has_companion:
@@ -49,8 +50,15 @@ func _initialize_child_signals(child: Node):
 	elif child is UIController:
 		ui_controller = child
 		ui_controller.dialog_complete.connect(on_dialog_complete)
-	#elif child is Pill:
-		#child.collected.connect(_on_collect)
+	elif child is Collectible:
+		child.collected.connect(_on_collect)
+	elif child is Checkpoint:
+		child.reached.connect(_on_checkpoint.bind(checkpoints_index))
+		if CollectibleTracker.last_checkpoint_index == checkpoints_index:
+			child.queue_free()
+			checkpoints_index += 1
+			return
+		checkpoints_index += 1
 	
 	if child.get_child_count() > 0:
 		for grandchild in child.get_children():
@@ -93,3 +101,6 @@ func _on_dialog_started(caller: InteractableCompanion, dialog_file_path: String)
 	
 func on_dialog_complete():
 	get_tree().paused = false
+
+func _on_checkpoint(checkpoint: Node2D, index: int):
+	CollectibleTracker.set_last_checkpoint_position(checkpoint.global_position, index)
