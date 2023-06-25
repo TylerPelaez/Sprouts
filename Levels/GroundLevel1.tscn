@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://evg4mo1jtqj0"]
+[gd_scene load_steps=16 format=3 uid="uid://evg4mo1jtqj0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_xnj5y"]
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_npm4k"]
@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="10_yd0r8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
-size = Vector2(64, 64)
+size = Vector2(64, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3um2"]
+size = Vector2(64.8, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vna0b"]
 size = Vector2(68.5, 496.5)
@@ -78,11 +81,19 @@ position = Vector2(1256, 608)
 scale = Vector2(10, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment/Ground/TestGround6"]
+position = Vector2(0, -8)
+scale = Vector2(1, 0.75)
 texture = ExtResource("2_npm4k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround6"]
-position = Vector2(-7.62939e-07, 0)
+position = Vector2(76, 192)
 shape = SubResource("RectangleShape2D_irls3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Ground/TestGround6/CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround6/CollisionShape2D/StaticBody2D"]
+position = Vector2(-76.4, -200)
+shape = SubResource("RectangleShape2D_i3um2")
 
 [node name="TestGround4" type="StaticBody2D" parent="Environment/Ground"]
 position = Vector2(1760, 544)
@@ -444,7 +455,7 @@ position = Vector2(1312, 1208)
 position = Vector2(1920, 1312)
 
 [node name="Switch4" parent="." instance=ExtResource("9_mdpgx")]
-position = Vector2(1336, 664)
+position = Vector2(1384, 648)
 
 [node name="KillArea" parent="." instance=ExtResource("4_jrdun")]
 position = Vector2(544, 1672)
