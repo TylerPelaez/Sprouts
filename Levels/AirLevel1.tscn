@@ -160,6 +160,96 @@ position = Vector2(6.4, 1224)
 scale = Vector2(1, 0.937498)
 texture = ExtResource("2_ub2av")
 
+[node name="Sprite2D31" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(-3.2, 144)
+scale = Vector2(1, 0.937498)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D30" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(-16.8, 6680)
+scale = Vector2(1, 1.96875)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(212, -1168)
+scale = Vector2(0.2125, 44.125)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D20" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(111.2, -3856)
+scale = Vector2(0.2125, 44.125)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(59.2, -3174)
+scale = Vector2(0.2125, 42.1875)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(1.60004, -3144)
+scale = Vector2(0.2125, 42.1875)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D23" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(-45.6, -3160)
+scale = Vector2(0.2125, 42.1875)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D24" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(-98.4, -3176)
+scale = Vector2(0.2125, 42.1875)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D25" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(-141.6, -3152)
+scale = Vector2(0.2125, 42.1875)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D26" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(-188.8, -3144)
+scale = Vector2(0.2125, 42.1875)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D27" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(-253.6, -3760)
+scale = Vector2(0.2125, 42.1875)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D28" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(-218.4, -232)
+scale = Vector2(0.2125, 42.1875)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D29" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(112.8, 1376)
+scale = Vector2(0.2125, 42.1875)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(-95.6, 294.5)
+scale = Vector2(4.0375, 2.79687)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(234.4, 56)
+scale = Vector2(4.0375, 2.79687)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(194.4, -2016)
+scale = Vector2(4.0375, 2.79687)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(-261.6, -1664)
+scale = Vector2(4.0375, 2.79687)
+texture = ExtResource("2_ub2av")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Environment/Ground/TestGround9"]
+position = Vector2(-261.6, -1664)
+scale = Vector2(4.0375, 2.79687)
+texture = ExtResource("2_ub2av")
+
 [node name="Sprite2D13" type="Sprite2D" parent="Environment/Ground/TestGround9"]
 position = Vector2(49.2, 4440)
 scale = Vector2(1.6375, 0.749992)
@@ -483,6 +573,9 @@ rotation = 1.5708
 
 [node name="KillArea13" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
 position = Vector2(3184, 5112)
+
+[node name="KillArea15" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
+position = Vector2(-104, 5312)
 
 [node name="KillArea14" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
 position = Vector2(2240, 6336)
