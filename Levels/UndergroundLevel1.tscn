@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvmc03t2yoqwq"]
+[gd_scene load_steps=10 format=3 uid="uid://dvmc03t2yoqwq"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_lhpq6"]
+[ext_resource type="PackedScene" uid="uid://b7sodh70kw41p" path="res://Prefabs/Platform/UnderLeft.tscn" id="3_l2guj"]
+[ext_resource type="PackedScene" uid="uid://bk5j2w78ju833" path="res://Prefabs/pills.tscn" id="3_yv2n4"]
+[ext_resource type="PackedScene" uid="uid://613wuntiyxtn" path="res://Prefabs/Platform/UnderRight.tscn" id="4_pghvs"]
+[ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="6_xs5fi"]
+[ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="7_v6e1r"]
+[ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="8_ie4mh"]
 [ext_resource type="PackedScene" uid="uid://jjukmdme6xcg" path="res://Prefabs/LevelEnd.tscn" id="9_aefh4"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_cp7g7"]
 
 [node name="Underground_level_1" type="Node2D"]
 script = ExtResource("1_lhpq6")
+metadata/_edit_horizontal_guides_ = [5736.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(96, 288)
@@ -12,7 +21,7 @@ drag_vertical_offset = 1.0
 editor_draw_drag_margin = true
 
 [node name="PlayerSpawnPosition" type="Marker2D" parent="."]
-position = Vector2(-88, 256)
+position = Vector2(-152, -1592)
 gizmo_extents = 20.0
 
 [node name="Environment" type="Node2D" parent="."]
@@ -20,5 +29,258 @@ gizmo_extents = 20.0
 [node name="KillAreas" type="Node2D" parent="Environment"]
 
 [node name="LevelEnd" parent="." instance=ExtResource("9_aefh4")]
-position = Vector2(-2416, 4176)
+position = Vector2(3256, 1440)
 scale = Vector2(5, 5)
+
+[node name="UnderLeft" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(200, 704)
+scale = Vector2(1, 2)
+
+[node name="UnderRight" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-520, 704)
+scale = Vector2(1, 2)
+
+[node name="UnderLeft2" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-632, 1360)
+rotation = -2.79253
+scale = Vector2(1, 2)
+
+[node name="UnderRight2" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(296, 1352)
+rotation = 2.79253
+scale = Vector2(1, 2)
+
+[node name="UnderRight3" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(824, 1048)
+rotation = 2.26893
+scale = Vector2(1, 0.5)
+
+[node name="UnderLeft3" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-1144, 1072)
+rotation = -2.26893
+scale = Vector2(1, 0.5)
+
+[node name="UnderLeft4" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(672, 728)
+rotation = 0.523599
+scale = Vector2(0.6, 0.4)
+
+[node name="UnderRight4" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-992, 720)
+rotation = -0.523599
+scale = Vector2(0.6, 0.4)
+
+[node name="UnderLeft5" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-112, 1864)
+rotation = -1.5708
+
+[node name="UnderRight5" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-184, 1776)
+rotation = 1.5708
+
+[node name="UnderLeft6" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(760, 2632)
+rotation = 0.226893
+scale = Vector2(2.5, 2.5)
+
+[node name="UnderRight6" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-1016, 2648)
+rotation = -0.226893
+scale = Vector2(2.5, 2.5)
+
+[node name="UnderRight7" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(976, 3096)
+rotation = 2.87979
+scale = Vector2(3, 2.5)
+
+[node name="UnderLeft7" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-1288, 3088)
+rotation = -2.87979
+scale = Vector2(3, 2.5)
+
+[node name="UnderLeft8" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-40, 1808)
+scale = Vector2(0.2, 0.2)
+
+[node name="UnderLeft9" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(56, 2032)
+scale = Vector2(0.2, 0.2)
+
+[node name="UnderLeft10" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(64, 2192)
+scale = Vector2(0.2, 0.2)
+
+[node name="UnderRight8" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-184, 1496)
+scale = Vector2(0.1, 0.1)
+
+[node name="UnderRight9" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-216, 1616)
+scale = Vector2(0.1, 0.1)
+
+[node name="UnderRight10" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-256, 1800)
+scale = Vector2(0.2, 0.2)
+
+[node name="UnderRight11" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-296, 1944)
+scale = Vector2(0.2, 0.2)
+
+[node name="UnderRight12" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-312, 2104)
+scale = Vector2(0.2, 0.2)
+
+[node name="UnderRight13" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-312, 2104)
+scale = Vector2(0.2, 0.2)
+
+[node name="UnderRight14" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-248, 3336)
+rotation = -1.43117
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft11" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-64, 3336)
+rotation = 1.43117
+scale = Vector2(0.5, 0.5)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("6_xs5fi")]
+position = Vector2(-96, 3712)
+
+[node name="UnderLeft" parent="MovingPlatform/AnimatableBody2D" index="1" instance=ExtResource("3_l2guj")]
+position = Vector2(3.2, 0)
+scale = Vector2(0.1, 0.6)
+
+[node name="Sprite2D" parent="MovingPlatform/AnimatableBody2D" index="2"]
+scale = Vector2(1e-05, 1e-05)
+texture = SubResource("ImageTexture_cp7g7")
+
+[node name="Position2" parent="MovingPlatform" index="2"]
+position = Vector2(94.3999, 2784)
+
+[node name="UnderRight15" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(672, 6520)
+
+[node name="UnderLeft12" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-672, 6513)
+
+[node name="KillArea" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(-2280, 1544)
+rotation = 1.5708
+
+[node name="KillArea5" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(-552, 4528)
+rotation = 1.5708
+
+[node name="KillArea3" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(-1184, -392)
+rotation = 2.44346
+
+[node name="KillArea4" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(1176, -136)
+rotation = -2.44346
+
+[node name="KillArea2" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(2088, 1536)
+rotation = 1.5708
+
+[node name="KillArea6" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(520, 4512)
+rotation = 1.5708
+
+[node name="UnderLeft13" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(1400, 6520)
+
+[node name="UnderRight16" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-1384, 6513)
+
+[node name="Area2D16" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(-403, 6400)
+
+[node name="Area2D17" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(421, 6415)
+
+[node name="Area2D18" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(-155, 3119)
+
+[node name="Area2D19" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(-1099, 2999)
+
+[node name="Area2D20" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(781, 3007)
+
+[node name="Area2D21" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(1349, 2951)
+
+[node name="Area2D22" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(1261, 2967)
+
+[node name="Area2D23" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(-1635, 2943)
+
+[node name="Area2D24" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(-1579, 2951)
+
+[node name="Area2D25" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(-267, 2319)
+
+[node name="Area2D26" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(-11, 2311)
+
+[node name="Area2D27" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(-779, 1095)
+
+[node name="Area2D28" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(589, 1079)
+
+[node name="Area2D29" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(-1179, 919)
+
+[node name="Area2D30" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(837, 919)
+
+[node name="Area2D31" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(-163, 575)
+
+[node name="Area2D32" parent="." instance=ExtResource("3_yv2n4")]
+position = Vector2(-144, 3624)
+
+[node name="Switch" parent="." instance=ExtResource("7_v6e1r")]
+position = Vector2(1232, 6416)
+
+[node name="Switch4" parent="." instance=ExtResource("7_v6e1r")]
+position = Vector2(1800, 3096)
+
+[node name="Switch2" parent="." instance=ExtResource("7_v6e1r")]
+position = Vector2(-1200, 6401)
+
+[node name="Switch3" parent="." instance=ExtResource("7_v6e1r")]
+position = Vector2(-2104, 3072)
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("6_xs5fi")]
+position = Vector2(-2168, 3232)
+
+[node name="Sprite2D" parent="MovingPlatform2/AnimatableBody2D" index="1"]
+texture = null
+
+[node name="UnderRight" parent="MovingPlatform2/AnimatableBody2D/Sprite2D" index="0" instance=ExtResource("4_pghvs")]
+scale = Vector2(0.1, 0.5)
+
+[node name="Position2" parent="MovingPlatform2" index="2"]
+position = Vector2(-2440, 0)
+
+[node name="MovingPlatform3" parent="." instance=ExtResource("6_xs5fi")]
+position = Vector2(1864, 3232)
+
+[node name="Sprite2D" parent="MovingPlatform3/AnimatableBody2D" index="1"]
+texture = null
+
+[node name="UnderLeft" parent="MovingPlatform3/AnimatableBody2D/Sprite2D" index="0" instance=ExtResource("3_l2guj")]
+scale = Vector2(0.1, 0.5)
+
+[node name="Position2" parent="MovingPlatform3" index="2"]
+position = Vector2(2744, 0)
+
+[editable path="MovingPlatform"]
+[editable path="MovingPlatform2"]
+[editable path="MovingPlatform3"]
