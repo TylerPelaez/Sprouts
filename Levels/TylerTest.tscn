@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://cks2s8aa0xkm2"]
+[gd_scene load_steps=14 format=3 uid="uid://cks2s8aa0xkm2"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_60dag"]
+[ext_resource type="Texture2D" uid="uid://m0xbwp81g6i5" path="res://Art/Background/sky BG.png" id="2_46ei5"]
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_qan4b"]
 [ext_resource type="PackedScene" uid="uid://bvx0c80txy8rv" path="res://Prefabs/LandingPad.tscn" id="3_126nx"]
 [ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="3_fm4aq"]
@@ -19,6 +20,19 @@ size = Vector2(64, 64)
 process_mode = 1
 script = ExtResource("1_60dag")
 next_level = "res://Levels/AirLevel1.tscn"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_limit_begin = Vector2(-4000, -2000)
+scroll_limit_end = Vector2(4000, 4000)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
+motion_offset = Vector2(-660, -540)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_46ei5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(96, 288)
@@ -164,5 +178,23 @@ dialog_file_path = "res://Dialog/ExampleDialog.json"
 
 [node name="UnderLeft" parent="." instance=ExtResource("11_yoasu")]
 position = Vector2(64, 360)
+
+[node name="UnderLeft2" parent="." instance=ExtResource("11_yoasu")]
+position = Vector2(-72, 1944)
+
+[node name="UnderLeft3" parent="." instance=ExtResource("11_yoasu")]
+position = Vector2(944, 2736)
+
+[node name="UnderLeft4" parent="." instance=ExtResource("11_yoasu")]
+position = Vector2(952, 4408)
+
+[node name="UnderLeft5" parent="." instance=ExtResource("11_yoasu")]
+position = Vector2(936, 5936)
+
+[node name="UnderLeft6" parent="." instance=ExtResource("11_yoasu")]
+position = Vector2(944, 6552)
+
+[node name="UnderLeft7" parent="." instance=ExtResource("11_yoasu")]
+position = Vector2(888, 7376)
 
 [editable path="Environment/Ground/MovingPlatform"]

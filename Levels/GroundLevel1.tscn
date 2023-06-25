@@ -1,13 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://evg4mo1jtqj0"]
+[gd_scene load_steps=18 format=3 uid="uid://evg4mo1jtqj0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_xnj5y"]
+[ext_resource type="Texture2D" uid="uid://cd7n1oke618px" path="res://Art/Background/middle BG.png" id="2_1v1lk"]
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_npm4k"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="4_jrdun"]
-[ext_resource type="PackedScene" uid="uid://bk5j2w78ju833" path="res://Prefabs/pills.tscn" id="5_pvs2g"]
+[ext_resource type="PackedScene" uid="uid://cyrefgeqop3hu" path="res://Prefabs/pills.tscn" id="5_pvs2g"]
 [ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="6_6hxw7"]
 [ext_resource type="PackedScene" uid="uid://sm5n8ljv3sdn" path="res://Prefabs/BatTest.tscn" id="7_77syx"]
 [ext_resource type="PackedScene" uid="uid://jjukmdme6xcg" path="res://Prefabs/LevelEnd.tscn" id="9_bxv0l"]
-[ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="9_mdpgx"]
+[ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="9_mdpgx"]
 [ext_resource type="PackedScene" uid="uid://c7cyjv561duli" path="res://Prefabs/Platform/GroundLeft.tscn" id="10_yb6g3"]
 [ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="10_yd0r8"]
 [ext_resource type="PackedScene" uid="uid://b3dgsovk0unkr" path="res://Prefabs/Platform/GroundRight.tscn" id="11_m4wra"]
@@ -39,6 +40,17 @@ point_count = 11
 
 [node name="Ground_level_1" type="Node2D"]
 script = ExtResource("1_xnj5y")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2(-1800, -408)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.7)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_1v1lk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(96, 288)
