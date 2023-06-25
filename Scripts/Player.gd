@@ -12,6 +12,8 @@ signal double_jump_restored
 @export var has_jump: bool = true
 @export var has_double_jump: bool = false
 
+@onready var sprite = $Sprite2D
+
 @onready var coyote_timer := $CoyoteTimer
 @onready var remote_transform := $RemoteTransform2D
 
@@ -30,10 +32,12 @@ func _ready():
 
 func _physics_process(delta):
 	var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		velocity.y = sign(velocity.y) *  min(abs(velocity.y), MAX_FALL_SPEED)
 		was_on_ground = false
+		animation_state.travel("Idle")
 	else:
 		coyote_timer.start()
 		jumped = false
@@ -60,7 +64,10 @@ func _physics_process(delta):
 	var direction = Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
-		animation_state.travel("Run")
+		if is_on_floor():
+			animation_state.travel("Run")
+		
+		post_grav_change_input_check()
 		animation_tree.set("parameters/Run/blend_position", velocity.x)
 		animation_tree.set("parameters/Idle/blend_position", velocity.x)
 	else:
@@ -85,5 +92,18 @@ func set_double_jumped(val):
 	else:
 		double_jump_restored.emit()
 
+var invert_direction_next_animation_play = false
+	
+
 func on_gravity_switch(direction: Vector2):
 	up_direction = -direction
+	var tween = get_tree().create_tween().bind_node(self)
+	tween.tween_interval(0.2)
+	tween.tween_property(self, "rotation", rotation + PI, 0.3)
+	tween.tween_callback(func(): invert_direction_next_animation_play = true)
+
+func post_grav_change_input_check():
+	if invert_direction_next_animation_play:
+		sprite.scale.x = -sprite.scale.x
+		invert_direction_next_animation_play = false
+
