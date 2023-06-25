@@ -140,10 +140,8 @@ SPEED = 400.0
 JUMP_VELOCITY = -500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-scale = Vector2(0.05, 0.05)
 texture = ExtResource("2_y3cl2")
-offset = Vector2(0, -900)
+offset = Vector2(0, -42)
 flip_h = true
 hframes = 6
 
