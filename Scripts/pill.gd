@@ -1,13 +1,8 @@
 extends Node
+class_name Pill
+
+signal collected
 
 func _on_body_entered(body):
+	collected.emit()
 	queue_free()
-
-
-func _ready():
-	pass # Replace with function body.
-
-
-
-func _process(delta):
-	pass

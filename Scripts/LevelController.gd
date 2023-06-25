@@ -49,18 +49,26 @@ func _initialize_child_signals(child: Node):
 	elif child is UIController:
 		ui_controller = child
 		ui_controller.dialog_complete.connect(on_dialog_complete)
+	elif child is Pill:
+		child.collected.connect(_on_collect)
 	
 	if child.get_child_count() > 0:
 		for grandchild in child.get_children():
 			_initialize_child_signals(grandchild)
 
+func _on_collect():
+	CollectibleTracker.collect_one()
+
 func _on_player_death():
+	CollectibleTracker.on_scene_restarted()
 	get_tree().reload_current_scene()
 
 func _on_level_end():
 	if next_level != null:
+		CollectibleTracker.save_collected()
 		get_tree().change_scene_to_file(next_level)
 	else:
+		CollectibleTracker.on_scene_restarted()
 		get_tree().reload_current_scene()
 
 func _on_switch_hit(effect: Switch.SwitchEffect):
