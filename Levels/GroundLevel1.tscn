@@ -313,6 +313,16 @@ position = Vector2(634.563, 1705)
 scale = Vector2(20.5801, 1.21875)
 texture = ExtResource("2_npm4k")
 
+[node name="Sprite2D15" type="Sprite2D" parent="Environment/Ground/StaticBody2D2"]
+position = Vector2(2024, 2696)
+scale = Vector2(20.5801, 1.21875)
+texture = ExtResource("2_npm4k")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Environment/Ground/StaticBody2D2"]
+position = Vector2(-2410.64, 4180)
+scale = Vector2(4.83252, 4.875)
+texture = ExtResource("2_npm4k")
+
 [node name="Sprite2D10" type="Sprite2D" parent="Environment/Ground/StaticBody2D2"]
 position = Vector2(152, 2496)
 scale = Vector2(20.5801, 1.21875)
@@ -336,6 +346,11 @@ texture = ExtResource("2_npm4k")
 [node name="Sprite2D14" type="Sprite2D" parent="Environment/Ground/StaticBody2D2"]
 position = Vector2(-1490, 544)
 scale = Vector2(20.1875, 1)
+texture = ExtResource("2_npm4k")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Environment/Ground/StaticBody2D2"]
+position = Vector2(4094.5, 1720)
+scale = Vector2(0.703124, 47.25)
 texture = ExtResource("2_npm4k")
 
 [node name="Sprite2D16" type="Sprite2D" parent="Environment/Ground/StaticBody2D2"]
