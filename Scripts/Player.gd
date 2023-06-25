@@ -62,8 +62,10 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 		animation_state.travel("Run")
 		animation_tree.set("parameters/Run/blend_position", velocity.x)
+		animation_tree.set("parameters/Idle/blend_position", velocity.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		animation_state.travel("Idle")
 	
 	move_and_slide()
 
