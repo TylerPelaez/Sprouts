@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvmc03t2yoqwq"]
+[gd_scene load_steps=11 format=3 uid="uid://dvmc03t2yoqwq"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_lhpq6"]
+[ext_resource type="Texture2D" uid="uid://biai8bedfm6f6" path="res://Art/Background/underground BG.png" id="2_addlt"]
 [ext_resource type="PackedScene" uid="uid://b7sodh70kw41p" path="res://Prefabs/Platform/UnderLeft.tscn" id="3_l2guj"]
-[ext_resource type="PackedScene" uid="uid://bk5j2w78ju833" path="res://Prefabs/pills.tscn" id="3_yv2n4"]
+[ext_resource type="PackedScene" uid="uid://cyrefgeqop3hu" path="res://Prefabs/pills.tscn" id="3_yv2n4"]
 [ext_resource type="PackedScene" uid="uid://613wuntiyxtn" path="res://Prefabs/Platform/UnderRight.tscn" id="4_pghvs"]
 [ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="6_xs5fi"]
-[ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="7_v6e1r"]
+[ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="7_v6e1r"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="8_ie4mh"]
 [ext_resource type="PackedScene" uid="uid://jjukmdme6xcg" path="res://Prefabs/LevelEnd.tscn" id="9_aefh4"]
 
@@ -14,6 +15,17 @@
 [node name="Underground_level_1" type="Node2D"]
 script = ExtResource("1_lhpq6")
 metadata/_edit_horizontal_guides_ = [5736.0]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2(-2400, -2400)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_addlt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(96, 288)
