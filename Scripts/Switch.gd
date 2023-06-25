@@ -3,6 +3,8 @@ class_name Switch
 
 signal switch_hit(effect: SwitchEffect)
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 @export var switch_effect: SwitchEffect = SwitchEffect.INVERT_GRAVITY
 
 
@@ -18,7 +20,8 @@ func _input(event):
 
 func _on_area_2d_body_entered(body):
 	player_is_inside = true
-
+	animation_player.play("Pulsate")
 
 func _on_area_2d_body_exited(body):
 	player_is_inside = false
+	animation_player.play("RESET")

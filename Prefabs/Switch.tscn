@@ -1,12 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwr0wpdjf27gt"]
+[gd_scene load_steps=9 format=3 uid="uid://dwr0wpdjf27gt"]
 
 [ext_resource type="Script" path="res://Scripts/Switch.gd" id="1_8tb1m"]
-[ext_resource type="Texture2D" uid="uid://pvmo6pva2rc0" path="res://Art/Test/White48.png" id="2_0n2vr"]
+[ext_resource type="Texture2D" uid="uid://ctmop7i7lu31p" path="res://Art/Bean/Bean.png" id="2_eap8i"]
+[ext_resource type="Shader" path="res://Art/GrabAlpha.gdshader" id="2_phfhg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_okkc1"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_y1t4n"]
+radius = 49.0102
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_18uus"]
+shader = ExtResource("2_phfhg")
+shader_parameter/color = Color(0.701961, 0.443137, 0, 1)
+
+[sub_resource type="Animation" id="Animation_2gchn"]
+resource_name = "Pulsate"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 0]
+}
+
+[sub_resource type="Animation" id="Animation_kgfa5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1cxwy"]
+_data = {
+"Pulsate": SubResource("Animation_2gchn"),
+"RESET": SubResource("Animation_kgfa5")
+}
 
 [node name="Switch" type="Node2D"]
-position = Vector2(864, 488)
 script = ExtResource("1_8tb1m")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -14,11 +57,19 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_okkc1")
+shape = SubResource("CircleShape2D_y1t4n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.964706, 0.839216, 0, 1)
-texture = ExtResource("2_0n2vr")
+material = SubResource("ShaderMaterial_18uus")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_eap8i")
+offset = Vector2(60, 60)
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1cxwy")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -96,9 +96,10 @@ position = Vector2(1896, 704)
 [node name="Interactive" type="Node2D" parent="Environment"]
 
 [node name="Switch" parent="Environment/Interactive" instance=ExtResource("5_n852e")]
+position = Vector2(912, 448)
 
 [node name="Switch2" parent="Environment/Interactive" instance=ExtResource("5_n852e")]
-position = Vector2(1048, -80)
+position = Vector2(1048, -56)
 
 [node name="LevelEnd" parent="Environment/Interactive" instance=ExtResource("6_htsaq")]
 position = Vector2(2768, 96)
