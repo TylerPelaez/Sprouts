@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqj1ujkf0llv7"]
+
+[ext_resource type="Texture2D" uid="uid://b6cxir8kqgokn" path="res://Art/Platforms/cloud.png" id="1_4ikyk"]
+
+[node name="AirSmall" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4ikyk")
+offset = Vector2(-96, 144)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-53, -31, 62, -24, 154, -21, 174, 2, 174, 43, 159, 62, 70, 61, -95, 53, -298, 54, -339, 45, -354, 9, -357, -20, -318, -33, -249, -33, -163, -30)
