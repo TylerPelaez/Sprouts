@@ -980,11 +980,11 @@ position = Vector2(1472, 6656)
 position = Vector2(-960, 552)
 
 [node name="AirLeft2" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(232, 344)
+position = Vector2(240, 336)
 scale = Vector2(0.5, 0.7)
 
 [node name="AirRight" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(-176, 336)
+position = Vector2(-120, 336)
 scale = Vector2(0.5, 0.7)
 
 [node name="AirLeft3" parent="." instance=ExtResource("11_ho1cw")]
@@ -992,15 +992,15 @@ position = Vector2(208, 544)
 scale = Vector2(0.5, 0.7)
 
 [node name="AirRight2" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(-272, 536)
+position = Vector2(-248, 544)
 scale = Vector2(0.7, 0.7)
 
 [node name="AirLeft4" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(1104, 536)
+position = Vector2(1096, 528)
 scale = Vector2(0.5, 0.7)
 
 [node name="AirRight3" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(696, 528)
+position = Vector2(712, 528)
 scale = Vector2(0.5, 0.7)
 
 [node name="AirRight4" parent="." instance=ExtResource("12_ht4ns")]
@@ -1008,11 +1008,11 @@ position = Vector2(1624, 536)
 scale = Vector2(0.5, 0.7)
 
 [node name="AirLeft5" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(2032, 544)
+position = Vector2(2016, 536)
 scale = Vector2(0.5, 0.7)
 
 [node name="AirLeft6" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(552, 3952)
+position = Vector2(544, 3944)
 scale = Vector2(0.8, 0.5)
 
 [node name="AirLeft9" parent="." instance=ExtResource("11_ho1cw")]
@@ -1020,15 +1020,15 @@ position = Vector2(-608, 4512)
 scale = Vector2(1.2, 0.8)
 
 [node name="AirRight5" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(-104, 3952)
+position = Vector2(-96, 3944)
 scale = Vector2(0.8, 0.5)
 
 [node name="AirLeft10" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(48, 4696)
+position = Vector2(40, 4688)
 scale = Vector2(0.4, 0.5)
 
 [node name="AirRight7" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(-344, 4688)
+position = Vector2(-336, 4688)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft11" parent="." instance=ExtResource("11_ho1cw")]
@@ -1036,7 +1036,7 @@ position = Vector2(760, 4848)
 scale = Vector2(0.4, 0.5)
 
 [node name="AirRight8" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(368, 4840)
+position = Vector2(376, 4848)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft17" parent="." instance=ExtResource("11_ho1cw")]
@@ -1044,7 +1044,7 @@ position = Vector2(1248, 5232)
 scale = Vector2(0.4, 0.5)
 
 [node name="AirRight14" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(856, 5224)
+position = Vector2(872, 5224)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft18" parent="." instance=ExtResource("11_ho1cw")]
@@ -1060,7 +1060,7 @@ position = Vector2(800, 4576)
 scale = Vector2(0.4, 0.5)
 
 [node name="AirRight9" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(408, 4568)
+position = Vector2(416, 4576)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft13" parent="." instance=ExtResource("11_ho1cw")]
@@ -1068,15 +1068,15 @@ position = Vector2(1640, 4424)
 scale = Vector2(0.4, 0.5)
 
 [node name="AirRight10" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(1248, 4416)
+position = Vector2(1264, 4424)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft14" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(2288, 4296)
+position = Vector2(2264, 4296)
 scale = Vector2(0.4, 0.5)
 
 [node name="AirRight11" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(1896, 4288)
+position = Vector2(1896, 4296)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft15" parent="." instance=ExtResource("11_ho1cw")]
@@ -1084,7 +1084,7 @@ position = Vector2(3000, 4336)
 scale = Vector2(0.4, 0.5)
 
 [node name="AirRight12" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(2608, 4328)
+position = Vector2(2624, 4336)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft16" parent="." instance=ExtResource("11_ho1cw")]
@@ -1106,7 +1106,7 @@ position = Vector2(904, 3928)
 scale = Vector2(0.2, 0.125)
 
 [node name="AirRight6" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(1336, 3928)
+position = Vector2(1352, 3928)
 scale = Vector2(0.8, 0.5)
 
 [node name="AirLeft19" parent="." instance=ExtResource("11_ho1cw")]
