@@ -15,10 +15,6 @@ signal double_jump_restored
 @onready var coyote_timer := $CoyoteTimer
 @onready var remote_transform := $RemoteTransform2D
 
-@onready var fall_timer: Timer = $FallTimer
-
-@onready var safe_fall_cast: RayCast2D = $SafeFallCast
-
 @onready var animation_tree := $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
 
@@ -27,7 +23,6 @@ signal double_jump_restored
 var jumped: bool = false
 var double_jumped: bool = false : set = set_double_jumped
 var was_on_ground: bool = true
-var fall_is_deadly: bool = false
 
 func _ready():
 	animation_tree.active = true
@@ -38,23 +33,12 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		velocity.y = sign(velocity.y) *  min(abs(velocity.y), MAX_FALL_SPEED)
-		
-		if was_on_ground:
-			fall_timer.start()
-		
-
 		was_on_ground = false
 	else:
-		if fall_is_deadly and !safe_fall_cast.is_colliding():
-			die()
-			return
-		fall_timer.stop()
 		coyote_timer.start()
 		jumped = false
 		self.double_jumped = false
 		was_on_ground = true
-		fall_is_deadly = false
-		
 	
 	var do_jump: bool = false
 	if has_jump and Input.is_action_just_pressed("Jump"):
@@ -80,9 +64,7 @@ func _physics_process(delta):
 		animation_tree.set("parameters/Run/blend_position", velocity.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
 	
-
 	move_and_slide()
 
 func set_camera_follow(camera: Node2D):
@@ -94,10 +76,6 @@ func die():
 func _on_kill_area_check_area_entered(area):
 	die()
 
-
-func _on_fall_timer_timeout():
-	fall_is_deadly = true
-
 func set_double_jumped(val):
 	double_jumped = val
 	if double_jumped:
@@ -107,4 +85,3 @@ func set_double_jumped(val):
 
 func on_gravity_switch(direction: Vector2):
 	up_direction = -direction
-	safe_fall_cast.target_position = safe_fall_cast.target_position * direction.y
