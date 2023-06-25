@@ -18,7 +18,6 @@ size = Vector2(64, 64)
 [node name="TylerTest" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_60dag")
-player_has_companion = false
 next_level = "res://Levels/AirLevel1.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="."]

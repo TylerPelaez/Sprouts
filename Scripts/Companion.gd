@@ -7,6 +7,9 @@ class_name Companion
 @export var player_double_jump_offset: Vector2 = Vector2(0, 32)
 @export var double_jump_movement_time_seconds: float = 0.05
 
+@onready var animation_tree := $AnimationTree
+@onready var animation_state = animation_tree.get("parameters/playback")
+
 var player: Player
 var original_color: Color
 var double_jump_start_position: Vector2
@@ -21,8 +24,9 @@ enum State {
 var state: State = State.PLAYER_FOLLOW
 
 func initialize(_player: Player):
+	animation_tree.active = true
 	player = _player
-	global_position = _player.global_position + initial_offset
+	global_position = _player.companion_center.global_position + initial_offset
 	player.double_jump.connect(_on_player_double_jump)
 	player.double_jump_restored.connect(_on_player_double_jump_restored)
 	original_color = modulate
@@ -31,8 +35,18 @@ func initialize(_player: Player):
 func _physics_process(delta):
 	match state:
 		State.PLAYER_FOLLOW:
-			if global_position.distance_to(player.global_position) > follow_distance:
-				global_position = global_position.lerp(player.global_position + (global_position - player.global_position).normalized() * follow_distance, follow_speed * delta)
+			var pivot = player.companion_center.global_position
+			var target_pos = pivot + (global_position - pivot).normalized() * follow_distance
+			if global_position.distance_to(target_pos) > 0.01:
+				var direction = (target_pos - global_position).normalized()
+				global_position = global_position.lerp(target_pos, follow_speed * delta)
+				animation_state.travel("Float")
+				animation_tree.set("parameters/Idle/blend_position", direction.x)
+				animation_tree.set("parameters/Float/blend_position", direction.x)
+			
+				if global_position.distance_to(target_pos) < 1:
+					animation_state.travel("Idle")
+					
 		State.DOUBLE_JUMP:
 			var t = ((Time.get_ticks_msec() - double_jump_start_time) / 1000.0) / float(double_jump_movement_time_seconds)
 			if t >= 1:

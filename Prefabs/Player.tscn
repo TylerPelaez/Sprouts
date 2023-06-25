@@ -183,5 +183,8 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_7celx")
 parameters/Run/blend_position = 0
 
+[node name="PlayerCompanionCenter" type="Marker2D" parent="."]
+position = Vector2(0, -72)
+
 [connection signal="area_entered" from="KillAreaCheck" to="." method="_on_kill_area_check_area_entered"]
 [connection signal="timeout" from="FallTimer" to="." method="_on_fall_timer_timeout"]

@@ -22,6 +22,8 @@ signal double_jump_restored
 @onready var animation_tree := $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
 
+@onready var companion_center := $PlayerCompanionCenter
+
 var jumped: bool = false
 var double_jumped: bool = false : set = set_double_jumped
 var was_on_ground: bool = true
