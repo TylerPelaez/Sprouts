@@ -97,9 +97,11 @@ var invert_direction_next_animation_play = false
 
 func on_gravity_switch(direction: Vector2):
 	up_direction = -direction
+	var new_rotation = 0 if up_direction.y < 0 else PI
+	
 	var tween = get_tree().create_tween().bind_node(self)
 	tween.tween_interval(0.2)
-	tween.tween_property(self, "rotation", rotation + PI, 0.3)
+	tween.tween_property(self, "rotation", new_rotation, 0.3)
 	tween.tween_callback(func(): invert_direction_next_animation_play = true)
 
 func post_grav_change_input_check():

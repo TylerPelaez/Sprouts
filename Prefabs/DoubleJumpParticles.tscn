@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtq0n1b8wejtu"]
+
+[ext_resource type="Script" path="res://Scripts/DoubleJumpParticles.gd" id="1_b64cr"]
+
+[sub_resource type="Curve" id="Curve_cuhes"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_nll6l"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[node name="DoubleJumpParticles" type="CPUParticles2D"]
+emitting = false
+amount = 15
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+emission_shape = 2
+emission_sphere_radius = 10.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 130.0
+initial_velocity_max = 130.0
+scale_amount_min = 6.0
+scale_amount_max = 6.0
+scale_amount_curve = SubResource("Curve_cuhes")
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("Gradient_nll6l")
+script = ExtResource("1_b64cr")

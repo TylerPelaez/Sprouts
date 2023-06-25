@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://clgebm3bcjsqn"]
+[gd_scene load_steps=27 format=3 uid="uid://clgebm3bcjsqn"]
 
 [ext_resource type="Texture2D" uid="uid://bhb08c478uwgh" path="res://Art/Chickpea/ChickpeaSheetDownscaled.png" id="1_qlrg1"]
 [ext_resource type="Script" path="res://Scripts/Companion.gd" id="2_36u7f"]
@@ -29,6 +29,19 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_wb8se")
 blend_point_1/pos = -1.0
 blend_mode = 1
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bb3lx"]
+animation = &"SquishRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8bk77"]
+animation = &"SquishLeft"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ymkg4"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_bb3lx")
+blend_point_0/pos = 1.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_8bk77")
+blend_point_1/pos = -1.0
+blend_mode = 1
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_benfa"]
 advance_mode = 2
 
@@ -36,13 +49,19 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fg3tb"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_maejb"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q8rk1"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_is8k7"]
 states/Float/node = SubResource("AnimationNodeBlendSpace1D_mgwtb")
 states/Float/position = Vector2(394, 149)
 states/Idle/node = SubResource("AnimationNodeBlendSpace1D_hrr5u")
 states/Idle/position = Vector2(394, 70)
+states/Squish/node = SubResource("AnimationNodeBlendSpace1D_ymkg4")
+states/Squish/position = Vector2(579, 70)
 states/Start/position = Vector2(227, 70)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_benfa"), "Idle", "Float", SubResource("AnimationNodeStateMachineTransition_vice8"), "Float", "Idle", SubResource("AnimationNodeStateMachineTransition_fg3tb")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_benfa"), "Idle", "Float", SubResource("AnimationNodeStateMachineTransition_vice8"), "Float", "Idle", SubResource("AnimationNodeStateMachineTransition_fg3tb"), "Idle", "Squish", SubResource("AnimationNodeStateMachineTransition_maejb"), "Squish", "Idle", SubResource("AnimationNodeStateMachineTransition_q8rk1")]
 graph_offset = Vector2(98, -8)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_0rglo"]
@@ -247,7 +266,117 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_e5xou"]
+resource_name = "SquishRight"
+length = 1.04
+step = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32, 0.4, 0.48, 0.56, 0.64, 0.72, 0.8, 0.88, 0.96),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.04),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_double_jump_animation_complete"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_g6tby"]
+resource_name = "SquishLeft"
+length = 1.04
+step = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
 "values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-4, -4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16, 0.24, 0.32, 0.4, 0.48, 0.56, 0.64, 0.72, 0.8, 0.88, 0.96),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.04),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_double_jump_animation_complete"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bg6ck"]
@@ -256,14 +385,15 @@ _data = {
 "FloatRight": SubResource("Animation_x0dek"),
 "IdleLeft": SubResource("Animation_hk4te"),
 "IdleRight": SubResource("Animation_cpnd3"),
-"RESET": SubResource("Animation_55rqj")
+"RESET": SubResource("Animation_55rqj"),
+"SquishLeft": SubResource("Animation_g6tby"),
+"SquishRight": SubResource("Animation_e5xou")
 }
 
 [node name="Companion" type="Sprite2D"]
 texture = ExtResource("1_qlrg1")
 offset = Vector2(4, -4)
-flip_h = true
-hframes = 20
+hframes = 33
 script = ExtResource("2_36u7f")
 follow_distance = 80.0
 initial_offset = Vector2(80, 0)
@@ -274,6 +404,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_0rglo")
 parameters/Float/blend_position = 0
 parameters/Idle/blend_position = 0
+parameters/Squish/blend_position = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

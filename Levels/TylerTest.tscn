@@ -110,7 +110,7 @@ position = Vector2(1896, 704)
 [node name="Interactive" type="Node2D" parent="Environment"]
 
 [node name="Switch" parent="Environment/Interactive" instance=ExtResource("5_n852e")]
-position = Vector2(912, 448)
+position = Vector2(912, 384)
 
 [node name="Switch2" parent="Environment/Interactive" instance=ExtResource("5_n852e")]
 position = Vector2(1048, -56)
