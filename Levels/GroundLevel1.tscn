@@ -384,6 +384,18 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(1968, 1168)
 scale = Vector2(0.5, 0.5)
 
+[node name="KillArea25" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(1936, 2664)
+scale = Vector2(0.5, 0.5)
+
+[node name="KillArea11" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(64, 2464)
+scale = Vector2(0.5, 0.5)
+
+[node name="KillArea12" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(-1224, 2456)
+scale = Vector2(0.5, 0.5)
+
 [node name="KillArea7" parent="." instance=ExtResource("4_jrdun")]
 position = Vector2(-1568, 512)
 scale = Vector2(0.5, 0.5)
@@ -395,6 +407,11 @@ scale = Vector2(0.2, 0.2)
 
 [node name="KillArea5" parent="." instance=ExtResource("4_jrdun")]
 position = Vector2(3320, 864)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea10" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(824, 2464)
 rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 
@@ -410,6 +427,66 @@ scale = Vector2(0.2, 0.2)
 
 [node name="KillArea6" parent="." instance=ExtResource("4_jrdun")]
 position = Vector2(-824, 272)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea16" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(4088, 408)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea17" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(4088, 904)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea18" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(4088, 1424)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea19" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(4096, 1936)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea20" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(4104, 2440)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea21" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(4104, 2936)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea22" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(2712, 2768)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea23" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(2344, 1992)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea24" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(2704, 2264)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea13" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(-1728, 2176)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea14" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(-1728, 1672)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+
+[node name="KillArea15" parent="." instance=ExtResource("4_jrdun")]
+position = Vector2(-1728, 1168)
 rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 
