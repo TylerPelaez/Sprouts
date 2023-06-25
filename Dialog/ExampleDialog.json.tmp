@@ -1,0 +1,15 @@
+[
+	{
+		"text": "This is Example Dialog."
+	},
+	{
+		"text": "I can even change my face",
+		"icon": "res://Art/Test/TestChickpea2.png"
+	},
+	{
+		"text": "I am the best bean."
+	},
+	{
+		"text": "Let me join you!."
+	},
+]
