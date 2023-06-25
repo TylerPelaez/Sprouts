@@ -38,8 +38,6 @@ point_count = 6
 
 [node name="Air_level_1" type="Node2D"]
 script = ExtResource("1_k2wap")
-player_has_jump = null
-player_has_companion = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(96, 288)

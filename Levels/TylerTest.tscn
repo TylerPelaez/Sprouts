@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="3_fm4aq"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="4_rw5bo"]
 [ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="5_klksn"]
-[ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="5_n852e"]
-[ext_resource type="PackedScene" uid="uid://cg03aepviau41" path="res://Prefabs/LevelEnd.tscn" id="6_htsaq"]
-[ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="9_o51mv"]
-[ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="10_h1xg2"]
+[ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="5_n852e"]
+[ext_resource type="PackedScene" path="res://Prefabs/LevelEnd.tscn" id="6_htsaq"]
+[ext_resource type="PackedScene" path="res://Prefabs/InteractableCompanion.tscn" id="9_o51mv"]
+[ext_resource type="PackedScene" path="res://Prefabs/UIController.tscn" id="10_h1xg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
 size = Vector2(64, 64)

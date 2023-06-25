@@ -49,8 +49,8 @@ func _initialize_child_signals(child: Node):
 	elif child is UIController:
 		ui_controller = child
 		ui_controller.dialog_complete.connect(on_dialog_complete)
-	elif child is Pill:
-		child.collected.connect(_on_collect)
+	#elif child is Pill:
+		#child.collected.connect(_on_collect)
 	
 	if child.get_child_count() > 0:
 		for grandchild in child.get_children():
