@@ -46,7 +46,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oxwds"]
-radius = 128.0
+radius = 160.0
 
 [sub_resource type="Curve" id="Curve_5ic2l"]
 _data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]

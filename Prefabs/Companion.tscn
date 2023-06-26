@@ -269,8 +269,8 @@ tracks/2/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_e5xou"]
-resource_name = "SquishRight"
+[sub_resource type="Animation" id="Animation_g6tby"]
+resource_name = "SquishLeft"
 length = 1.04
 step = 0.08
 tracks/0/type = "value"
@@ -283,7 +283,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -295,7 +295,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(4, -4)]
+"values": [Vector2(-4, -4)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -324,8 +324,8 @@ tracks/3/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_g6tby"]
-resource_name = "SquishLeft"
+[sub_resource type="Animation" id="Animation_e5xou"]
+resource_name = "SquishRight"
 length = 1.04
 step = 0.08
 tracks/0/type = "value"
@@ -338,7 +338,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -350,7 +350,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-4, -4)]
+"values": [Vector2(4, -4)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false

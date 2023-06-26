@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvmc03t2yoqwq"]
+[gd_scene load_steps=16 format=3 uid="uid://dvmc03t2yoqwq"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_lhpq6"]
 [ext_resource type="Texture2D" uid="uid://biai8bedfm6f6" path="res://Art/Background/underground BG.png" id="2_addlt"]
@@ -12,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cptcj4qinijgl" path="res://Prefabs/Checkpoint.tscn" id="10_xdqn6"]
 [ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="11_harna"]
 [ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="12_7ni65"]
-[ext_resource type="PackedScene" path="res://Prefabs/Platform/UnderSmall.tscn" id="13_yp6j4"]
+[ext_resource type="PackedScene" uid="uid://ce6egr7m0euoo" path="res://Prefabs/Platform/UnderSmall.tscn" id="13_yp6j4"]
+[ext_resource type="PackedScene" uid="uid://d0yb4f5es3x0e" path="res://Prefabs/BGFiller.tscn" id="14_4dvfx"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_cp7g7"]
 
@@ -46,6 +47,7 @@ gizmo_extents = 20.0
 [node name="KillAreas" type="Node2D" parent="Environment"]
 
 [node name="LevelEnd" parent="." instance=ExtResource("9_aefh4")]
+visible = false
 position = Vector2(-7768, 3360)
 
 [node name="UnderLeft" parent="." instance=ExtResource("3_l2guj")]
@@ -489,8 +491,8 @@ rotation = 3.14159
 scale = Vector2(0.5, 0.5)
 
 [node name="UnderRight34" parent="." instance=ExtResource("4_pghvs")]
-position = Vector2(-7368, 3424)
-rotation = 3.14159
+position = Vector2(-7342, 3428)
+rotation = 3.12566
 scale = Vector2(0.5, 0.5)
 
 [node name="UnderLeft29" parent="." instance=ExtResource("3_l2guj")]
@@ -499,8 +501,8 @@ rotation = 3.14159
 scale = Vector2(0.5, 0.5)
 
 [node name="UnderLeft30" parent="." instance=ExtResource("3_l2guj")]
-position = Vector2(-7680, 3416)
-rotation = 3.14159
+position = Vector2(-7704, 3417)
+rotation = 3.21095
 scale = Vector2(0.5, 0.5)
 
 [node name="UnderRight21" parent="." instance=ExtResource("4_pghvs")]
@@ -616,6 +618,14 @@ scale = Vector2(5, 1)
 position = Vector2(-7840, 2320)
 rotation = 1.5708
 scale = Vector2(5, 1)
+
+[node name="BGFiller" parent="." instance=ExtResource("14_4dvfx")]
+position = Vector2(-8911.5, 3272.5)
+scale = Vector2(33.4219, 94.0156)
+
+[node name="BGFiller2" parent="." instance=ExtResource("14_4dvfx")]
+position = Vector2(-6124.38, 99)
+scale = Vector2(119.699, 16.8359)
 
 [editable path="MovingPlatform"]
 [editable path="MovingPlatform2"]
