@@ -1,7 +1,8 @@
-[gd_scene load_steps=89 format=3 uid="uid://b8j0cr231tosy"]
+[gd_scene load_steps=90 format=3 uid="uid://b8j0cr231tosy"]
 
 [ext_resource type="Script" path="res://Scripts/FinalSprout.gd" id="1_huxxj"]
 [ext_resource type="Texture2D" uid="uid://dv0li801bxc1b" path="res://Art/ChickpeaDeath/Untitled_Artwork-1.png" id="2_6ubrs"]
+[ext_resource type="Texture2D" uid="uid://da05w85m6rgpq" path="res://Art/ChickpeaDeath/SproutDeathBG.png" id="2_nkd1f"]
 [ext_resource type="Texture2D" uid="uid://bpbqi2hytod3d" path="res://Art/ChickpeaDeath/Untitled_Artwork-2.png" id="3_ar8iv"]
 [ext_resource type="Texture2D" uid="uid://c4yohdq3f3ytl" path="res://Art/ChickpeaDeath/Untitled_Artwork-3.png" id="4_0djg0"]
 [ext_resource type="Texture2D" uid="uid://dmci3ojf8jxt0" path="res://Art/ChickpeaDeath/Untitled_Artwork-4.png" id="5_d8lji"]
@@ -270,12 +271,15 @@ _data = {
 [node name="FinalSprout" type="CanvasLayer"]
 script = ExtResource("1_huxxj")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_nkd1f")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15

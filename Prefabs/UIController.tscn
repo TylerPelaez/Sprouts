@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c46a44f3l7cm0"]
+[gd_scene load_steps=11 format=3 uid="uid://c46a44f3l7cm0"]
 
 [ext_resource type="Script" path="res://Scripts/UIController.gd" id="1_uj38h"]
 [ext_resource type="Theme" uid="uid://cy8uik3hm8t3u" path="res://UITheme.tres" id="2_tysbo"]
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="3_7oo4m"]
+[ext_resource type="Texture2D" uid="uid://bsw411bj3oblf" path="res://Art/UI/chickpea bg.png" id="4_b6xbe"]
 [ext_resource type="Texture2D" uid="uid://u65n8d01up0v" path="res://Art/UI/PortraitBashfulNoSprout.png" id="4_u0flx"]
 [ext_resource type="Texture2D" uid="uid://b87lngawmxo8k" path="res://Art/UI/DialogNextArrow.png" id="5_5pnbf"]
 [ext_resource type="Script" path="res://Scripts/VoiceSoundPlayer.gd" id="5_0602t"]
@@ -83,6 +84,11 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
+
+[node name="TextureRect2" type="TextureRect" parent="DialogContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_b6xbe")
+expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="DialogContainer/NinePatchRect/MarginContainer"]
 layout_mode = 2
