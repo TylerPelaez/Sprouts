@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://difkx236nk5ej"]
+[gd_scene load_steps=21 format=3 uid="uid://difkx236nk5ej"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_k2wap"]
 [ext_resource type="Texture2D" uid="uid://m0xbwp81g6i5" path="res://Art/Background/sky BG.png" id="2_pncg2"]
@@ -6,12 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://cyrefgeqop3hu" path="res://Prefabs/pills.tscn" id="6_enc4c"]
 [ext_resource type="PackedScene" uid="uid://sm5n8ljv3sdn" path="res://Prefabs/BatTest.tscn" id="7_1ja6j"]
 [ext_resource type="PackedScene" uid="uid://jjukmdme6xcg" path="res://Prefabs/LevelEnd.tscn" id="8_n683u"]
+[ext_resource type="Texture2D" uid="uid://obnnswye5mmu" path="res://Art/Platforms/upper right large platform.png" id="9_brinv"]
 [ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="9_n74ue"]
 [ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="9_wg2g8"]
 [ext_resource type="PackedScene" uid="uid://du276oy1bnd5s" path="res://Prefabs/Platform/AirLeft.tscn" id="11_ho1cw"]
 [ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="11_ydy3s"]
 [ext_resource type="PackedScene" uid="uid://d2oxltdub1nxo" path="res://Prefabs/Platform/AirRight.tscn" id="12_ht4ns"]
 [ext_resource type="PackedScene" uid="uid://cptcj4qinijgl" path="res://Prefabs/Checkpoint.tscn" id="14_nq4ug"]
+[ext_resource type="Texture2D" uid="uid://cns7vx8k4wqj6" path="res://Art/Platforms/RepeatableHorizontal/Untitled_Artwork-8.png" id="15_c1lfb"]
 [ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="15_hxdx3"]
 [ext_resource type="PackedScene" uid="uid://dqj1ujkf0llv7" path="res://Prefabs/Platform/AirSmall.tscn" id="16_p1rpc"]
 
@@ -23,6 +25,10 @@ _data = {
 }
 point_count = 7
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_js8v8"]
+resource_local_to_scene = true
+size = Vector2(614, 72)
+
 [sub_resource type="Curve2D" id="Curve2D_hv7h8"]
 resource_local_to_scene = true
 resource_name = "Bat"
@@ -30,6 +36,10 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 88, 304, 0, 0, 0, 0, 632, 304, 0, 0, 0, 0, 632, 376, 0, 0, 0, 0, -16, 376, 0, 0, 0, 0, -16, 304, 0, 0, 0, 0, 88, 304)
 }
 point_count = 6
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nw8os"]
+radius = 50.0
+height = 738.0
 
 [node name="Air_level_1" type="Node2D"]
 script = ExtResource("1_k2wap")
@@ -801,7 +811,7 @@ position = Vector2(888, 11792)
 scale = Vector2(47.578, 2)
 
 [node name="Switch" parent="." instance=ExtResource("9_wg2g8")]
-position = Vector2(850, 3872)
+position = Vector2(840, 3642)
 
 [node name="Switch3" parent="." instance=ExtResource("9_wg2g8")]
 position = Vector2(1129, 9428)
@@ -817,11 +827,17 @@ prompt_above = false
 [node name="MovingPlatform" parent="." instance=ExtResource("9_n74ue")]
 position = Vector2(1760, 6328)
 
-[node name="AirRight" parent="MovingPlatform/AnimatableBody2D" index="1" instance=ExtResource("12_ht4ns")]
-scale = Vector2(0.1, 0.5)
+[node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
+scale = Vector2(1, 1)
 
-[node name="Sprite2D" parent="MovingPlatform/AnimatableBody2D" index="2"]
-texture = null
+[node name="CollisionShape2D" parent="MovingPlatform/AnimatableBody2D" index="0"]
+position = Vector2(5, 2)
+shape = SubResource("RectangleShape2D_js8v8")
+
+[node name="Sprite2D" parent="MovingPlatform/AnimatableBody2D" index="1"]
+position = Vector2(-27, 71)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_brinv")
 
 [node name="Position2" parent="MovingPlatform" index="2"]
 position = Vector2(672, 0)
@@ -847,36 +863,12 @@ dialog_file_path = "res://Dialog/Greetings.json"
 [node name="AirLeft" parent="." instance=ExtResource("11_ho1cw")]
 position = Vector2(-960, 552)
 
-[node name="AirLeft2" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(240, 336)
-scale = Vector2(0.5, 0.7)
-
-[node name="AirRight" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(-168, 336)
-scale = Vector2(0.5, 0.7)
-
-[node name="AirLeft3" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(208, 544)
-scale = Vector2(0.5, 0.7)
-
-[node name="AirRight2" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(-272, 544)
-scale = Vector2(0.7, 0.7)
-
 [node name="AirLeft4" parent="." instance=ExtResource("11_ho1cw")]
 position = Vector2(1096, 528)
 scale = Vector2(0.5, 0.7)
 
 [node name="AirRight3" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(688, 528)
-scale = Vector2(0.5, 0.7)
-
-[node name="AirRight4" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(1624, 536)
-scale = Vector2(0.5, 0.7)
-
-[node name="AirLeft5" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(2016, 536)
+position = Vector2(686, 526)
 scale = Vector2(0.5, 0.7)
 
 [node name="AirLeft6" parent="." instance=ExtResource("11_ho1cw")]
@@ -960,6 +952,7 @@ position = Vector2(2080, 5200)
 scale = Vector2(0.6, 0.2)
 
 [node name="AirRight13" parent="." instance=ExtResource("12_ht4ns")]
+modulate = Color(1, 1, 1, 0.52549)
 position = Vector2(1600, 5200)
 scale = Vector2(0.6, 0.2)
 collision_layer = 32768
@@ -968,10 +961,6 @@ collision_mask = 32768
 [node name="AirLeft7" parent="." instance=ExtResource("11_ho1cw")]
 position = Vector2(1992, 3928)
 scale = Vector2(0.8, 0.5)
-
-[node name="AirLeft8" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(904, 3928)
-scale = Vector2(0.2, 0.125)
 
 [node name="AirRight6" parent="." instance=ExtResource("12_ht4ns")]
 position = Vector2(1336, 3928)
@@ -1041,14 +1030,14 @@ rotation = 1.5708
 scale = Vector2(2, 0.5)
 
 [node name="AirSmall15" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(-824, 2320)
+position = Vector2(-896, 2356)
 rotation = 1.5708
-scale = Vector2(5, 1.25)
+scale = Vector2(5, 5)
 
 [node name="AirSmall16" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(-1463, 1747)
+position = Vector2(-1571, 1614)
 rotation = 1.5708
-scale = Vector2(5, 1.25)
+scale = Vector2(5, 5)
 
 [node name="AirSmall17" parent="." instance=ExtResource("16_p1rpc")]
 position = Vector2(-360, 2320)
@@ -1076,19 +1065,19 @@ rotation = 1.5708
 scale = Vector2(5, 1.25)
 
 [node name="AirSmall22" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(2192, 1704)
+position = Vector2(2399, 1704)
 rotation = 1.5708
-scale = Vector2(5, 1.25)
+scale = Vector2(5, 5)
 
 [node name="AirSmall23" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(3197, 4266)
+position = Vector2(3409, 4274)
 rotation = 1.5708
-scale = Vector2(5, 1.25)
+scale = Vector2(5, 5)
 
 [node name="AirSmall24" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(-1112, 5280)
+position = Vector2(-1197, 4796)
 rotation = 1.5708
-scale = Vector2(5, 1.25)
+scale = Vector2(4, 4)
 
 [node name="AirSmall25" parent="." instance=ExtResource("16_p1rpc")]
 position = Vector2(2192, 6992)
@@ -1096,20 +1085,20 @@ rotation = 1.5708
 scale = Vector2(5, 1.25)
 
 [node name="AirSmall26" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(3864, 5176)
-scale = Vector2(5, 1.25)
+position = Vector2(4014, 5302)
+scale = Vector2(5, 5)
 
 [node name="AirSmall27" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(589, 5344)
-scale = Vector2(4.67, 1.25)
+position = Vector2(551, 5461)
+scale = Vector2(5, 5)
 
 [node name="AirSmall28" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(-1144, 3416)
-scale = Vector2(5, 1.25)
+position = Vector2(-930, 3451)
+scale = Vector2(3.5, 3.5)
 
 [node name="AirSmall29" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(3468, 3088)
-scale = Vector2(5, 1.25)
+position = Vector2(3409, 2944)
+scale = Vector2(5, 5)
 
 [node name="AirSmall13" parent="." instance=ExtResource("16_p1rpc")]
 position = Vector2(744, 7984)
@@ -1150,6 +1139,36 @@ scale = Vector2(2, 0.5)
 position = Vector2(2088, 7520)
 rotation = 1.5708
 scale = Vector2(2, 0.5)
+
+[node name="AirSmall30" parent="." instance=ExtResource("16_p1rpc")]
+position = Vector2(16, 322)
+
+[node name="AirRight" parent="." instance=ExtResource("12_ht4ns")]
+position = Vector2(1772, 562)
+
+[node name="UntitledArtwork-8" type="Sprite2D" parent="."]
+position = Vector2(-320.931, 573.624)
+rotation = 0.0893525
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_c1lfb")
+
+[node name="UntitledArtwork-9" type="Sprite2D" parent="."]
+position = Vector2(91, 573)
+rotation = -0.0890118
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_c1lfb")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-114, 569)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-6, 2)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_nw8os")
+
+[node name="AirSmall31" parent="." instance=ExtResource("16_p1rpc")]
+position = Vector2(959, 3846)
 
 [editable path="Node2D"]
 [editable path="MovingPlatform"]

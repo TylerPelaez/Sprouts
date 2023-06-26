@@ -3,14 +3,14 @@
 		"text": "Oh"
 	},
 	{
-		"text": "I never been here before",
-		"icon": "res://Art/Test/TestChickpea1.png"
+		"text": "I never been here before"
 	},
 	{
 		"text": "Those spiky things look harmy!",
-		"icon": "res://Art/Test/TestChickpea2.png"
+		"icon": "res://Art/UI/PortraitConcernedNoSprout.png"
 	},
 	{
-		"text": "I very hungy can u get me BEANS!?"
+		"text": "I very hungy can u get me BEANS!?",
+		"icon": "res://Art/UI/PortraitExcitedWithSprout.png"
 	},
 ]

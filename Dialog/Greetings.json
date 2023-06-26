@@ -1,24 +1,25 @@
 [
 	{
-		"text": "Oh Hai!"
+		"text": "Oh Hai!",
+		"icon": "res://Art/UI/PortraitExcitedNoSprout.png"
 	},
 	{
-		"text": "Iv been sitting here all by my self",
-		"icon": "res://Art/Test/TestChickpea1.png"
+		"text": "Iv been sitting here all by my self"
 	},
 	{
 		"text": "My fwiends and famly left me.",
-		"icon": "res://Art/Test/TestChickpea2.png"
+		"icon": "res://Art/UI/PortraitConcernedNoSprout.png"
 	},
 	{
 		"text": "My name Chickpea!",
-		"icon": "res://Art/Test/TestChickpea1.png"
+		"icon": "res://Art/UI/PortraitExcitedNoSprout.png"
 	},
 	{
 		"text": "U seem fun! I join u on ur journey!"
 	},
 		{
-		"text": "I gib u juoblejump!"
+		"text": "I gib u juoblejump!",
+		"icon": "res://Art/UI/PortraitExcitedNoSprout.png"
 	},
 	{
 		"text": "Do u have food?"

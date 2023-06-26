@@ -24,6 +24,7 @@ bus = &"Sound"
 [node name="CollectSFXPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_2wyiw")
 volume_db = -3.0
+pitch_scale = 0.8
 bus = &"Sound"
 
 [node name="GravitySFXPlayer" type="AudioStreamPlayer" parent="."]

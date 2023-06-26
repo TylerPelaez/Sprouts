@@ -10,7 +10,7 @@ signal dialog_complete
 @onready var dialog_image = $DialogContainer/NinePatchRect/MarginContainer/TextureRect
 @onready var audio_player = $AudioStreamPlayer
 
-var default_icon = preload("res://Art/Test/TestChickpea1.png")
+var default_icon = preload("res://Art/UI/PortraitBashfulNoSprout.png")
 var dialog_data = []
 var dialog_index = 0
 var current_tween
