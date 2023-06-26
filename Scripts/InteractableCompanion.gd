@@ -2,6 +2,7 @@ extends Node2D
 class_name InteractableCompanion
 
 @onready var sprite:= $Companion
+@onready var particles := $CPUParticles2D
 
 signal start_dialog(interactable: InteractableCompanion, dialog_file_path: String)
 signal summon_companion(interactible: InteractableCompanion)
@@ -33,9 +34,13 @@ func _input(event):
 func set_companion_present(val: bool):
 	companion_present = val
 	sprite.visible = companion_present
+	particles.emitting = !companion_present
 
 func _on_summon_companion_area_body_entered(body):
 	summon_companion.emit(self)
+	particles.emitting = false
+	
 
 func _on_summon_companion_area_body_exited(body):
 	release_companion.emit(self)
+	particles.emitting = !companion_present

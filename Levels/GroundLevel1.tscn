@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b3dgsovk0unkr" path="res://Prefabs/Platform/GroundRight.tscn" id="11_m4wra"]
 [ext_resource type="PackedScene" uid="uid://cptcj4qinijgl" path="res://Prefabs/Checkpoint.tscn" id="13_qe0q4"]
 [ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="14_powls"]
-[ext_resource type="PackedScene" path="res://Prefabs/Platform/GroundSmall.tscn" id="15_43dao"]
+[ext_resource type="PackedScene" uid="uid://ou2hf6vnf756" path="res://Prefabs/Platform/GroundSmall.tscn" id="15_43dao"]
 [ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="15_hgs7j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
