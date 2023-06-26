@@ -13,6 +13,7 @@ func save_collected():
 	collected_count += collected_in_level
 	collected_in_level = 0
 	last_checkpoint_position = null
+	last_checkpoint_index = -1
 
 func collect_one():
 	collected_in_level += 1
