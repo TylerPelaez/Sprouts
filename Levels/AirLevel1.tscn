@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://difkx236nk5ej"]
+[gd_scene load_steps=22 format=3 uid="uid://difkx236nk5ej"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_k2wap"]
 [ext_resource type="Texture2D" uid="uid://m0xbwp81g6i5" path="res://Art/Background/sky BG.png" id="2_pncg2"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cns7vx8k4wqj6" path="res://Art/Platforms/RepeatableHorizontal/Untitled_Artwork-8.png" id="15_c1lfb"]
 [ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="15_hxdx3"]
 [ext_resource type="PackedScene" uid="uid://dqj1ujkf0llv7" path="res://Prefabs/Platform/AirSmall.tscn" id="16_p1rpc"]
+[ext_resource type="Texture2D" uid="uid://b6cxir8kqgokn" path="res://Art/Platforms/cloud.png" id="17_x73gd"]
 
 [sub_resource type="Curve2D" id="Curve2D_kmfnv"]
 resource_local_to_scene = true
@@ -907,14 +908,6 @@ scale = Vector2(0.4, 0.5)
 position = Vector2(887, 5230)
 scale = Vector2(0.6, 0.5)
 
-[node name="AirLeft18" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(1152, 5984)
-scale = Vector2(0.4, 0.5)
-
-[node name="AirRight15" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(752, 5984)
-scale = Vector2(0.6, 0.5)
-
 [node name="AirLeft12" parent="." instance=ExtResource("11_ho1cw")]
 position = Vector2(800, 4576)
 scale = Vector2(0.4, 0.5)
@@ -948,7 +941,7 @@ position = Vector2(2624, 4336)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft16" parent="." instance=ExtResource("11_ho1cw")]
-modulate = Color(1, 1, 1, 0.721569)
+modulate = Color(1, 1, 1, 0.52549)
 position = Vector2(2080, 5200)
 scale = Vector2(0.6, 0.2)
 
@@ -1170,6 +1163,62 @@ shape = SubResource("CapsuleShape2D_nw8os")
 
 [node name="AirSmall31" parent="." instance=ExtResource("16_p1rpc")]
 position = Vector2(959, 3846)
+
+[node name="Cloud" type="Sprite2D" parent="."]
+position = Vector2(659, 6120)
+texture = ExtResource("17_x73gd")
+
+[node name="Cloud7" type="Sprite2D" parent="."]
+position = Vector2(4183, 7001)
+texture = ExtResource("17_x73gd")
+
+[node name="Cloud3" type="Sprite2D" parent="."]
+position = Vector2(-263, 6109)
+texture = ExtResource("17_x73gd")
+
+[node name="Cloud4" type="Sprite2D" parent="."]
+position = Vector2(184, 5979)
+texture = ExtResource("17_x73gd")
+
+[node name="Cloud2" type="Sprite2D" parent="."]
+position = Vector2(-535, 6493)
+scale = Vector2(2, 2)
+texture = ExtResource("17_x73gd")
+
+[node name="Cloud8" type="Sprite2D" parent="."]
+position = Vector2(-1689, 5193)
+rotation = -1.56214
+texture = ExtResource("17_x73gd")
+
+[node name="Cloud9" type="Sprite2D" parent="."]
+position = Vector2(-2009, 4107)
+rotation = -4.70105
+texture = ExtResource("17_x73gd")
+
+[node name="Cloud10" type="Sprite2D" parent="."]
+position = Vector2(-1332, 4767)
+rotation = -1.56214
+scale = Vector2(2, 2)
+texture = ExtResource("17_x73gd")
+
+[node name="Cloud5" type="Sprite2D" parent="."]
+position = Vector2(3541, 6337)
+scale = Vector2(2, 2)
+texture = ExtResource("17_x73gd")
+
+[node name="Cloud6" type="Sprite2D" parent="."]
+position = Vector2(3894, 6955)
+scale = Vector2(3, 3)
+texture = ExtResource("17_x73gd")
+
+[node name="UntitledArtwork-10" type="Sprite2D" parent="."]
+position = Vector2(-593, 5837)
+texture = ExtResource("15_c1lfb")
+
+[node name="UntitledArtwork-11" type="Sprite2D" parent="."]
+position = Vector2(3993, 4952)
+rotation = -3.14159
+texture = ExtResource("15_c1lfb")
 
 [editable path="Node2D"]
 [editable path="MovingPlatform"]
