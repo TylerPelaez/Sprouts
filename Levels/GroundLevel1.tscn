@@ -676,6 +676,7 @@ position = Vector2(22, 3369.26)
 scale = Vector2(1, 1)
 
 [node name="LevelEnd" parent="." instance=ExtResource("9_bxv0l")]
+visible = false
 position = Vector2(-2461, 4123)
 scale = Vector2(20, 10)
 

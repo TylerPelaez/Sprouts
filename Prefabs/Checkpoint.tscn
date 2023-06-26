@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cptcj4qinijgl"]
+[gd_scene load_steps=9 format=3 uid="uid://cptcj4qinijgl"]
 
 [ext_resource type="Texture2D" uid="uid://cesskqarrdboi" path="res://Art/Bean/BeanDownscaled20Percent.png" id="1_d2nhw"]
 [ext_resource type="Script" path="res://Scripts/Checkpoint.gd" id="1_dp1wv"]
-[ext_resource type="Shader" uid="uid://cdwmt34j1jgax" path="res://Prefabs/WhiteBean.tres" id="2_tec5i"]
 
 [sub_resource type="Animation" id="Animation_m8i1o"]
 resource_name = "Hover"
@@ -30,10 +29,6 @@ _data = {
 "RESET": SubResource("Animation_ey4q3")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d1gg3"]
-shader = ExtResource("2_tec5i")
-shader_parameter/color = Color(1, 1, 1, 1)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_7hio7"]
 radius = 48.0
 
@@ -42,7 +37,7 @@ _data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_gaqtp"]
-colors = PackedColorArray(1, 1, 1, 0.878431, 1, 1, 1, 0)
+colors = PackedColorArray(0, 0, 0, 0.878431, 0, 0, 0, 0)
 
 [node name="Checkpoint" type="Node2D"]
 script = ExtResource("1_dp1wv")
@@ -56,7 +51,6 @@ libraries = {
 [node name="Offset" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Offset"]
-material = SubResource("ShaderMaterial_d1gg3")
 position = Vector2(0, -8)
 texture = ExtResource("1_d2nhw")
 offset = Vector2(12, 12)
@@ -80,8 +74,8 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 60.0
 initial_velocity_max = 80.0
-scale_amount_min = 3.0
-scale_amount_max = 3.0
+scale_amount_min = 5.0
+scale_amount_max = 5.0
 scale_amount_curve = SubResource("Curve_h72k1")
 color_ramp = SubResource("Gradient_gaqtp")
 
