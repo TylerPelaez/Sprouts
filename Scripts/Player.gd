@@ -36,8 +36,11 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		velocity.y = sign(velocity.y) *  min(abs(velocity.y), MAX_FALL_SPEED)
+		if sign(velocity.y) != sign(up_direction.y):
+			# We're falling
+			animation_state.travel("Falling")
+		
 		was_on_ground = false
-		animation_state.travel("Idle")
 	else:
 		coyote_timer.start()
 		jumped = false
@@ -59,21 +62,26 @@ func _physics_process(delta):
 			do_jump = true
 	
 	if do_jump:
+		animation_state.travel("Jump")
 		MusicController.play_jump_sound()
 		velocity.y = JUMP_VELOCITY * -up_direction.y
 
 	var direction = Input.get_axis("Left", "Right")
 	if direction:
 		velocity.x = direction * SPEED
-		if is_on_floor():
+		if is_on_floor() and !do_jump:
 			animation_state.travel("Run")
 		
 		post_grav_change_input_check()
 		animation_tree.set("parameters/Run/blend_position", velocity.x)
 		animation_tree.set("parameters/Idle/blend_position", velocity.x)
+		animation_tree.set("parameters/Jump/blend_position", velocity.x)
+		animation_tree.set("parameters/StartFalling/blend_position", velocity.x)
+		animation_tree.set("parameters/Falling/blend_position", velocity.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		animation_state.travel("Idle")
+		if is_on_floor() and !do_jump:
+			animation_state.travel("Idle")
 	
 	move_and_slide()
 
