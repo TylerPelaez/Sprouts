@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0yb4f5es3x0e"]
+
+[ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="1_0vi1o"]
+
+[node name="BGFiller" type="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_0vi1o")

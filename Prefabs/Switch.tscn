@@ -6,11 +6,12 @@
 [ext_resource type="FontFile" uid="uid://n2ucbn5g7j22" path="res://Oxygen-Regular.ttf" id="4_yk1bg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1t4n"]
-radius = 49.0102
+radius = 62.0081
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_18uus"]
+resource_local_to_scene = true
 shader = ExtResource("2_fk2ga")
-shader_parameter/color = Color(0.701961, 0.443137, 0, 1)
+shader_parameter/color = Color(0.827451, 0.52549, 0, 1)
 
 [sub_resource type="Animation" id="Animation_2gchn"]
 resource_name = "Pulsate"

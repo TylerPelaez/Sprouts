@@ -11,4 +11,4 @@ offset = Vector2(96, 144)
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(30, -34, 99, -49, 196, -55, 293, -47, 324, -34, 324, -27, 210, -19, -6, 22, -361, 88, -361, -23, -294, -47, -194, -54, -68, -41, -30, -31)
+polygon = PackedVector2Array(35, -39, 110, -47, 199, -52, 289, -46, 318, -39, 324, -27, 210, -19, -6, 22, -361, 88, -361, -30, -296, -39, -193, -45, -77, -40, -30, -36)

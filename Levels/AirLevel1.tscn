@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://difkx236nk5ej"]
+[gd_scene load_steps=17 format=3 uid="uid://difkx236nk5ej"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_k2wap"]
 [ext_resource type="Texture2D" uid="uid://m0xbwp81g6i5" path="res://Art/Background/sky BG.png" id="2_pncg2"]
-[ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="4_br8gs"]
 [ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="5_yt0rx"]
 [ext_resource type="PackedScene" uid="uid://cyrefgeqop3hu" path="res://Prefabs/pills.tscn" id="6_enc4c"]
 [ext_resource type="PackedScene" uid="uid://sm5n8ljv3sdn" path="res://Prefabs/BatTest.tscn" id="7_1ja6j"]
@@ -14,13 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d2oxltdub1nxo" path="res://Prefabs/Platform/AirRight.tscn" id="12_ht4ns"]
 [ext_resource type="PackedScene" uid="uid://cptcj4qinijgl" path="res://Prefabs/Checkpoint.tscn" id="14_nq4ug"]
 [ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="15_hxdx3"]
-[ext_resource type="PackedScene" path="res://Prefabs/Platform/AirSmall.tscn" id="16_p1rpc"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
-size = Vector2(64, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6ist"]
-size = Vector2(5, 133)
+[ext_resource type="PackedScene" uid="uid://dqj1ujkf0llv7" path="res://Prefabs/Platform/AirSmall.tscn" id="16_p1rpc"]
 
 [sub_resource type="Curve2D" id="Curve2D_kmfnv"]
 resource_local_to_scene = true
@@ -66,107 +59,6 @@ gizmo_extents = 20.0
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Ground" type="Node2D" parent="Environment"]
-
-[node name="TestGround" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(0, 352)
-scale = Vector2(10, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround"]
-position = Vector2(105.6, -256)
-shape = SubResource("RectangleShape2D_irls3")
-
-[node name="TestGround16" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(512, 6296)
-scale = Vector2(10, 1)
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="Environment/Ground/TestGround16"]
-position = Vector2(227.2, 1744)
-shape = SubResource("RectangleShape2D_irls3")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment/Ground/TestGround16"]
-position = Vector2(-284, 354.4)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_irls3")
-
-[node name="TestGround9" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(1056, 5104)
-scale = Vector2(10, 1)
-
-[node name="Sprite2D30" type="Sprite2D" parent="Environment/Ground/TestGround9"]
-position = Vector2(-16.8, 6680)
-scale = Vector2(1, 1.96875)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Environment/Ground"]
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Environment/Ground/StaticBody2D2"]
-position = Vector2(-16, 6848)
-rotation = 1.5708
-scale = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_g6ist")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="Environment/Ground/StaticBody2D2"]
-position = Vector2(32, 7536)
-rotation = 1.5708
-scale = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_g6ist")
-
-[node name="KillAreas" type="Node2D" parent="Environment"]
-
-[node name="KillArea" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(-1424, 1080)
-rotation = 1.5708
-
-[node name="KillArea12" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(2224, 1064)
-rotation = 1.5708
-
-[node name="KillArea4" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(-1789, 3366)
-
-[node name="KillArea11" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(2784, 3040)
-
-[node name="KillArea9" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(3240, 3608)
-rotation = 1.5708
-
-[node name="KillArea13" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(3176, 5128)
-
-[node name="KillArea15" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(-48, 5304)
-
-[node name="KillArea14" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(2240, 6336)
-rotation = 1.5708
-
-[node name="KillArea10" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(-1064, 4576)
-rotation = 1.5708
-
-[node name="KillArea3" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(144, 1664)
-rotation = 1.5708
-
-[node name="KillArea5" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(-768, 1664)
-rotation = 1.5708
-
-[node name="KillArea6" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(-304, 1664)
-rotation = 1.5708
-
-[node name="KillArea2" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(656, 1664)
-rotation = 1.5708
-
-[node name="KillArea7" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(1136, 1696)
-rotation = 1.5708
-
-[node name="KillArea8" parent="Environment/KillAreas" instance=ExtResource("4_br8gs")]
-position = Vector2(1719, 1694)
-rotation = 1.5708
 
 [node name="Area2D16" parent="Environment" instance=ExtResource("6_enc4c")]
 position = Vector2(-192, 472)
@@ -357,12 +249,6 @@ position = Vector2(1248, 5160)
 [node name="Area2D62" parent="Environment" instance=ExtResource("6_enc4c")]
 position = Vector2(1576, 5144)
 
-[node name="Area2D60" parent="Environment" instance=ExtResource("6_enc4c")]
-position = Vector2(672, 5912)
-
-[node name="Area2D61" parent="Environment" instance=ExtResource("6_enc4c")]
-position = Vector2(1136, 5912)
-
 [node name="Area2D33" parent="Environment" instance=ExtResource("6_enc4c")]
 position = Vector2(1120, 4344)
 
@@ -370,8 +256,6 @@ position = Vector2(1120, 4344)
 position = Vector2(1736, 4216)
 
 [node name="Hazards" type="Node2D" parent="."]
-
-[node name="SpikeEnemy" parent="Hazards" instance=ExtResource("5_yt0rx")]
 
 [node name="SpikeEnemy2" parent="Hazards" instance=ExtResource("5_yt0rx")]
 position = Vector2(288, 712)
@@ -421,17 +305,47 @@ position = Vector2(-501, 2401)
 [node name="SpikeEnemy33" parent="Hazards" instance=ExtResource("5_yt0rx")]
 position = Vector2(-501, 2585)
 
-[node name="SpikeEnemy34" parent="Hazards" instance=ExtResource("5_yt0rx")]
-position = Vector2(-648, 2980)
-
 [node name="SpikeEnemy35" parent="Hazards" instance=ExtResource("5_yt0rx")]
 position = Vector2(-648, 3164)
 
-[node name="SpikeEnemy36" parent="Hazards" instance=ExtResource("5_yt0rx")]
-position = Vector2(-488, 2980)
-
 [node name="SpikeEnemy37" parent="Hazards" instance=ExtResource("5_yt0rx")]
 position = Vector2(-488, 3164)
+
+[node name="SpikeEnemy167" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-518, 3188)
+
+[node name="SpikeEnemy168" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-551, 3153)
+
+[node name="SpikeEnemy169" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-587, 3184)
+
+[node name="SpikeEnemy170" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-603, 3123)
+
+[node name="SpikeEnemy171" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-675, 3121)
+
+[node name="SpikeEnemy172" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-717, 3156)
+
+[node name="SpikeEnemy173" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-737, 3112)
+
+[node name="SpikeEnemy174" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-766, 3160)
+
+[node name="SpikeEnemy175" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-787, 3101)
+
+[node name="SpikeEnemy176" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-481, 3207)
+
+[node name="SpikeEnemy177" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-443, 3185)
+
+[node name="SpikeEnemy178" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(-432, 3216)
 
 [node name="SpikeEnemy42" parent="Hazards" instance=ExtResource("5_yt0rx")]
 position = Vector2(1222, 716)
@@ -474,6 +388,12 @@ position = Vector2(1333, 3378)
 
 [node name="SpikeEnemy55" parent="Hazards" instance=ExtResource("5_yt0rx")]
 position = Vector2(1333, 3562)
+
+[node name="SpikeEnemy179" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(2408, 4421)
+
+[node name="SpikeEnemy180" parent="Hazards" instance=ExtResource("5_yt0rx")]
+position = Vector2(2356, 4421)
 
 [node name="SpikeEnemy56" parent="Hazards" instance=ExtResource("5_yt0rx")]
 position = Vector2(1493, 3378)
@@ -878,19 +798,21 @@ curve = SubResource("Curve2D_kmfnv")
 [node name="LevelEnd" parent="." instance=ExtResource("8_n683u")]
 visible = false
 position = Vector2(888, 11792)
-scale = Vector2(10, 2)
+scale = Vector2(47.578, 2)
 
 [node name="Switch" parent="." instance=ExtResource("9_wg2g8")]
-position = Vector2(848, 3904)
+position = Vector2(850, 3872)
 
 [node name="Switch3" parent="." instance=ExtResource("9_wg2g8")]
-position = Vector2(1120, 9456)
+position = Vector2(1129, 9428)
 
 [node name="Switch4" parent="." instance=ExtResource("9_wg2g8")]
-position = Vector2(824, 6384)
+position = Vector2(840, 6388)
+prompt_above = false
 
 [node name="Switch2" parent="." instance=ExtResource("9_wg2g8")]
-position = Vector2(728, 600)
+position = Vector2(728, 627)
+prompt_above = false
 
 [node name="MovingPlatform" parent="." instance=ExtResource("9_n74ue")]
 position = Vector2(1760, 6328)
@@ -915,11 +837,11 @@ position = Vector2(1336, 6504)
 spacing = 2
 
 [node name="Node2D7" parent="." instance=ExtResource("7_1ja6j")]
-position = Vector2(1336, 6944)
+position = Vector2(1335, 6955)
 num_bats = 1
 
 [node name="InteractableCompanion" parent="." instance=ExtResource("11_ydy3s")]
-position = Vector2(1472, 6656)
+position = Vector2(1472, 6605)
 dialog_file_path = "res://Dialog/Greetings.json"
 
 [node name="AirLeft" parent="." instance=ExtResource("11_ho1cw")]
@@ -986,11 +908,11 @@ position = Vector2(360, 4848)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft17" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(1248, 5232)
+position = Vector2(1287, 5232)
 scale = Vector2(0.4, 0.5)
 
 [node name="AirRight14" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(848, 5232)
+position = Vector2(887, 5230)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft18" parent="." instance=ExtResource("11_ho1cw")]
@@ -1026,7 +948,7 @@ position = Vector2(1864, 4296)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft15" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(3000, 4336)
+position = Vector2(3023, 4340)
 scale = Vector2(0.4, 0.5)
 
 [node name="AirRight12" parent="." instance=ExtResource("12_ht4ns")]
@@ -1064,15 +986,15 @@ position = Vector2(1232, 6304)
 scale = Vector2(1, 0.5)
 
 [node name="AirLeft20" parent="." instance=ExtResource("11_ho1cw")]
-position = Vector2(1696, 7376)
+position = Vector2(1696, 7404)
 scale = Vector2(1, 0.5)
 
 [node name="AirRight16" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(1680, 6704)
+position = Vector2(1699, 6704)
 scale = Vector2(1, 0.5)
 
 [node name="AirRight17" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(1680, 7176)
+position = Vector2(1703, 7176)
 scale = Vector2(1, 0.5)
 
 [node name="AirRight19" parent="." instance=ExtResource("12_ht4ns")]
@@ -1080,7 +1002,7 @@ position = Vector2(1536, 9512)
 scale = Vector2(1.5, 0.536)
 
 [node name="AirRight18" parent="." instance=ExtResource("12_ht4ns")]
-position = Vector2(1856, 7584)
+position = Vector2(1877, 7584)
 scale = Vector2(0.5, 0.25)
 
 [node name="Checkpoint" parent="." instance=ExtResource("14_nq4ug")]
@@ -1119,12 +1041,12 @@ rotation = 1.5708
 scale = Vector2(2, 0.5)
 
 [node name="AirSmall15" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(-824, 2280)
+position = Vector2(-824, 2320)
 rotation = 1.5708
 scale = Vector2(5, 1.25)
 
 [node name="AirSmall16" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(-1480, 1744)
+position = Vector2(-1463, 1747)
 rotation = 1.5708
 scale = Vector2(5, 1.25)
 
@@ -1159,7 +1081,7 @@ rotation = 1.5708
 scale = Vector2(5, 1.25)
 
 [node name="AirSmall23" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(3200, 4216)
+position = Vector2(3197, 4266)
 rotation = 1.5708
 scale = Vector2(5, 1.25)
 
@@ -1178,15 +1100,15 @@ position = Vector2(3864, 5176)
 scale = Vector2(5, 1.25)
 
 [node name="AirSmall27" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(616, 5344)
-scale = Vector2(5, 1.25)
+position = Vector2(589, 5344)
+scale = Vector2(4.67, 1.25)
 
 [node name="AirSmall28" parent="." instance=ExtResource("16_p1rpc")]
 position = Vector2(-1144, 3416)
 scale = Vector2(5, 1.25)
 
 [node name="AirSmall29" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(3488, 3088)
+position = Vector2(3468, 3088)
 scale = Vector2(5, 1.25)
 
 [node name="AirSmall13" parent="." instance=ExtResource("16_p1rpc")]
@@ -1215,7 +1137,7 @@ rotation = 1.5708
 scale = Vector2(2, 0.5)
 
 [node name="AirSmall7" parent="." instance=ExtResource("16_p1rpc")]
-position = Vector2(2072, 5928)
+position = Vector2(2099, 5928)
 rotation = 1.5708
 scale = Vector2(2, 0.5)
 

@@ -1,13 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://evg4mo1jtqj0"]
+[gd_scene load_steps=28 format=3 uid="uid://evg4mo1jtqj0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_xnj5y"]
 [ext_resource type="Texture2D" uid="uid://cd7n1oke618px" path="res://Art/Background/middle BG.png" id="2_1v1lk"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="4_jrdun"]
 [ext_resource type="PackedScene" uid="uid://cyrefgeqop3hu" path="res://Prefabs/pills.tscn" id="5_pvs2g"]
-[ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="6_6hxw7"]
+[ext_resource type="Texture2D" uid="uid://dvsv2ayyhlfre" path="res://Art/Platforms/grass.png" id="6_moaba"]
 [ext_resource type="PackedScene" uid="uid://sm5n8ljv3sdn" path="res://Prefabs/BatTest.tscn" id="7_77syx"]
 [ext_resource type="PackedScene" uid="uid://jjukmdme6xcg" path="res://Prefabs/LevelEnd.tscn" id="9_bxv0l"]
 [ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="9_mdpgx"]
+[ext_resource type="Texture2D" uid="uid://b0hltid5dp1yy" path="res://Art/Platforms/middle right large platform.png" id="10_nxxot"]
 [ext_resource type="PackedScene" uid="uid://c7cyjv561duli" path="res://Prefabs/Platform/GroundLeft.tscn" id="10_yb6g3"]
 [ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="10_yd0r8"]
 [ext_resource type="PackedScene" uid="uid://b3dgsovk0unkr" path="res://Prefabs/Platform/GroundRight.tscn" id="11_m4wra"]
@@ -15,28 +16,45 @@
 [ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="14_powls"]
 [ext_resource type="PackedScene" uid="uid://ou2hf6vnf756" path="res://Prefabs/Platform/GroundSmall.tscn" id="15_43dao"]
 [ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="15_hgs7j"]
+[ext_resource type="PackedScene" uid="uid://d0yb4f5es3x0e" path="res://Prefabs/BGFiller.tscn" id="15_rr4c6"]
+[ext_resource type="PackedScene" uid="uid://bucqxfshflxln" path="res://Prefabs/SpikeEnemy.tscn" id="17_y2w1g"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
-size = Vector2(64, 60)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pobjo"]
+size = Vector2(3805, 1559)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mmlh"]
-size = Vector2(41, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kof20"]
+size = Vector2(160, 3830)
 
-[sub_resource type="Curve2D" id="Curve2D_3ijxk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8iq7"]
+size = Vector2(122, 1462)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw4km"]
+size = Vector2(122, 5230)
+
+[sub_resource type="Curve2D" id="Curve2D_6yhwp"]
 resource_local_to_scene = true
 resource_name = "Bat"
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 88, 304, 0, 0, 0, 0, 1912, 312, 0, 0, 0, 0, 1912, 376, 0, 0, 0, 0, 1680, 416, 0, 0, 0, 0, 968, 440, 0, 0, 0, 0, 224, 408, 0, 0, 0, 0, -16, 376, 0, 0, 0, 0, -16, 304, 0, 0, 0, 0, 88, 304)
+"points": PackedVector2Array(0, 0, 0, 0, 145, 278, 0, 0, 0, 0, 1928, 308, 0, 0, 0, 0, 1938, 424, 0, 0, 0, 0, 1680, 416, 0, 0, 0, 0, 968, 440, 0, 0, 0, 0, 224, 408, 0, 0, 0, 0, 27, 405, 0, 0, 0, 0, 29, 304, 0, 0, 0, 0, 61, 276, 0, 0, 0, 0, 145, 278)
 }
-point_count = 9
+point_count = 10
 
 [sub_resource type="Curve2D" id="Curve2D_im51u"]
 resource_local_to_scene = true
 resource_name = "Bat"
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 88, 304, 0, 0, 0, 0, 632, 304, 0, 0, 0, 0, 776, 336, 0, 0, 0, 0, 632, 376, 0, 0, 0, 0, 384, 408, 0, 0, 0, 0, -256, 376, 0, 0, 0, 0, -1112, 408, 0, 0, 0, 0, -1280, 368, 0, 0, 0, 0, -1280, 304, 0, 0, 0, 0, -16, 304, 0, 0, 0, 0, 88, 304)
+"points": PackedVector2Array(0, 0, 0, 0, 88, 304, 0, 0, 0, 0, 641, 302, 0, 0, 0, 0, 678, 347, 0, 0, 0, 0, 654, 383, 0, 0, 0, 0, 382, 389, 0, 0, 0, 0, -270, 388, 0, 0, 0, 0, -1130, 387, 0, 0, 0, 0, -1369, 369, 0, 0, 0, 0, -1352, 283, 0, 0, 0, 0, -16, 304, 0, 0, 0, 0, 88, 304)
 }
 point_count = 11
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_db1mm"]
+size = Vector2(701, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc8lt"]
+size = Vector2(499, 87)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp6ra"]
+size = Vector2(500, 64)
 
 [node name="Ground_level_1" type="Node2D"]
 script = ExtResource("1_xnj5y")
@@ -66,96 +84,471 @@ gizmo_extents = 20.0
 
 [node name="Ground" type="Node2D" parent="Environment"]
 
-[node name="TestGround" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(0, 352)
-scale = Vector2(10, 1)
+[node name="GroundSmall11" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(3261, 3174)
 
-[node name="TestGround3" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(843, 545)
-scale = Vector2(10, 1)
+[node name="GroundSmall43" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(2777, 3171)
 
-[node name="TestGround6" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(1256, 608)
-scale = Vector2(10, 1)
+[node name="GroundSmall44" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(2683, 2352)
+rotation = 1.5708
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/TestGround6"]
-position = Vector2(76, 192)
-shape = SubResource("RectangleShape2D_irls3")
+[node name="GroundSmall45" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(2678, 2819)
+rotation = 1.5708
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Ground/TestGround6/CollisionShape2D"]
+[node name="GroundSmall46" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(2670, 3276)
+rotation = 1.5708
 
-[node name="TestGround4" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(1760, 544)
-scale = Vector2(10, 1)
+[node name="GroundSmall4" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(3335, 1523)
+rotation = 1.5708
+scale = Vector2(1.1, 1)
 
-[node name="TestGround7" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(2400, 544)
-scale = Vector2(10, 1)
+[node name="GroundSmall19" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(3090, 1650)
+scale = Vector2(1.1, 1.1)
 
-[node name="TestGround8" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(3040, 544)
-scale = Vector2(10, 1)
+[node name="GroundSmall22" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(2523, 1214)
+rotation = -0.0120057
 
-[node name="TestGround9" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(3040, 2952)
-scale = Vector2(10, 1)
+[node name="GroundSmall23" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(2056, 1214)
+rotation = -0.0120057
 
-[node name="TestGround10" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(3032, 1696)
-scale = Vector2(10, 1)
+[node name="GroundSmall24" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1686, 1211)
+rotation = -0.0120057
 
-[node name="TestGround11" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(2328, 1264)
-scale = Vector2(10, 1)
+[node name="GroundSmall36" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(3345, 977)
+rotation = 1.5708
+scale = Vector2(1.1, 1)
 
-[node name="TestGround14" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(1632, 1264)
-scale = Vector2(10, 1)
+[node name="GroundSmall7" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(2747, 1533)
+rotation = 1.5708
 
-[node name="TestGround16" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(656, 1776)
-scale = Vector2(10, 1)
+[node name="GroundSmall20" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1811, 1013)
+rotation = 1.5708
+scale = Vector2(1.3, 1.3)
 
-[node name="TestGround17" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(16, 1768)
-scale = Vector2(10, 1)
+[node name="GroundSmall8" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1984, 1681)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
 
-[node name="TestGround18" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(464, 1632)
-scale = Vector2(10, 1)
+[node name="GroundSmall12" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1984, 1440)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
 
-[node name="TestGround13" type="StaticBody2D" parent="Environment/Ground"]
-position = Vector2(1992, 1992)
-scale = Vector2(10, 1)
+[node name="GroundSmall9" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1337, 1596)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="GroundSmall14" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1344, 1355)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="GroundSmall15" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(605, 1772)
+rotation = 1.5708
+
+[node name="GroundSmall16" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(492, 1708)
+
+[node name="GroundSmall18" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(276, 1701)
+rotation = -0.0326902
+
+[node name="GroundSmall10" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(806, 2487)
+rotation = 1.5708
+
+[node name="GroundSmall13" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(806, 2920)
+rotation = 1.5708
+
+[node name="GroundSmall6" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(2320, 2157)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="GroundSmall25" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(2323, 1920)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="GroundSmall26" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1502, 2494)
+rotation = 1.68739
+scale = Vector2(0.5, 0.5)
+
+[node name="GroundSmall27" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1527, 2132)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="GroundSmall28" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1520, 2313)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="GroundSmall17" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1331, 1827)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="GroundSmall21" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(64, 264)
+
+[node name="GroundSmall32" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(3216, 552)
+
+[node name="GroundSmall33" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(2748, 550)
+rotation = -0.0244235
+
+[node name="GroundSmall34" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(2274, 550)
+
+[node name="GroundSmall35" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1841, 540)
+
+[node name="GroundSmall37" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1450, 563)
+rotation = -0.0309987
+scale = Vector2(0.5, 0.5)
+
+[node name="GroundSmall39" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1041, 547)
+rotation = -0.0309987
+scale = Vector2(0.8, 0.8)
+
+[node name="GroundSmall40" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(675, 551)
+rotation = -0.0309987
+scale = Vector2(0.8, 0.8)
+
+[node name="GroundSmall41" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(321, 554)
+rotation = -0.0309987
+scale = Vector2(0.8, 0.8)
+
+[node name="GroundSmall42" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(-44, 558)
+rotation = -0.0188846
+scale = Vector2(0.8, 0.8)
+
+[node name="GroundSmall47" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(-413, 554)
+rotation = 0.0271841
+scale = Vector2(0.8, 0.8)
+
+[node name="GroundSmall48" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(-777, 531)
+rotation = 0.0888788
+scale = Vector2(0.8, 0.8)
+
+[node name="GroundSmall38" parent="Environment/Ground" instance=ExtResource("15_43dao")]
+position = Vector2(1248, 563)
+rotation = -0.0309987
+scale = Vector2(0.5, 0.5)
+
+[node name="GroundRight3" parent="Environment/Ground" instance=ExtResource("11_m4wra")]
+position = Vector2(3713, 3195)
+
+[node name="GroundRight6" parent="Environment/Ground" instance=ExtResource("11_m4wra")]
+position = Vector2(1744, 1760)
+scale = Vector2(0.8, 0.269)
+
+[node name="GroundLeft6" parent="Environment/Ground" instance=ExtResource("10_yb6g3")]
+position = Vector2(2008, 1760)
+scale = Vector2(0.4, 0.2)
+
+[node name="GroundLeft14" parent="Environment/Ground" instance=ExtResource("10_yb6g3")]
+position = Vector2(942, 1713)
+rotation = 3.14159
+
+[node name="GroundRight14" parent="Environment/Ground" instance=ExtResource("11_m4wra")]
+position = Vector2(278, 1593)
+rotation = -0.377092
+
+[node name="GroundLeft17" parent="Environment/Ground" instance=ExtResource("10_yb6g3")]
+position = Vector2(994, 1587)
+
+[node name="GroundRight8" parent="Environment/Ground" instance=ExtResource("11_m4wra")]
+position = Vector2(2036, 2045)
+scale = Vector2(0.8, 0.8)
+
+[node name="GroundLeft18" parent="Environment/Ground" instance=ExtResource("10_yb6g3")]
+position = Vector2(3006, 2971)
+
+[node name="GroundLeft7" parent="Environment/Ground" instance=ExtResource("10_yb6g3")]
+position = Vector2(1192, 2583)
+
+[node name="GroundLeft10" parent="Environment/Ground" instance=ExtResource("10_yb6g3")]
+position = Vector2(-27, 2478)
+
+[node name="GroundLeft15" parent="Environment/Ground" instance=ExtResource("10_yb6g3")]
+position = Vector2(518, 2314)
+rotation = -0.417399
+
+[node name="GroundLeft13" parent="Environment/Ground" instance=ExtResource("10_yb6g3")]
+position = Vector2(-1035, 1199)
+scale = Vector2(2, 2)
+
+[node name="GroundRight18" parent="Environment/Ground" instance=ExtResource("11_m4wra")]
+position = Vector2(2304, 2824)
+
+[node name="GroundRight19" parent="Environment/Ground" instance=ExtResource("11_m4wra")]
+position = Vector2(1678, 2819)
+
+[node name="GroundRight20" parent="Environment/Ground" instance=ExtResource("11_m4wra")]
+position = Vector2(1041, 2824)
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(4067, 2929)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(4065, 2447)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(4059, 1957)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(4059, 1491)
+rotation = 1.58352
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(4069, 1005)
+rotation = 1.62934
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(4082, 541)
+rotation = 1.62934
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D16" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(4082, 77)
+rotation = 1.59385
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D17" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-946.138, 264.34)
+rotation = 1.62934
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-933.138, -199.66)
+rotation = 1.62934
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-933.138, -663.66)
+rotation = 1.59385
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1138, 571)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1604, 577)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-2084, 581.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-2550, 587.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-3034, 581.5)
+rotation = 0.0369188
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-3500, 587.5)
+rotation = 0.0369188
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-4010.75, 578.384)
+rotation = 0.0369188
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-4476.75, 584.384)
+rotation = 0.0369188
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(4078, -398)
+rotation = 1.59028
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(-1053, -75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/StaticBody2D"]
+position = Vector2(-1719.5, -137.5)
+shape = SubResource("RectangleShape2D_pobjo")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(4046, 1847)
 
-[node name="Sprite2D18" type="Sprite2D" parent="Environment/Ground/StaticBody2D2"]
-position = Vector2(-2410.64, 4180)
-scale = Vector2(4.83252, 4.875)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/StaticBody2D2"]
+position = Vector2(123, -546)
+shape = SubResource("RectangleShape2D_kof20")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(-726, 1975)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/StaticBody2D3"]
+position = Vector2(275, -155)
+shape = SubResource("RectangleShape2D_k8iq7")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="Environment/Ground"]
+position = Vector2(-2308, 2531)
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="Environment/Ground"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Ground/StaticBody2D4"]
+position = Vector2(512, 1202)
+shape = SubResource("RectangleShape2D_qw4km")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment/Ground/StaticBody2D5"]
-position = Vector2(1059.5, 1536)
-shape = SubResource("RectangleShape2D_3mmlh")
+[node name="Sprite2D20" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1833.31, 2730.63)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1835.31, 2248.63)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1841.31, 1758.63)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D23" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1820, 1352)
+rotation = 1.58352
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D30" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-492.313, 2730.63)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D31" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-494.313, 2248.63)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D32" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-500.313, 1758.63)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D33" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-500, 1331)
+rotation = 1.58352
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D24" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1846.14, 3674.74)
+rotation = 1.62934
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D25" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1833.14, 3210.74)
+rotation = 1.62934
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D26" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1841.23, 4647.71)
+rotation = 1.60618
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D27" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1828.23, 4183.71)
+rotation = 1.60618
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D28" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1841.23, 5584.71)
+rotation = 1.60618
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+
+[node name="Sprite2D29" type="Sprite2D" parent="Environment/Ground"]
+position = Vector2(-1828.23, 5120.71)
+rotation = 1.60618
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
 
 [node name="KillAreas" type="Node2D" parent="Environment"]
 
 [node name="Area2D16" parent="Environment" instance=ExtResource("5_pvs2g")]
 position = Vector2(-192, 472)
 
+[node name="Area2D21" parent="Environment" instance=ExtResource("5_pvs2g")]
+position = Vector2(-2182, 664)
+
 [node name="Area2D17" parent="Environment" instance=ExtResource("5_pvs2g")]
 position = Vector2(640, 472)
 
 [node name="Area2D18" parent="Environment" instance=ExtResource("5_pvs2g")]
-position = Vector2(1472, 472)
+position = Vector2(1364, 513)
 
 [node name="Area2D19" parent="Environment" instance=ExtResource("5_pvs2g")]
 position = Vector2(1024, 472)
@@ -165,14 +558,12 @@ position = Vector2(1152, 472)
 
 [node name="Hazards" type="Node2D" parent="."]
 
-[node name="SpikeEnemy" parent="Hazards" instance=ExtResource("6_6hxw7")]
-
 [node name="Node2D" parent="." instance=ExtResource("7_77syx")]
 position = Vector2(1456, 200)
 num_bats = 20
 
 [node name="Path2D" parent="Node2D" index="0"]
-curve = SubResource("Curve2D_3ijxk")
+curve = SubResource("Curve2D_6yhwp")
 
 [node name="Node2D2" parent="." instance=ExtResource("7_77syx")]
 position = Vector2(528, 208)
@@ -184,12 +575,17 @@ curve = SubResource("Curve2D_im51u")
 [node name="MovingPlatform" parent="." instance=ExtResource("10_yd0r8")]
 position = Vector2(3680, 544)
 
-[node name="GroundLeft" parent="MovingPlatform/AnimatableBody2D" index="1" instance=ExtResource("10_yb6g3")]
-position = Vector2(4.80005, -8)
-scale = Vector2(0.12, 0.5)
+[node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
+scale = Vector2(1, 1)
 
-[node name="Sprite2D" parent="MovingPlatform/AnimatableBody2D" index="2"]
-texture = null
+[node name="CollisionShape2D" parent="MovingPlatform/AnimatableBody2D" index="0"]
+position = Vector2(55.5, 24)
+shape = SubResource("RectangleShape2D_db1mm")
+
+[node name="Sprite2D" parent="MovingPlatform/AnimatableBody2D" index="1"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("10_nxxot")
+offset = Vector2(20, 225)
 
 [node name="Position1" parent="MovingPlatform" index="1"]
 position = Vector2(32, 2400)
@@ -198,156 +594,60 @@ position = Vector2(32, 2400)
 position = Vector2(0, 0)
 
 [node name="Switch" parent="." instance=ExtResource("9_mdpgx")]
-position = Vector2(2776, 2896)
+position = Vector2(2776, 2872)
 
 [node name="Switch2" parent="." instance=ExtResource("9_mdpgx")]
-position = Vector2(2040, 1320)
+position = Vector2(2056, 1328)
+prompt_above = false
 
 [node name="Switch3" parent="." instance=ExtResource("9_mdpgx")]
-position = Vector2(1912, 1936)
+position = Vector2(2035, 1972)
 
 [node name="Switch5" parent="." instance=ExtResource("9_mdpgx")]
-position = Vector2(888, 2496)
+position = Vector2(888, 2488)
 
 [node name="Switch6" parent="." instance=ExtResource("9_mdpgx")]
-position = Vector2(-136, 1528)
+position = Vector2(-134, 1501)
+prompt_above = false
 
 [node name="Switch7" parent="." instance=ExtResource("9_mdpgx")]
-position = Vector2(1056, 1520)
+position = Vector2(1238, 1475)
 
 [node name="Switch8" parent="." instance=ExtResource("9_mdpgx")]
-position = Vector2(1312, 1208)
+position = Vector2(1636, 1097)
 
 [node name="Switch9" parent="." instance=ExtResource("9_mdpgx")]
-position = Vector2(1920, 1312)
+position = Vector2(1896, 1328)
+prompt_above = false
 
 [node name="Switch4" parent="." instance=ExtResource("9_mdpgx")]
-position = Vector2(1384, 648)
-
-[node name="KillArea" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(544, 1672)
-scale = Vector2(0.5, 0.5)
-
-[node name="KillArea3" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(1968, 1168)
-scale = Vector2(0.5, 0.5)
+position = Vector2(1384, 656)
+prompt_above = false
 
 [node name="KillArea25" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(1184, 2776)
-scale = Vector2(1, 0.5)
+position = Vector2(1600, 2712)
+scale = Vector2(0.728, 0.5)
 
 [node name="KillArea26" parent="." instance=ExtResource("4_jrdun")]
 position = Vector2(2648, 3088)
 scale = Vector2(1, 0.5)
 
-[node name="KillArea11" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(64, 2456)
-scale = Vector2(0.5, 0.5)
-
-[node name="KillArea12" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(-1224, 2456)
-scale = Vector2(0.5, 0.5)
-
-[node name="KillArea7" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(-1584, 512)
-scale = Vector2(0.5, 0.5)
-
-[node name="KillArea4" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(3320, 1360)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea5" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(3320, 864)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea9" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(1288, 1688)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea8" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(1528, 2248)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea6" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(-840, 240)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea16" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(4088, 408)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea17" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(4088, 904)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea18" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(4088, 1424)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea19" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(4096, 1936)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea20" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(4104, 2440)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea21" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(4104, 2936)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea22" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(2712, 2768)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea23" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(2328, 1960)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea24" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(2712, 2256)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea13" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(-1728, 2176)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea14" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(-1728, 1672)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
-[node name="KillArea15" parent="." instance=ExtResource("4_jrdun")]
-position = Vector2(-1728, 1152)
-rotation = 1.5708
-scale = Vector2(0.2, 0.2)
-
 [node name="MovingPlatform2" parent="." instance=ExtResource("10_yd0r8")]
-position = Vector2(1216, 760)
+position = Vector2(1310, 761)
 
-[node name="GroundRight" parent="MovingPlatform2/AnimatableBody2D" index="1" instance=ExtResource("11_m4wra")]
-scale = Vector2(0.12, 0.5)
+[node name="AnimatableBody2D" parent="MovingPlatform2" index="0"]
+scale = Vector2(1, 1)
 
-[node name="Sprite2D" parent="MovingPlatform2/AnimatableBody2D" index="2"]
-texture = null
+[node name="CollisionShape2D" parent="MovingPlatform2/AnimatableBody2D" index="0"]
+shape = SubResource("RectangleShape2D_hc8lt")
+
+[node name="Sprite2D" parent="MovingPlatform2/AnimatableBody2D" index="1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+offset = Vector2(-65, 115)
 
 [node name="Position2" parent="MovingPlatform2" index="2"]
-position = Vector2(-3048, 0)
+position = Vector2(-3336, 0)
 
 [node name="Node2D3" parent="." instance=ExtResource("7_77syx")]
 position = Vector2(1496, 1424)
@@ -355,163 +655,29 @@ position = Vector2(1496, 1424)
 [node name="MovingPlatform3" parent="." instance=ExtResource("10_yd0r8")]
 position = Vector2(-2520, 760)
 
-[node name="GroundLeft" parent="MovingPlatform3/AnimatableBody2D" index="1" instance=ExtResource("10_yb6g3")]
-scale = Vector2(0.12, 0.5)
+[node name="AnimatableBody2D" parent="MovingPlatform3" index="0"]
+scale = Vector2(1, 1)
 
-[node name="Sprite2D" parent="MovingPlatform3/AnimatableBody2D" index="2"]
-texture = null
+[node name="CollisionShape2D" parent="MovingPlatform3/AnimatableBody2D" index="0"]
+position = Vector2(-80, 10)
+shape = SubResource("RectangleShape2D_kp6ra")
+
+[node name="Sprite2D" parent="MovingPlatform3/AnimatableBody2D" index="1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_moaba")
+offset = Vector2(-220, 140)
+
+[node name="Position1" parent="MovingPlatform3" index="1"]
+position = Vector2(27, 0)
+scale = Vector2(1, 1)
 
 [node name="Position2" parent="MovingPlatform3" index="2"]
-position = Vector2(94.4004, 3488)
+position = Vector2(22, 3369.26)
+scale = Vector2(1, 1)
 
 [node name="LevelEnd" parent="." instance=ExtResource("9_bxv0l")]
-visible = false
-position = Vector2(-2416, 4176)
-scale = Vector2(5, 5)
-
-[node name="GroundLeft" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(920, 544)
-scale = Vector2(1, 0.5)
-
-[node name="GroundLeft4" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(3104, 544)
-scale = Vector2(1, 0.5)
-
-[node name="GroundLeft2" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(464, 552)
-scale = Vector2(1.5, 0.5)
-
-[node name="GroundLeft10" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(384, 336)
-scale = Vector2(0.8, 0.267)
-
-[node name="GroundRight" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(-544, 544)
-scale = Vector2(1, 0.5)
-
-[node name="GroundRight4" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(1736, 536)
-scale = Vector2(1, 0.5)
-
-[node name="GroundRight2" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(-256, 552)
-scale = Vector2(1.5, 0.5)
-
-[node name="GroundRight19" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(-160, 336)
-scale = Vector2(0.8, 0.267)
-
-[node name="GroundRight5" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(1280, 592)
-scale = Vector2(0.3, 0.101)
-
-[node name="GroundLeft3" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(2840, 544)
-scale = Vector2(1.5, 0.5)
-
-[node name="GroundRight3" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(2120, 544)
-scale = Vector2(1.5, 0.5)
-
-[node name="GroundLeft5" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(1424, 592)
-scale = Vector2(0.2, 0.1)
-
-[node name="GroundRight6" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(1744, 1760)
-scale = Vector2(0.8, 0.269)
-
-[node name="GroundLeft6" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(2008, 1760)
-scale = Vector2(0.4, 0.2)
-
-[node name="GroundLeft16" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(-240, 1504)
-scale = Vector2(0.4, 0.2)
-
-[node name="GroundRight13" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(128, 1760)
-scale = Vector2(0.8, 0.24)
-
-[node name="GroundLeft14" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(832, 1760)
-scale = Vector2(1.2, 0.3)
-
-[node name="GroundRight14" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(-8, 1648)
-scale = Vector2(0.5, 0.15)
-
-[node name="GroundRight15" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(160, 1560)
-scale = Vector2(0.5, 0.15)
-
-[node name="GroundRight16" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(232, 1584)
-scale = Vector2(0.5, 0.15)
-
-[node name="GroundRight17" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(296, 1600)
-scale = Vector2(0.5, 0.15)
-
-[node name="GroundLeft15" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(704, 1568)
-scale = Vector2(1, 0.5)
-
-[node name="GroundLeft17" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(792, 1560)
-scale = Vector2(1, 0.5)
-
-[node name="GroundRight9" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(2888, 1704)
-scale = Vector2(0.8, 0.269)
-
-[node name="GroundLeft9" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(3216, 1704)
-scale = Vector2(0.4, 0.3)
-
-[node name="GroundRight10" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(2104, 1240)
-scale = Vector2(0.8, 0.269)
-
-[node name="GroundRight11" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(1568, 1248)
-scale = Vector2(0.8, 0.269)
-
-[node name="GroundLeft11" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(2520, 1248)
-scale = Vector2(0.4, 0.3)
-
-[node name="GroundLeft12" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(2064, 1248)
-scale = Vector2(1.5, 0.2)
-
-[node name="GroundRight8" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(1912, 1976)
-scale = Vector2(0.8, 0.269)
-
-[node name="GroundLeft8" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(2176, 1976)
-scale = Vector2(0.4, 0.2)
-
-[node name="GroundRight12" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(2952, 2936)
-scale = Vector2(0.8, 0.269)
-
-[node name="GroundLeft13" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(3216, 2936)
-scale = Vector2(0.4, 0.2)
-
-[node name="GroundRight7" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(1080, 2544)
-scale = Vector2(0.8, 0.269)
-
-[node name="GroundLeft7" parent="." instance=ExtResource("10_yb6g3")]
-position = Vector2(1376, 2544)
-scale = Vector2(0.4, 0.2)
-
-[node name="GroundRight18" parent="." instance=ExtResource("11_m4wra")]
-position = Vector2(1600, 2784)
-scale = Vector2(3, 0.5)
+position = Vector2(-2461, 4123)
+scale = Vector2(20, 10)
 
 [node name="Checkpoint" parent="." instance=ExtResource("13_qe0q4")]
 position = Vector2(3024, 2880)
@@ -519,103 +685,170 @@ position = Vector2(3024, 2880)
 [node name="UIController" parent="." instance=ExtResource("14_powls")]
 
 [node name="InteractableCompanion" parent="." instance=ExtResource("15_hgs7j")]
-position = Vector2(944, 1824)
+position = Vector2(727, 1824)
 dialog_file_path = "res://Dialog/sick.json"
 
 [node name="InteractableCompanion2" parent="." instance=ExtResource("15_hgs7j")]
-position = Vector2(-328, 288)
+position = Vector2(-192, 152)
 dialog_file_path = "res://Dialog/nomore.json"
 
-[node name="GroundSmall" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(4104, 1880)
-rotation = 1.5708
-scale = Vector2(5, 0.5)
+[node name="BGFiller" parent="." instance=ExtResource("15_rr4c6")]
+position = Vector2(-3044, -184)
+scale = Vector2(67.875, 23)
 
-[node name="GroundSmall11" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(3256, 3120)
-scale = Vector2(5, 0.5)
+[node name="BGFiller2" parent="." instance=ExtResource("15_rr4c6")]
+position = Vector2(6419, 3115)
+scale = Vector2(71.9688, 117.375)
 
-[node name="GroundSmall12" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(-112, 2488)
-scale = Vector2(5, 0.5)
+[node name="BGFiller3" parent="." instance=ExtResource("15_rr4c6")]
+position = Vector2(1329, 5075.5)
+scale = Vector2(97.1875, 59.1094)
 
-[node name="GroundSmall3" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(2704, 2704)
-rotation = 1.5708
-scale = Vector2(2, 0.3)
+[node name="BGFiller4" parent="." instance=ExtResource("15_rr4c6")]
+position = Vector2(1629.5, 3256.5)
+scale = Vector2(32.7031, 13.5469)
 
-[node name="GroundSmall4" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(3304, 1304)
-rotation = 1.5708
-scale = Vector2(2, 0.3)
+[node name="BGFiller5" parent="." instance=ExtResource("15_rr4c6")]
+position = Vector2(-502.75, 3024.75)
+scale = Vector2(40.4766, 16.6016)
 
-[node name="GroundSmall13" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(-1752, 1624)
-rotation = 1.5708
-scale = Vector2(2, 0.3)
+[node name="BGFiller7" parent="." instance=ExtResource("15_rr4c6")]
+position = Vector2(-1125, 2292.63)
+scale = Vector2(21.5625, 35.7696)
 
-[node name="GroundSmall14" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(-1752, 2152)
-rotation = 1.5708
-scale = Vector2(2, 0.3)
+[node name="BGFiller8" parent="." instance=ExtResource("15_rr4c6")]
+position = Vector2(581, 2444)
+rotation = 2.86876
+scale = Vector2(6.54944, 4.45509)
 
-[node name="GroundSmall2" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(4112, 3064)
-rotation = 1.5708
-scale = Vector2(1, 0.5)
+[node name="BGFiller6" parent="." instance=ExtResource("15_rr4c6")]
+position = Vector2(752, 1655.5)
+scale = Vector2(17.8125, 2.20312)
 
-[node name="GroundSmall7" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(2640, 1560)
-rotation = 1.5708
-scale = Vector2(1, 0.5)
+[node name="SpikeEnemy" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-73, 1101)
 
-[node name="GroundSmall16" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(864, 1704)
-scale = Vector2(2.5, 0.6)
+[node name="SpikeEnemy5" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-22, 1101)
 
-[node name="GroundSmall19" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(-1272, 536)
-scale = Vector2(2.5, 0.6)
+[node name="SpikeEnemy8" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(25, 1101)
 
-[node name="GroundSmall8" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(1984, 1584)
-rotation = 1.5708
-scale = Vector2(1, 0.5)
+[node name="SpikeEnemy6" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-306, 1101)
 
-[node name="GroundSmall9" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(1328, 1576)
-rotation = 1.5708
-scale = Vector2(1, 0.5)
+[node name="SpikeEnemy7" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-355, 1101)
 
-[node name="GroundSmall15" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(584, 1752)
-rotation = 1.5708
-scale = Vector2(1, 0.5)
+[node name="SpikeEnemy2" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-130, 1099)
 
-[node name="GroundSmall10" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(808, 2584)
-rotation = 1.5708
-scale = Vector2(1, 0.5)
+[node name="SpikeEnemy4" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-193, 1101)
 
-[node name="GroundSmall5" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(1520, 2368)
-rotation = 1.5708
-scale = Vector2(1, 0.3)
+[node name="SpikeEnemy3" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-252, 1101)
 
-[node name="GroundSmall6" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(2320, 2088)
-rotation = 1.5708
-scale = Vector2(1, 0.3)
+[node name="SpikeEnemy9" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-615, 1078)
 
-[node name="GroundSmall17" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(1288, 1824)
-rotation = 1.5708
-scale = Vector2(1, 0.3)
+[node name="SpikeEnemy10" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-564, 1078)
 
-[node name="GroundSmall18" parent="." instance=ExtResource("15_43dao")]
-position = Vector2(-864, 360)
-rotation = 1.5708
-scale = Vector2(1, 0.3)
+[node name="SpikeEnemy11" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-517, 1078)
+
+[node name="SpikeEnemy33" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-486, 1086)
+
+[node name="SpikeEnemy34" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-448, 1080)
+
+[node name="SpikeEnemy35" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-415, 1081)
+
+[node name="SpikeEnemy36" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-385, 1108)
+rotation = 0.435463
+
+[node name="SpikeEnemy37" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1198, 1091)
+rotation = 0.435463
+
+[node name="SpikeEnemy12" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-834, 1094)
+
+[node name="SpikeEnemy13" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-881, 1098)
+
+[node name="SpikeEnemy14" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-672, 1076)
+
+[node name="SpikeEnemy15" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-735, 1078)
+
+[node name="SpikeEnemy16" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-784, 1078)
+
+[node name="SpikeEnemy17" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1038, 1109)
+
+[node name="SpikeEnemy18" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-978, 1105)
+
+[node name="SpikeEnemy19" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-934, 1104)
+
+[node name="SpikeEnemy20" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1276, 1078)
+
+[node name="SpikeEnemy21" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1325, 1078)
+
+[node name="SpikeEnemy22" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1092, 1102)
+
+[node name="SpikeEnemy23" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1157, 1094)
+
+[node name="SpikeEnemy24" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1222, 1078)
+
+[node name="SpikeEnemy25" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1423, 1067)
+
+[node name="SpikeEnemy26" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1363, 1074)
+
+[node name="SpikeEnemy27" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1316, 1074)
+
+[node name="SpikeEnemy28" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1656, 1103)
+
+[node name="SpikeEnemy29" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1693, 1102)
+
+[node name="SpikeEnemy38" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1750, 1097)
+
+[node name="SpikeEnemy39" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1789, 1107)
+
+[node name="SpikeEnemy40" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1834, 1095)
+
+[node name="SpikeEnemy41" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1827, 1132)
+
+[node name="SpikeEnemy30" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1484, 1072)
+
+[node name="SpikeEnemy31" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1529, 1085)
+
+[node name="SpikeEnemy32" parent="." instance=ExtResource("17_y2w1g")]
+position = Vector2(-1591, 1076)
 
 [editable path="Node2D"]
 [editable path="Node2D2"]

@@ -10,4 +10,4 @@ texture = ExtResource("1_5a3tq")
 offset = Vector2(-96, 144)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(48, -40, 120, -48, 196, -55, 288, -48, 360, -24, 360, 104, 200, 72, 96, 56, -24, 72, -248, 72, -344, 0, -328, -32, -272, -56, -160, -56, -40, -40)
+polygon = PackedVector2Array(51, -44, 120, -48, 199, -50, 286, -44, 360, -24, 360, 104, 200, 72, 96, 56, -24, 72, -248, 72, -344, 0, -328, -32, -273, -50, -161, -50, -40, -43)
