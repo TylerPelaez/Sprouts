@@ -16,6 +16,8 @@ var ui_controller: UIController
 
 var checkpoints_index = 0
 
+var interactible_companions := []
+
 var gravity_direction: Vector2 = Vector2(0, 1)
 func _ready():
 	checkpoints_index = 0
@@ -28,17 +30,21 @@ func _ready():
 	player.global_position = CollectibleTracker.last_checkpoint_position if CollectibleTracker.last_checkpoint_position != null else player_spawn_pos.global_position
 	player.died.connect(_on_player_death)
 	
-	if player_has_companion:
-		spawn_companion()
-		
 	for child in get_children():
 		_initialize_child_signals(child)
+	
+	if player_has_companion:
+		spawn_companion()
 
 func spawn_companion():
+	player_has_companion = true
 	player.has_double_jump = true
 	companion = companion_prefab.instantiate()
 	add_child(companion)
 	companion.initialize(player)
+	for interactible in interactible_companions:
+		if interactible != null:
+			interactible.set_companion_present(false)
 
 func _initialize_child_signals(child: Node):
 	if child is LevelEnd:
@@ -47,6 +53,9 @@ func _initialize_child_signals(child: Node):
 		child.switch_hit.connect(_on_switch_hit)
 	elif child is InteractableCompanion:
 		child.start_dialog.connect(_on_dialog_started)
+		interactible_companions.append(child)
+		child.summon_companion.connect(on_companion_summon)
+		child.release_companion.connect(on_companion_release)
 	elif child is UIController:
 		ui_controller = child
 		ui_controller.dialog_complete.connect(on_dialog_complete)
@@ -87,7 +96,6 @@ func _on_switch_hit(effect: Switch.SwitchEffect):
 			gravity_direction = -gravity_direction
 			player.on_gravity_switch(gravity_direction)
 
-
 func _on_dialog_started(caller: InteractableCompanion, dialog_file_path: String):
 	var file = FileAccess.open(dialog_file_path, FileAccess.READ)
 	var text = file.get_as_text()
@@ -101,6 +109,18 @@ func _on_dialog_started(caller: InteractableCompanion, dialog_file_path: String)
 	
 func on_dialog_complete():
 	get_tree().paused = false
+	if !player_has_companion:
+		spawn_companion()
+	else:
+		companion.release()
 
 func _on_checkpoint(checkpoint: Node2D, index: int):
 	CollectibleTracker.set_last_checkpoint_position(checkpoint.global_position, index)
+
+func on_companion_summon(node: InteractableCompanion):
+	if companion != null:
+		companion.summon(node)
+
+func on_companion_release(node: InteractableCompanion):
+	if companion != null:
+		companion.release()

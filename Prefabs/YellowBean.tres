@@ -1,0 +1,12 @@
+[gd_resource type="Shader" format=3 uid="uid://h7bo41lmft0v"]
+
+[resource]
+code = "shader_type canvas_item;
+
+uniform vec4 color: source_color;
+
+void fragment() {
+	COLOR = color;
+	COLOR.a = texture(TEXTURE, UV).a;
+}
+"

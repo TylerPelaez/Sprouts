@@ -5,9 +5,10 @@ signal switch_hit(effect: SwitchEffect)
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var prompt: Label = $Label
+@export var prompt_above: bool = true
 
 @export var switch_effect: SwitchEffect = SwitchEffect.INVERT_GRAVITY
-@export var prompt_above: bool = true
+
 
 var player_is_inside: bool = false
 

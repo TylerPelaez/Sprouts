@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cesskqarrdboi" path="res://Art/Bean/BeanDownscaled20Percent.png" id="1_d2nhw"]
 [ext_resource type="Script" path="res://Scripts/Checkpoint.gd" id="1_dp1wv"]
-[ext_resource type="Shader" path="res://Art/GrabAlpha.gdshader" id="2_f8pbk"]
+[ext_resource type="Shader" uid="uid://cdwmt34j1jgax" path="res://Prefabs/WhiteBean.tres" id="2_tec5i"]
 
 [sub_resource type="Animation" id="Animation_m8i1o"]
 resource_name = "Hover"
@@ -31,7 +31,7 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d1gg3"]
-shader = ExtResource("2_f8pbk")
+shader = ExtResource("2_tec5i")
 shader_parameter/color = Color(1, 1, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7hio7"]

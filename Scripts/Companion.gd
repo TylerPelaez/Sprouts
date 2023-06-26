@@ -6,6 +6,7 @@ class_name Companion
 @export var follow_speed: float = 5.0
 @export var player_double_jump_offset: Vector2 = Vector2(0, 28)
 @export var double_jump_movement_time_seconds: float = 0.05
+@export var summon_movement_time_seconds: float = 0.5
 
 @onready var particles: PackedScene = preload("res://Prefabs/DoubleJumpParticles.tscn")
 @onready var animation_tree := $AnimationTree
@@ -22,10 +23,16 @@ var double_jump_movement_complete_particles_played: bool = false
 
 enum State {
 	PLAYER_FOLLOW,
-	DOUBLE_JUMP
+	DOUBLE_JUMP,
+	SUMMONED
 }
 
 var state: State = State.PLAYER_FOLLOW
+
+var summon_target: InteractableCompanion
+var summon_start_position: Vector2
+var summon_target_position: Vector2
+var summon_start_time: float
 
 func initialize(_player: Player):
 	animation_tree.active = true
@@ -62,6 +69,13 @@ func _physics_process(delta):
 					double_jump_movement_complete_particles_played = true
 			else:
 				global_position = double_jump_start_position.lerp(double_jump_target_position, t)
+		State.SUMMONED:
+			animation_state.travel("Idle")
+			var t = ((Time.get_ticks_msec() - summon_start_time) / 1000.0) / float(summon_movement_time_seconds)
+			if t >= 1:
+				global_position = summon_target_position
+			else:
+				global_position = summon_start_position.lerp(summon_target_position, t)
 
 func _on_player_double_jump():
 	double_jump_start_position = global_position
@@ -73,11 +87,13 @@ func _on_player_double_jump():
 	particle_burst()
 
 func _on_player_double_jump_restored():
-	state = State.PLAYER_FOLLOW
+	if state == State.DOUBLE_JUMP:
+		state = State.PLAYER_FOLLOW
 	modulate.a = 1.0
 
 func on_double_jump_animation_complete():
-	state = State.PLAYER_FOLLOW
+	if state == State.DOUBLE_JUMP:
+		state = State.PLAYER_FOLLOW
 	modulate.a = 0.5
 
 func particle_burst():
@@ -86,3 +102,12 @@ func particle_burst():
 	instance.global_position = global_position
 	instance.emitting = true
 
+func summon(node: InteractableCompanion):
+	summon_target = node
+	state = State.SUMMONED
+	summon_start_time = Time.get_ticks_msec()
+	summon_start_position = global_position
+	summon_target_position = node.global_position
+
+func release():
+	state = State.PLAYER_FOLLOW
