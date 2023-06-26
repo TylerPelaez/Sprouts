@@ -542,7 +542,7 @@ texture = ExtResource("6_moaba")
 position = Vector2(-192, 472)
 
 [node name="Area2D21" parent="Environment" instance=ExtResource("5_pvs2g")]
-position = Vector2(-2182, 664)
+position = Vector2(-2388, 664)
 
 [node name="Area2D17" parent="Environment" instance=ExtResource("5_pvs2g")]
 position = Vector2(640, 472)

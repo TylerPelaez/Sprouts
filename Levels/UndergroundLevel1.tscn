@@ -47,7 +47,7 @@ size = Vector2(130, 2530)
 
 [node name="Underground_level_1" type="Node2D"]
 script = ExtResource("1_lhpq6")
-next_level = "res://Levels/Main_Menu.tscn"
+next_level = "res://Levels/FinalSprout.tscn"
 metadata/_edit_horizontal_guides_ = [5736.0]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -561,6 +561,7 @@ dialog_file_path = "res://Dialog/Chickpea.json"
 
 [node name="InteractableCompanion2" parent="." instance=ExtResource("11_harna")]
 position = Vector2(-7264, 3376)
+kill_music = true
 dialog_file_path = "res://Dialog/Warning.json"
 
 [node name="UnderSmall3" parent="." instance=ExtResource("13_yp6j4")]

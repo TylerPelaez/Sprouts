@@ -1,6 +1,7 @@
 extends Node2D
 class_name InteractableCompanion
 
+@export var kill_music: bool = false
 @onready var sprite:= $Companion
 @onready var particles := $CPUParticles2D
 
@@ -29,6 +30,8 @@ func _input(event):
 	if dialog_file_path == null:
 		printerr("Null Dialog File!")
 	if event.is_action_pressed("Hit Switch") and player_is_in and !complete:
+		if kill_music:
+			MusicController.kill_music()
 		start_dialog.emit(self, dialog_file_path)
 
 func set_companion_present(val: bool):

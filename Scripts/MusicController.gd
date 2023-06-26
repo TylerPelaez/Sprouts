@@ -1,5 +1,6 @@
 extends Node
 
+@onready var music_player = $AudioStreamPlayer
 @onready var death_player = $DeathSFXPlayer
 @onready var collect_player = $CollectSFXPlayer
 @onready var jump_player = $JumpSFXPlayer
@@ -27,3 +28,6 @@ func play_gravity_sound():
 
 func play_checkpoint_sound():
 	checkpoint_player.play()
+
+func kill_music():
+	music_player.stop()
