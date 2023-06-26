@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dvmc03t2yoqwq"]
+[gd_scene load_steps=30 format=3 uid="uid://dvmc03t2yoqwq"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_lhpq6"]
 [ext_resource type="Texture2D" uid="uid://biai8bedfm6f6" path="res://Art/Background/underground BG.png" id="2_addlt"]
@@ -21,14 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cig3oxmds1w5v" path="res://Art/Platforms/RepeatableVertical/Untitled_Artwork-1.png" id="19_d574v"]
 [ext_resource type="Texture2D" uid="uid://dvecagnktnbdq" path="res://Art/Platforms/RepeatableVertical/Untitled_Artwork-3.png" id="20_siigb"]
 [ext_resource type="Texture2D" uid="uid://cb7eiwgjncib5" path="res://Art/Platforms/RepeatableHorizontal/Untitled_Artwork-2.png" id="21_njcxd"]
-
-[sub_resource type="Curve" id="Curve_jkxfh"]
-_data = [Vector2(0, 1), 0.0, -0.0845297, 0, 0, Vector2(1, 0), -3.46307, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Gradient" id="Gradient_lfb5i"]
-offsets = PackedFloat32Array(0, 0.252137, 1)
-colors = PackedColorArray(1, 1, 1, 0.227451, 1, 1, 1, 1, 1, 1, 1, 0)
+[ext_resource type="Texture2D" uid="uid://cjnutl7smj83t" path="res://Art/Level_End.png" id="22_nq75r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0pjj"]
 size = Vector2(500, 64)
@@ -44,6 +37,14 @@ size = Vector2(123, 2275)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qp3f1"]
 size = Vector2(130, 2530)
+
+[sub_resource type="Curve" id="Curve_jkxfh"]
+_data = [Vector2(0, 1), 0.0, -0.0845297, 0, 0, Vector2(1, 0.181818), -3.46307, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_lfb5i"]
+offsets = PackedFloat32Array(0, 0.205128, 0.405983, 1)
+colors = PackedColorArray(1, 1, 1, 0.227451, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Underground_level_1" type="Node2D"]
 script = ExtResource("1_lhpq6")
@@ -75,27 +76,13 @@ gizmo_extents = 20.0
 [node name="KillAreas" type="Node2D" parent="Environment"]
 
 [node name="LevelEnd" parent="." instance=ExtResource("9_aefh4")]
-position = Vector2(-7793, 3364)
+position = Vector2(-7789, 3364)
 
 [node name="Sprite2D" parent="LevelEnd" index="0"]
 texture = null
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="LevelEnd"]
-position = Vector2(1, 44)
-amount = 180
-lifetime = 4.0
-preprocess = 4.0
-emission_shape = 3
-emission_rect_extents = Vector2(40, 20)
-direction = Vector2(0, -1)
-spread = 0.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 40.0
-initial_velocity_max = 40.0
-scale_amount_min = 2.0
-scale_amount_max = 2.0
-scale_amount_curve = SubResource("Curve_jkxfh")
-color_ramp = SubResource("Gradient_lfb5i")
+[node name="CollisionShape2D" parent="LevelEnd/Area2D" index="0"]
+position = Vector2(15, 0)
 
 [node name="UnderLeft" parent="." instance=ExtResource("3_l2guj")]
 position = Vector2(200, 704)
@@ -648,7 +635,7 @@ rotation = 1.5708
 scale = Vector2(5, 1)
 
 [node name="BGFiller" parent="." instance=ExtResource("14_4dvfx")]
-position = Vector2(-8911.5, 3272.5)
+position = Vector2(-8913, 3274)
 scale = Vector2(33.4219, 94.0156)
 
 [node name="BGFiller3" parent="." instance=ExtResource("14_4dvfx")]
@@ -813,6 +800,28 @@ rotation = 0.11784
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("21_njcxd")
 flip_h = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7813, 3377)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("22_nq75r")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite2D"]
+position = Vector2(156, -179.999)
+scale = Vector2(4, 4)
+amount = 40
+lifetime = 2.0
+preprocess = 1.0
+emission_shape = 2
+emission_sphere_radius = 24.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_jkxfh")
+color_ramp = SubResource("Gradient_lfb5i")
 
 [editable path="LevelEnd"]
 [editable path="MovingPlatform"]
