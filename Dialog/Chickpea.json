@@ -1,12 +1,14 @@
 [
 	{
-		"text": "Hmmmm...."
+		"text": "Hmmmm....",
+		"icon": "res://Art/UI/PortraitBashfulWithSprout.png"
 	},
 	{
 		"text": "I thinks we cant go this way",
 		"icon": "res://Art/UI/PortraitConcernedWithSprout.png"
 	},
 	{
-		"text": "Did you tried the other way?"
-	},
+		"text": "Did you tried the other way?",
+		"icon": "res://Art/UI/PortraitBashfulWithSprout.png"
+	}
 ]

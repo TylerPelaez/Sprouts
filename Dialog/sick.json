@@ -1,6 +1,7 @@
 [
 	{
-		"text": "Ugh"
+		"text": "Ugh",
+		"icon": "res://Art/UI/PortraitBashfulWithSprout.png"
 	},
 	{
 		"text": "Dont feel good",
@@ -11,6 +12,7 @@
 		"icon": "res://Art/UI/PortraitConcernedWithSprout.png"
 	},
 	{
-		"text": "I'm gonna vom"
-	},
+		"text": "I'm gonna vom",
+		"icon": "res://Art/UI/PortraitBashfulWithSprout.png"
+	}
 ]
