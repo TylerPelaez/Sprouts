@@ -18,7 +18,7 @@
 
 [node name="Underground_level_1" type="Node2D"]
 script = ExtResource("1_lhpq6")
-next_level = "res://Levels/AirLevel1.tscn"
+next_level = "res://Levels/Main_Menu.tscn"
 metadata/_edit_horizontal_guides_ = [5736.0]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
