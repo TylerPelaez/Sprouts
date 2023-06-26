@@ -7,21 +7,25 @@
 		"text": "Iv been sitting here all by my self"
 	},
 	{
-		"text": "My fwiends and famly left me.",
+		"text": "My friends and famly left me.",
 		"icon": "res://Art/UI/PortraitConcernedNoSprout.png"
+	},
+	{
+		"text": "My friends and famly left me.",
+		"icon": "res://Art/Test/TestChickpea2.png"
 	},
 	{
 		"text": "My name Chickpea!",
 		"icon": "res://Art/UI/PortraitExcitedNoSprout.png"
 	},
 	{
-		"text": "U seem fun! I join u on ur journey!"
+		"text": "You seem fun! I join you on your journey!"
 	},
 		{
-		"text": "I gib u juoblejump!",
+		"text": "I gib you double jump!",
 		"icon": "res://Art/UI/PortraitExcitedNoSprout.png"
 	},
 	{
-		"text": "Do u have food?"
+		"text": "Do you have food?"
 	},
 ]
