@@ -6,7 +6,7 @@ class_name Companion
 @export var follow_speed: float = 5.0
 @export var player_double_jump_offset: Vector2 = Vector2(0, 28)
 @export var double_jump_movement_time_seconds: float = 0.05
-@export var summon_movement_time_seconds: float = 0.2
+@export var summon_movement_time_seconds: float = 0.3
 
 @onready var particles: PackedScene = preload("res://Prefabs/DoubleJumpParticles.tscn")
 @onready var animation_tree := $AnimationTree

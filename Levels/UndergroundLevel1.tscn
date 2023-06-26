@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvmc03t2yoqwq"]
+[gd_scene load_steps=27 format=3 uid="uid://dvmc03t2yoqwq"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_lhpq6"]
 [ext_resource type="Texture2D" uid="uid://biai8bedfm6f6" path="res://Art/Background/underground BG.png" id="2_addlt"]
@@ -9,13 +9,33 @@
 [ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="7_v6e1r"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="8_ie4mh"]
 [ext_resource type="PackedScene" uid="uid://jjukmdme6xcg" path="res://Prefabs/LevelEnd.tscn" id="9_aefh4"]
+[ext_resource type="Texture2D" uid="uid://vjog5jviregk" path="res://Art/Platforms/ground.png" id="10_re7x6"]
 [ext_resource type="PackedScene" uid="uid://cptcj4qinijgl" path="res://Prefabs/Checkpoint.tscn" id="10_xdqn6"]
 [ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="11_harna"]
 [ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="12_7ni65"]
 [ext_resource type="PackedScene" uid="uid://ce6egr7m0euoo" path="res://Prefabs/Platform/UnderSmall.tscn" id="13_yp6j4"]
 [ext_resource type="PackedScene" uid="uid://d0yb4f5es3x0e" path="res://Prefabs/BGFiller.tscn" id="14_4dvfx"]
+[ext_resource type="Texture2D" uid="uid://onhtsroor5et" path="res://Art/Platforms/RepeatableHorizontal/Untitled_Artwork-1.png" id="16_8hrxd"]
+[ext_resource type="Texture2D" uid="uid://h6lueodtntle" path="res://Art/Platforms/lower right large platform.png" id="17_l5syg"]
+[ext_resource type="Texture2D" uid="uid://188n0jgs640n" path="res://Art/Platforms/RepeatableVertical/Untitled_Artwork-2.png" id="18_qotj3"]
+[ext_resource type="Texture2D" uid="uid://cig3oxmds1w5v" path="res://Art/Platforms/RepeatableVertical/Untitled_Artwork-1.png" id="19_d574v"]
+[ext_resource type="Texture2D" uid="uid://dvecagnktnbdq" path="res://Art/Platforms/RepeatableVertical/Untitled_Artwork-3.png" id="20_siigb"]
+[ext_resource type="Texture2D" uid="uid://cb7eiwgjncib5" path="res://Art/Platforms/RepeatableHorizontal/Untitled_Artwork-2.png" id="21_njcxd"]
 
-[sub_resource type="ImageTexture" id="ImageTexture_cp7g7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0pjj"]
+size = Vector2(500, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if6l6"]
+size = Vector2(500, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teg6t"]
+size = Vector2(500, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xsqx"]
+size = Vector2(123, 2275)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qp3f1"]
+size = Vector2(130, 2530)
 
 [node name="Underground_level_1" type="Node2D"]
 script = ExtResource("1_lhpq6")
@@ -165,13 +185,16 @@ scale = Vector2(0.5, 0.5)
 [node name="MovingPlatform" parent="." instance=ExtResource("6_xs5fi")]
 position = Vector2(-96, 3712)
 
-[node name="UnderLeft" parent="MovingPlatform/AnimatableBody2D" index="1" instance=ExtResource("3_l2guj")]
-position = Vector2(3.2, 0)
-scale = Vector2(0.1, 0.6)
+[node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
+scale = Vector2(1, 1)
 
-[node name="Sprite2D" parent="MovingPlatform/AnimatableBody2D" index="2"]
-scale = Vector2(1e-05, 1e-05)
-texture = SubResource("ImageTexture_cp7g7")
+[node name="CollisionShape2D" parent="MovingPlatform/AnimatableBody2D" index="0"]
+shape = SubResource("RectangleShape2D_x0pjj")
+
+[node name="Sprite2D" parent="MovingPlatform/AnimatableBody2D" index="1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_re7x6")
+offset = Vector2(-70, 120)
 
 [node name="Position2" parent="MovingPlatform" index="2"]
 position = Vector2(94.3999, 2784)
@@ -181,10 +204,6 @@ position = Vector2(672, 6520)
 
 [node name="UnderLeft12" parent="." instance=ExtResource("3_l2guj")]
 position = Vector2(-672, 6513)
-
-[node name="KillArea" parent="." instance=ExtResource("8_ie4mh")]
-position = Vector2(-2280, 1544)
-rotation = 1.5708
 
 [node name="KillArea8" parent="." instance=ExtResource("8_ie4mh")]
 position = Vector2(4256, 3808)
@@ -205,18 +224,6 @@ scale = Vector2(2, 2)
 [node name="KillArea12" parent="." instance=ExtResource("8_ie4mh")]
 position = Vector2(-5456, 464)
 scale = Vector2(2, 2)
-
-[node name="KillArea5" parent="." instance=ExtResource("8_ie4mh")]
-position = Vector2(-552, 4528)
-rotation = 1.5708
-
-[node name="KillArea3" parent="." instance=ExtResource("8_ie4mh")]
-position = Vector2(-1184, -392)
-rotation = 2.44346
-
-[node name="KillArea4" parent="." instance=ExtResource("8_ie4mh")]
-position = Vector2(1176, -136)
-rotation = -2.44346
 
 [node name="KillArea2" parent="." instance=ExtResource("8_ie4mh")]
 position = Vector2(7304, -192)
@@ -244,14 +251,6 @@ rotation = 1.5708
 
 [node name="KillArea18" parent="." instance=ExtResource("8_ie4mh")]
 position = Vector2(-2744, 7072)
-rotation = 1.5708
-
-[node name="KillArea6" parent="." instance=ExtResource("8_ie4mh")]
-position = Vector2(520, 4512)
-rotation = 1.5708
-
-[node name="KillArea7" parent="." instance=ExtResource("8_ie4mh")]
-position = Vector2(2064, 1416)
 rotation = 1.5708
 
 [node name="UnderLeft13" parent="." instance=ExtResource("3_l2guj")]
@@ -326,11 +325,16 @@ position = Vector2(-2104, 3072)
 [node name="MovingPlatform2" parent="." instance=ExtResource("6_xs5fi")]
 position = Vector2(-2168, 3232)
 
-[node name="Sprite2D" parent="MovingPlatform2/AnimatableBody2D" index="1"]
-texture = null
+[node name="AnimatableBody2D" parent="MovingPlatform2" index="0"]
+scale = Vector2(1, 1)
 
-[node name="UnderRight" parent="MovingPlatform2/AnimatableBody2D/Sprite2D" index="0" instance=ExtResource("4_pghvs")]
-scale = Vector2(0.1, 0.5)
+[node name="CollisionShape2D" parent="MovingPlatform2/AnimatableBody2D" index="0"]
+shape = SubResource("RectangleShape2D_if6l6")
+
+[node name="Sprite2D" parent="MovingPlatform2/AnimatableBody2D" index="1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_re7x6")
+offset = Vector2(-70, 120)
 
 [node name="Position2" parent="MovingPlatform2" index="2"]
 position = Vector2(-2440, 0)
@@ -338,14 +342,20 @@ position = Vector2(-2440, 0)
 [node name="MovingPlatform3" parent="." instance=ExtResource("6_xs5fi")]
 position = Vector2(1864, 3232)
 
-[node name="Sprite2D" parent="MovingPlatform3/AnimatableBody2D" index="1"]
-texture = null
+[node name="AnimatableBody2D" parent="MovingPlatform3" index="0"]
+scale = Vector2(1, 1)
 
-[node name="UnderLeft" parent="MovingPlatform3/AnimatableBody2D/Sprite2D" index="0" instance=ExtResource("3_l2guj")]
-scale = Vector2(0.1, 0.5)
+[node name="CollisionShape2D" parent="MovingPlatform3/AnimatableBody2D" index="0"]
+shape = SubResource("RectangleShape2D_teg6t")
+
+[node name="Sprite2D" parent="MovingPlatform3/AnimatableBody2D" index="1"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_re7x6")
+offset = Vector2(-70, 120)
 
 [node name="Position2" parent="MovingPlatform3" index="2"]
 position = Vector2(2744, 0)
+scale = Vector2(1, 1)
 
 [node name="UnderLeft14" parent="." instance=ExtResource("3_l2guj")]
 position = Vector2(5152, 3168)
@@ -526,16 +536,6 @@ dialog_file_path = "res://Dialog/Chickpea.json"
 position = Vector2(-7264, 3376)
 dialog_file_path = "res://Dialog/Warning.json"
 
-[node name="UnderSmall" parent="." instance=ExtResource("13_yp6j4")]
-position = Vector2(488, 5128)
-rotation = 1.5708
-scale = Vector2(5, 1)
-
-[node name="UnderSmall2" parent="." instance=ExtResource("13_yp6j4")]
-position = Vector2(-600, 5144)
-rotation = 1.5708
-scale = Vector2(5, 1)
-
 [node name="UnderSmall3" parent="." instance=ExtResource("13_yp6j4")]
 position = Vector2(-2336, 2152)
 rotation = 1.5708
@@ -623,9 +623,168 @@ scale = Vector2(5, 1)
 position = Vector2(-8911.5, 3272.5)
 scale = Vector2(33.4219, 94.0156)
 
+[node name="BGFiller3" parent="." instance=ExtResource("14_4dvfx")]
+position = Vector2(-6394.24, 8358.32)
+rotation = 1.5708
+scale = Vector2(70.4632, 112.836)
+
+[node name="BGFiller4" parent="." instance=ExtResource("14_4dvfx")]
+position = Vector2(1997.06, 10397)
+rotation = 1.5708
+scale = Vector2(70.4632, 167.494)
+
+[node name="BGFiller5" parent="." instance=ExtResource("14_4dvfx")]
+position = Vector2(12626, 2716.15)
+rotation = 1.5708
+scale = Vector2(229.771, 167.494)
+
 [node name="BGFiller2" parent="." instance=ExtResource("14_4dvfx")]
-position = Vector2(-6124.38, 99)
-scale = Vector2(119.699, 16.8359)
+position = Vector2(-6132.87, 18.3744)
+scale = Vector2(119.434, 19.3554)
+
+[node name="BGFiller6" parent="." instance=ExtResource("14_4dvfx")]
+position = Vector2(-1938.27, -943.129)
+rotation = -0.674694
+scale = Vector2(39.9079, 26.3071)
+
+[node name="BGFiller8" parent="." instance=ExtResource("14_4dvfx")]
+position = Vector2(-1481, -2178)
+rotation = -1.75259
+scale = Vector2(39.9079, 26.3071)
+
+[node name="BGFiller7" parent="." instance=ExtResource("14_4dvfx")]
+position = Vector2(1843.57, -1209.54)
+rotation = 0.692343
+scale = Vector2(39.9079, 36.7624)
+
+[node name="UntitledArtwork-1" type="Sprite2D" parent="."]
+position = Vector2(-405, -1116)
+rotation = 1.57079
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_8hrxd")
+
+[node name="UntitledArtwork-2" type="Sprite2D" parent="."]
+position = Vector2(-408, -1337)
+rotation = 1.57079
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_8hrxd")
+
+[node name="LowerRightLargePlatform" type="Sprite2D" parent="."]
+position = Vector2(-827, -2214)
+rotation = 1.31022
+texture = ExtResource("17_l5syg")
+
+[node name="LowerRightLargePlatform2" type="Sprite2D" parent="."]
+position = Vector2(560, -1468)
+rotation = 5.24397
+texture = ExtResource("17_l5syg")
+
+[node name="LowerRightLargePlatform3" type="Sprite2D" parent="."]
+position = Vector2(1322, -2836)
+rotation = 8.54785
+texture = ExtResource("17_l5syg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-788, -1852)
+rotation = -0.177334
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(169.5, -284.5)
+shape = SubResource("RectangleShape2D_0xsqx")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-783, 4965)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(173, -346)
+shape = SubResource("RectangleShape2D_qp3f1")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(283, 4965)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(173, -346)
+shape = SubResource("RectangleShape2D_qp3f1")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-93, -1912)
+rotation = -2.61479
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-697.305, 523.57)
+rotation = 0.0747412
+shape = SubResource("RectangleShape2D_0xsqx")
+
+[node name="UntitledArtwork-3" type="Sprite2D" parent="."]
+position = Vector2(394, 5519)
+texture = ExtResource("18_qotj3")
+
+[node name="UntitledArtwork-4" type="Sprite2D" parent="."]
+position = Vector2(394, 4719)
+texture = ExtResource("18_qotj3")
+
+[node name="UntitledArtwork-5" type="Sprite2D" parent="."]
+position = Vector2(394, 3938)
+texture = ExtResource("18_qotj3")
+
+[node name="UntitledArtwork-6" type="Sprite2D" parent="."]
+position = Vector2(394, 3938)
+texture = ExtResource("18_qotj3")
+
+[node name="UntitledArtwork-7" type="Sprite2D" parent="."]
+position = Vector2(396, 5539)
+texture = ExtResource("19_d574v")
+
+[node name="UntitledArtwork-8" type="Sprite2D" parent="."]
+position = Vector2(397, 3969)
+texture = ExtResource("20_siigb")
+
+[node name="UntitledArtwork-9" type="Sprite2D" parent="."]
+position = Vector2(-674, 5508)
+texture = ExtResource("18_qotj3")
+
+[node name="UntitledArtwork-10" type="Sprite2D" parent="."]
+position = Vector2(-674, 4708)
+texture = ExtResource("18_qotj3")
+
+[node name="UntitledArtwork-11" type="Sprite2D" parent="."]
+position = Vector2(-674, 3927)
+texture = ExtResource("18_qotj3")
+
+[node name="UntitledArtwork-12" type="Sprite2D" parent="."]
+position = Vector2(-674, 3927)
+texture = ExtResource("18_qotj3")
+
+[node name="UntitledArtwork-13" type="Sprite2D" parent="."]
+position = Vector2(-672, 5528)
+texture = ExtResource("19_d574v")
+
+[node name="UntitledArtwork-14" type="Sprite2D" parent="."]
+position = Vector2(-671, 3958)
+texture = ExtResource("20_siigb")
+
+[node name="UntitledArtwork-15" type="Sprite2D" parent="."]
+position = Vector2(857, 5989)
+rotation = 2.95322
+texture = ExtResource("21_njcxd")
+
+[node name="UntitledArtwork-16" type="Sprite2D" parent="."]
+position = Vector2(682, 5825)
+rotation = -0.00228466
+texture = ExtResource("21_njcxd")
+flip_h = true
+
+[node name="UntitledArtwork-17" type="Sprite2D" parent="."]
+position = Vector2(-765, 5816)
+rotation = 0.0231977
+texture = ExtResource("21_njcxd")
+
+[node name="UntitledArtwork-18" type="Sprite2D" parent="."]
+position = Vector2(-522, 5886)
+rotation = 0.11784
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("21_njcxd")
+flip_h = true
 
 [editable path="MovingPlatform"]
 [editable path="MovingPlatform2"]

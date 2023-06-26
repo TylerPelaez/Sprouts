@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bxn8kvm570f80" path="res://Art/Test/White.png" id="2_yuuog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
-size = Vector2(64, 64)
+resource_local_to_scene = true
+size = Vector2(500, 64)
 
 [node name="MovingPlatform" type="Node2D"]
 position = Vector2(1328, 160)
