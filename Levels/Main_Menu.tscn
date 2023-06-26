@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://csk2i0aoebgpc"]
 
 [ext_resource type="Texture2D" uid="uid://m0xbwp81g6i5" path="res://Art/Background/sky BG.png" id="1_7pnat"]
-[ext_resource type="Script" path="res://CanvasLayer.gd" id="2_vrujr"]
+[ext_resource type="Script" path="res://Levels/Main_Menu.gd" id="2_fpbg0"]
 [ext_resource type="FontFile" uid="uid://n2ucbn5g7j22" path="res://Oxygen-Regular.ttf" id="3_h5kqa"]
 [ext_resource type="Script" path="res://Levels/Credits.gd" id="4_4ldmm"]
 
@@ -16,7 +16,7 @@ grow_vertical = 2
 texture = ExtResource("1_7pnat")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Background"]
-script = ExtResource("2_vrujr")
+script = ExtResource("2_fpbg0")
 
 [node name="Main" type="Control" parent="Background/CanvasLayer"]
 layout_mode = 3
@@ -64,50 +64,62 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_h5kqa")
 text = "Play"
 
+[node name="ButtonCredits" type="Button" parent="Background/CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_h5kqa")
+text = "Credits"
+
 [node name="ButtonQuit" type="Button" parent="Background/CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_h5kqa")
 text = "Quit"
 
-[node name="Credits" type="Control" parent="Background/CanvasLayer"]
+[node name="CanvasLayer2" type="CanvasLayer" parent="Background"]
+visible = false
+script = ExtResource("4_4ldmm")
+
+[node name="Credits" type="Control" parent="Background/CanvasLayer2"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 66.0
+offset_top = -540.0
+offset_right = 66.0
+offset_bottom = -540.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("4_4ldmm")
 
-[node name="CenterContainer" type="CenterContainer" parent="Background/CanvasLayer/Credits"]
+[node name="CenterContainer" type="CenterContainer" parent="Background/CanvasLayer2/Credits"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = 935.0
-offset_right = -4.0
-offset_bottom = 83.0
+offset_left = 42.0
+offset_top = 1050.0
+offset_right = -166.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Background/CanvasLayer/Credits/CenterContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Background/CanvasLayer2/Credits/CenterContainer"]
 custom_minimum_size = Vector2(512, 256)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Background/CanvasLayer2/Credits/CenterContainer/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/CanvasLayer2/Credits/CenterContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="Label" type="Label" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-visible = false
+[node name="Label" type="Label" parent="Background/CanvasLayer2/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_h5kqa")
@@ -116,27 +128,35 @@ text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DefectiveMelon" type="Button" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="DefectiveMelon" type="Button" parent="Background/CanvasLayer2/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_h5kqa")
 text = "DefectiveMelon
 "
 
-[node name="Loki_Howell_Studios" type="Button" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Loki_Howell_Studios" type="Button" parent="Background/CanvasLayer2/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_h5kqa")
 text = "Loki_Howell_Studios"
 
-[node name="Altagracia" type="Button" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Altagracia" type="Button" parent="Background/CanvasLayer2/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_h5kqa")
 text = "Altagracia"
 
+[node name="Back" type="Button" parent="Background/CanvasLayer2/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_h5kqa")
+text = "Back"
+
 [connection signal="pressed" from="Background/CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="Background/CanvasLayer" method="_on_button_play_pressed"]
+[connection signal="pressed" from="Background/CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonCredits" to="Background/CanvasLayer" method="_on_button_credits_pressed"]
 [connection signal="pressed" from="Background/CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonQuit" to="Background/CanvasLayer" method="_on_button_quit_pressed"]
-[connection signal="pressed" from="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/DefectiveMelon" to="Background/CanvasLayer" method="_on_defective_melon_pressed"]
-[connection signal="pressed" from="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Loki_Howell_Studios" to="Background/CanvasLayer" method="_on_loki_howell_studios_pressed"]
-[connection signal="pressed" from="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Altagracia" to="Background/CanvasLayer" method="_on_altagracia_pressed"]
+[connection signal="pressed" from="Background/CanvasLayer2/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/DefectiveMelon" to="Background/CanvasLayer" method="_on_defective_melon_pressed"]
+[connection signal="pressed" from="Background/CanvasLayer2/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Loki_Howell_Studios" to="Background/CanvasLayer" method="_on_loki_howell_studios_pressed"]
+[connection signal="pressed" from="Background/CanvasLayer2/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Altagracia" to="Background/CanvasLayer" method="_on_altagracia_pressed"]
+[connection signal="pressed" from="Background/CanvasLayer2/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Back" to="Background/CanvasLayer2" method="_on_back_pressed"]
