@@ -11,10 +11,6 @@
 		"icon": "res://Art/UI/PortraitConcernedNoSprout.png"
 	},
 	{
-		"text": "My friends and famly left me.",
-		"icon": "res://Art/Test/TestChickpea2.png"
-	},
-	{
 		"text": "My name Chickpea!",
 		"icon": "res://Art/UI/PortraitExcitedNoSprout.png"
 	},
