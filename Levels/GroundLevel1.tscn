@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://evg4mo1jtqj0"]
+[gd_scene load_steps=20 format=3 uid="uid://evg4mo1jtqj0"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_xnj5y"]
 [ext_resource type="Texture2D" uid="uid://cd7n1oke618px" path="res://Art/Background/middle BG.png" id="2_1v1lk"]
@@ -18,9 +18,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irls3"]
 size = Vector2(64, 60)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vna0b"]
-size = Vector2(68.5, 496.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mmlh"]
 size = Vector2(41, 20)
@@ -140,10 +137,6 @@ scale = Vector2(10, 1)
 [node name="Sprite2D18" type="Sprite2D" parent="Environment/Ground/StaticBody2D2"]
 position = Vector2(-2410.64, 4180)
 scale = Vector2(4.83252, 4.875)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Environment/Ground/StaticBody2D2"]
-position = Vector2(576, 1672)
-shape = SubResource("RectangleShape2D_vna0b")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Environment/Ground"]
 
@@ -593,6 +586,11 @@ scale = Vector2(1, 0.5)
 
 [node name="GroundSmall9" parent="." instance=ExtResource("15_43dao")]
 position = Vector2(1328, 1576)
+rotation = 1.5708
+scale = Vector2(1, 0.5)
+
+[node name="GroundSmall15" parent="." instance=ExtResource("15_43dao")]
+position = Vector2(584, 1752)
 rotation = 1.5708
 scale = Vector2(1, 0.5)
 
