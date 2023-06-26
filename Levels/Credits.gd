@@ -1,11 +1,5 @@
 extends CanvasLayer
 
-@onready var main: Control = $Main
-@onready var credits: Control = $Credits
-
-
-
-
 func _on_defective_melon_pressed():
 	OS.shell_open("https://defectivemelon.itch.io/")
 func _on_loki_howell_studios_pressed():

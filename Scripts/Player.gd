@@ -59,6 +59,7 @@ func _physics_process(delta):
 			do_jump = true
 	
 	if do_jump:
+		MusicController.play_jump_sound()
 		velocity.y = JUMP_VELOCITY * -up_direction.y
 
 	var direction = Input.get_axis("Left", "Right")

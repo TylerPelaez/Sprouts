@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://csk2i0aoebgpc"]
+[gd_scene load_steps=5 format=3 uid="uid://dcs12fc5gs30h"]
 
 [ext_resource type="Texture2D" uid="uid://m0xbwp81g6i5" path="res://Art/Background/sky BG.png" id="1_7pnat"]
 [ext_resource type="Script" path="res://Levels/Main_Menu.gd" id="2_fpbg0"]

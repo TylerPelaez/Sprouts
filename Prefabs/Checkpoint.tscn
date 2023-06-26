@@ -85,4 +85,7 @@ scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_h72k1")
 color_ramp = SubResource("Gradient_gaqtp")
 
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-138, -110)
+
 [connection signal="body_entered" from="Offset/Area2D" to="." method="_on_area_2d_body_entered"]

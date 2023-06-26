@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnb5n2hhq8fj"]
+
+[ext_resource type="Script" path="res://Scripts/CheckpointReached.gd" id="1_mxe2y"]
+[ext_resource type="FontFile" uid="uid://n2ucbn5g7j22" path="res://Oxygen-Regular.ttf" id="1_r2uml"]
+
+[node name="CheckpointReached" type="Label"]
+theme_override_fonts/font = ExtResource("1_r2uml")
+theme_override_font_sizes/font_size = 32
+text = "Checkpoint Reached"
+script = ExtResource("1_mxe2y")

@@ -75,15 +75,18 @@ func _initialize_child_signals(child: Node):
 
 func _on_collect():
 	CollectibleTracker.collect_one()
+	MusicController.play_collect_sound()
 
 func _on_player_death():
+	MusicController.play_death_sound()
 	CollectibleTracker.on_scene_restarted()
 	get_tree().reload_current_scene()
 
 func _on_level_end():
 	if next_level != null:
 		CollectibleTracker.save_collected()
-		get_tree().change_scene_to_file(next_level)
+		FadeToBlack.fade_out_complete.connect(func(): get_tree().change_scene_to_file(next_level))
+		FadeToBlack.do_fade_out_in()
 	else:
 		CollectibleTracker.on_scene_restarted()
 		get_tree().reload_current_scene()
@@ -95,6 +98,7 @@ func _on_switch_hit(effect: Switch.SwitchEffect):
 			ProjectSettings.set_setting("physics/2d/default_gravity", -current_grav)
 			gravity_direction = -gravity_direction
 			player.on_gravity_switch(gravity_direction)
+			MusicController.play_gravity_sound()
 
 func _on_dialog_started(caller: InteractableCompanion, dialog_file_path: String):
 	var file = FileAccess.open(dialog_file_path, FileAccess.READ)
@@ -115,6 +119,7 @@ func on_dialog_complete():
 		companion.release()
 
 func _on_checkpoint(checkpoint: Node2D, index: int):
+	MusicController.play_checkpoint_sound()
 	CollectibleTracker.set_last_checkpoint_position(checkpoint.global_position, index)
 
 func on_companion_summon(node: InteractableCompanion):
