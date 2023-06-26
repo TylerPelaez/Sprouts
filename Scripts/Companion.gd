@@ -65,7 +65,8 @@ func _physics_process(delta):
 
 func _on_player_double_jump():
 	double_jump_start_position = global_position
-	double_jump_target_position = player.global_position + (player_double_jump_offset * -player.up_direction.y)
+	var player_expected_distance_at_end = Vector2(player.velocity.x * double_jump_movement_time_seconds * 3, 0)
+	double_jump_target_position = player.global_position + (player_double_jump_offset * -player.up_direction.y) + player_expected_distance_at_end
 	double_jump_start_time = Time.get_ticks_msec()
 	state = State.DOUBLE_JUMP
 	double_jump_movement_complete_particles_played = false

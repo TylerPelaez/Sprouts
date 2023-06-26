@@ -93,11 +93,12 @@ func set_double_jumped(val):
 		double_jump_restored.emit()
 
 var invert_direction_next_animation_play = false
-	
+var next_animation_scale_sign = 1
 
 func on_gravity_switch(direction: Vector2):
 	up_direction = -direction
 	var new_rotation = 0 if up_direction.y < 0 else PI
+	next_animation_scale_sign = 1 if up_direction.y < 0 else -1
 	
 	var tween = get_tree().create_tween().bind_node(self)
 	tween.tween_interval(0.2)
@@ -106,6 +107,6 @@ func on_gravity_switch(direction: Vector2):
 
 func post_grav_change_input_check():
 	if invert_direction_next_animation_play:
-		sprite.scale.x = -sprite.scale.x
+		sprite.scale.x = abs(sprite.scale.x) * next_animation_scale_sign
 		invert_direction_next_animation_play = false
 
