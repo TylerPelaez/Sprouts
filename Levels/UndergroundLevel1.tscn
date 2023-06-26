@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cyrefgeqop3hu" path="res://Prefabs/pills.tscn" id="3_yv2n4"]
 [ext_resource type="PackedScene" uid="uid://613wuntiyxtn" path="res://Prefabs/Platform/UnderRight.tscn" id="4_pghvs"]
 [ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="6_xs5fi"]
-[ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="7_v6e1r"]
+[ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="7_v6e1r"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="8_ie4mh"]
 [ext_resource type="PackedScene" uid="uid://jjukmdme6xcg" path="res://Prefabs/LevelEnd.tscn" id="9_aefh4"]
 [ext_resource type="PackedScene" uid="uid://cptcj4qinijgl" path="res://Prefabs/Checkpoint.tscn" id="10_xdqn6"]
-[ext_resource type="PackedScene" path="res://Prefabs/InteractableCompanion.tscn" id="11_harna"]
+[ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="11_harna"]
 [ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="12_7ni65"]
 [ext_resource type="PackedScene" path="res://Prefabs/Platform/UnderSmall.tscn" id="13_yp6j4"]
 
@@ -18,8 +18,6 @@
 
 [node name="Underground_level_1" type="Node2D"]
 script = ExtResource("1_lhpq6")
-player_has_jump = null
-player_has_companion = null
 next_level = "res://Levels/AirLevel1.tscn"
 metadata/_edit_horizontal_guides_ = [5736.0]
 

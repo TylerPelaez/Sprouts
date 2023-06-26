@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://sm5n8ljv3sdn" path="res://Prefabs/BatTest.tscn" id="7_1ja6j"]
 [ext_resource type="PackedScene" uid="uid://jjukmdme6xcg" path="res://Prefabs/LevelEnd.tscn" id="8_n683u"]
 [ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="9_n74ue"]
-[ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="9_wg2g8"]
+[ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="9_wg2g8"]
 [ext_resource type="PackedScene" uid="uid://du276oy1bnd5s" path="res://Prefabs/Platform/AirLeft.tscn" id="11_ho1cw"]
-[ext_resource type="PackedScene" path="res://Prefabs/InteractableCompanion.tscn" id="11_ydy3s"]
+[ext_resource type="PackedScene" uid="uid://cr5myk64gyok3" path="res://Prefabs/InteractableCompanion.tscn" id="11_ydy3s"]
 [ext_resource type="PackedScene" uid="uid://d2oxltdub1nxo" path="res://Prefabs/Platform/AirRight.tscn" id="12_ht4ns"]
 [ext_resource type="PackedScene" uid="uid://cptcj4qinijgl" path="res://Prefabs/Checkpoint.tscn" id="14_nq4ug"]
 [ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="15_hxdx3"]
@@ -40,7 +40,6 @@ point_count = 6
 
 [node name="Air_level_1" type="Node2D"]
 script = ExtResource("1_k2wap")
-player_has_jump = null
 player_has_companion = false
 next_level = "res://Levels/GroundLevel1.tscn"
 

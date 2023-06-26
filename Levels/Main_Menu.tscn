@@ -1,0 +1,142 @@
+[gd_scene load_steps=5 format=3 uid="uid://csk2i0aoebgpc"]
+
+[ext_resource type="Texture2D" uid="uid://m0xbwp81g6i5" path="res://Art/Background/sky BG.png" id="1_7pnat"]
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="2_vrujr"]
+[ext_resource type="FontFile" uid="uid://n2ucbn5g7j22" path="res://Oxygen-Regular.ttf" id="3_h5kqa"]
+[ext_resource type="Script" path="res://Levels/Credits.gd" id="4_4ldmm"]
+
+[node name="MainMenu" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7pnat")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Background"]
+script = ExtResource("2_vrujr")
+
+[node name="Main" type="Control" parent="Background/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Background/CanvasLayer/Main"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/CanvasLayer/Main/CenterContainer"]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/CanvasLayer/Main/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="Background/CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_h5kqa")
+theme_override_font_sizes/font_size = 35
+text = "Sprouts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonPlay" type="Button" parent="Background/CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_h5kqa")
+text = "Play"
+
+[node name="ButtonQuit" type="Button" parent="Background/CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_h5kqa")
+text = "Quit"
+
+[node name="Credits" type="Control" parent="Background/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_4ldmm")
+
+[node name="CenterContainer" type="CenterContainer" parent="Background/CanvasLayer/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 935.0
+offset_right = -4.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Background/CanvasLayer/Credits/CenterContainer"]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_h5kqa")
+theme_override_font_sizes/font_size = 35
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DefectiveMelon" type="Button" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_h5kqa")
+text = "DefectiveMelon
+"
+
+[node name="Loki_Howell_Studios" type="Button" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_h5kqa")
+text = "Loki_Howell_Studios"
+
+[node name="Altagracia" type="Button" parent="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_h5kqa")
+text = "Altagracia"
+
+[connection signal="pressed" from="Background/CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="Background/CanvasLayer" method="_on_button_play_pressed"]
+[connection signal="pressed" from="Background/CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonQuit" to="Background/CanvasLayer" method="_on_button_quit_pressed"]
+[connection signal="pressed" from="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/DefectiveMelon" to="Background/CanvasLayer" method="_on_defective_melon_pressed"]
+[connection signal="pressed" from="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Loki_Howell_Studios" to="Background/CanvasLayer" method="_on_loki_howell_studios_pressed"]
+[connection signal="pressed" from="Background/CanvasLayer/Credits/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Altagracia" to="Background/CanvasLayer" method="_on_altagracia_pressed"]
