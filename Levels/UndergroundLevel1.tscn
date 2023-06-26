@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvmc03t2yoqwq"]
+[gd_scene load_steps=15 format=3 uid="uid://dvmc03t2yoqwq"]
 
 [ext_resource type="Script" path="res://Scripts/LevelController.gd" id="1_lhpq6"]
 [ext_resource type="Texture2D" uid="uid://biai8bedfm6f6" path="res://Art/Background/underground BG.png" id="2_addlt"]
@@ -6,14 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://cyrefgeqop3hu" path="res://Prefabs/pills.tscn" id="3_yv2n4"]
 [ext_resource type="PackedScene" uid="uid://613wuntiyxtn" path="res://Prefabs/Platform/UnderRight.tscn" id="4_pghvs"]
 [ext_resource type="PackedScene" uid="uid://ep6nutbk5cst" path="res://Prefabs/MovingPlatform.tscn" id="6_xs5fi"]
-[ext_resource type="PackedScene" uid="uid://dwr0wpdjf27gt" path="res://Prefabs/Switch.tscn" id="7_v6e1r"]
+[ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="7_v6e1r"]
 [ext_resource type="PackedScene" uid="uid://d2ngs33h645x4" path="res://Prefabs/KillArea.tscn" id="8_ie4mh"]
 [ext_resource type="PackedScene" uid="uid://jjukmdme6xcg" path="res://Prefabs/LevelEnd.tscn" id="9_aefh4"]
+[ext_resource type="PackedScene" uid="uid://cptcj4qinijgl" path="res://Prefabs/Checkpoint.tscn" id="10_xdqn6"]
+[ext_resource type="PackedScene" path="res://Prefabs/InteractableCompanion.tscn" id="11_harna"]
+[ext_resource type="PackedScene" uid="uid://c46a44f3l7cm0" path="res://Prefabs/UIController.tscn" id="12_7ni65"]
+[ext_resource type="PackedScene" path="res://Prefabs/Platform/UnderSmall.tscn" id="13_yp6j4"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_cp7g7"]
 
 [node name="Underground_level_1" type="Node2D"]
 script = ExtResource("1_lhpq6")
+player_has_jump = null
+player_has_companion = null
+next_level = "res://Levels/AirLevel1.tscn"
 metadata/_edit_horizontal_guides_ = [5736.0]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -33,7 +40,7 @@ drag_vertical_offset = 1.0
 editor_draw_drag_margin = true
 
 [node name="PlayerSpawnPosition" type="Marker2D" parent="."]
-position = Vector2(-152, -1592)
+position = Vector2(-128, -1704)
 gizmo_extents = 20.0
 
 [node name="Environment" type="Node2D" parent="."]
@@ -41,8 +48,7 @@ gizmo_extents = 20.0
 [node name="KillAreas" type="Node2D" parent="Environment"]
 
 [node name="LevelEnd" parent="." instance=ExtResource("9_aefh4")]
-position = Vector2(3256, 1440)
-scale = Vector2(5, 5)
+position = Vector2(-7768, 3360)
 
 [node name="UnderLeft" parent="." instance=ExtResource("3_l2guj")]
 position = Vector2(200, 704)
@@ -180,6 +186,26 @@ position = Vector2(-672, 6513)
 position = Vector2(-2280, 1544)
 rotation = 1.5708
 
+[node name="KillArea8" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(4256, 3808)
+scale = Vector2(2, 2)
+
+[node name="KillArea15" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(-320, 7776)
+scale = Vector2(5, 5)
+
+[node name="KillArea13" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(-5712, 5984)
+scale = Vector2(2, 2)
+
+[node name="KillArea14" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(4224, -1312)
+scale = Vector2(2, 2)
+
+[node name="KillArea12" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(-5456, 464)
+scale = Vector2(2, 2)
+
 [node name="KillArea5" parent="." instance=ExtResource("8_ie4mh")]
 position = Vector2(-552, 4528)
 rotation = 1.5708
@@ -193,11 +219,39 @@ position = Vector2(1176, -136)
 rotation = -2.44346
 
 [node name="KillArea2" parent="." instance=ExtResource("8_ie4mh")]
-position = Vector2(2088, 1536)
+position = Vector2(7304, -192)
+rotation = 1.5708
+
+[node name="KillArea9" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(7304, 2368)
+rotation = 1.5708
+
+[node name="KillArea16" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(7320, 4912)
+rotation = 1.5708
+
+[node name="KillArea17" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(7320, 7456)
+rotation = 1.5708
+
+[node name="KillArea10" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(-7768, 1680)
+rotation = 1.5708
+
+[node name="KillArea11" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(-7800, 4672)
+rotation = 1.5708
+
+[node name="KillArea18" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(-2744, 7072)
 rotation = 1.5708
 
 [node name="KillArea6" parent="." instance=ExtResource("8_ie4mh")]
 position = Vector2(520, 4512)
+rotation = 1.5708
+
+[node name="KillArea7" parent="." instance=ExtResource("8_ie4mh")]
+position = Vector2(2064, 1416)
 rotation = 1.5708
 
 [node name="UnderLeft13" parent="." instance=ExtResource("3_l2guj")]
@@ -293,6 +347,279 @@ scale = Vector2(0.1, 0.5)
 [node name="Position2" parent="MovingPlatform3" index="2"]
 position = Vector2(2744, 0)
 
+[node name="UnderLeft14" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(5152, 3168)
+scale = Vector2(0.5, 0.5)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="UnderRight17" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(5568, 3288)
+scale = Vector2(0.5, 0.5)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="UnderLeft15" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-5328, 2992)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight18" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-4960, 3008)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft16" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-6024, 2784)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight19" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-5704, 2872)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight23" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-5568, 3264)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight26" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-6704, 3256)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft17" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-5616, 3728)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft20" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-4896, 4144)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft23" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-4272, 4504)
+scale = Vector2(0.5, 0.5)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="UnderLeft19" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-6472, 4144)
+scale = Vector2(0.5, 0.5)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="UnderLeft27" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-6424, 4464)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="UnderLeft25" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-6280, 4296)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft26" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-6624, 4328)
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight20" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-5296, 3872)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight24" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-4656, 4296)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight28" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-4064, 4336)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight29" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-4200, 4104)
+scale = Vector2(0.5, 0.5)
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="UnderRight30" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-4384, 4304)
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight25" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-6384, 2592)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight27" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-6520, 2424)
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight31" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-6320, 2256)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight32" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-7368, 3256)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight22" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-6048, 3952)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft18" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-4792, 3432)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft21" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-5144, 3272)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft22" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-6016, 3264)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft24" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-7016, 3256)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft28" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-7680, 3248)
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight33" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-6704, 3424)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight34" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-7368, 3424)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft29" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-7016, 3424)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderLeft30" parent="." instance=ExtResource("3_l2guj")]
+position = Vector2(-7680, 3416)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+
+[node name="UnderRight21" parent="." instance=ExtResource("4_pghvs")]
+position = Vector2(-5224, 3536)
+scale = Vector2(0.5, 0.5)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("10_xdqn6")]
+position = Vector2(-160, 3400)
+
+[node name="Checkpoint" parent="." instance=ExtResource("10_xdqn6")]
+position = Vector2(-4720, 3296)
+
+[node name="InteractableCompanion" parent="." instance=ExtResource("11_harna")]
+position = Vector2(4608, 3192)
+scale = Vector2(1, 1.00001)
+dialog_file_path = "res://Dialog/Chickpea.json"
+
+[node name="UIController" parent="." instance=ExtResource("12_7ni65")]
+
+[node name="InteractableCompanion2" parent="." instance=ExtResource("11_harna")]
+position = Vector2(-7264, 3376)
+dialog_file_path = "res://Dialog/Warning.json"
+
+[node name="UnderSmall" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(488, 5128)
+rotation = 1.5708
+scale = Vector2(5, 1)
+
+[node name="UnderSmall2" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(-600, 5144)
+rotation = 1.5708
+scale = Vector2(5, 1)
+
+[node name="UnderSmall3" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(-2336, 2152)
+rotation = 1.5708
+scale = Vector2(5, 1)
+
+[node name="UnderSmall19" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(1384, -64)
+rotation = 0.698132
+scale = Vector2(5, 1)
+
+[node name="UnderSmall20" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(-1120, -544)
+rotation = -0.698132
+scale = Vector2(5, 1)
+
+[node name="UnderSmall4" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(2000, 2080)
+rotation = 1.5708
+scale = Vector2(5, 1)
+
+[node name="UnderSmall5" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(7256, 400)
+rotation = 1.5708
+scale = Vector2(5, 1)
+
+[node name="UnderSmall12" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(5536, 3904)
+scale = Vector2(10, 2)
+
+[node name="UnderSmall13" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(5536, -1248)
+scale = Vector2(10, 2)
+
+[node name="UnderSmall14" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(-4208, 568)
+scale = Vector2(10, 2)
+
+[node name="UnderSmall15" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(-4416, 6096)
+scale = Vector2(10, 2)
+
+[node name="UnderSmall16" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(5488, 8032)
+scale = Vector2(10, 5)
+
+[node name="UnderSmall17" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(336, 7984)
+scale = Vector2(10, 5)
+
+[node name="UnderSmall18" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(-3936, 8000)
+scale = Vector2(10, 5)
+
+[node name="UnderSmall6" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(7272, 3000)
+rotation = 1.5708
+scale = Vector2(5, 1)
+
+[node name="UnderSmall7" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(7272, 5480)
+rotation = 1.5708
+scale = Vector2(5, 1)
+
+[node name="UnderSmall8" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(7256, 8016)
+rotation = 1.5708
+scale = Vector2(5, 1)
+
+[node name="UnderSmall9" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(-2784, 7680)
+rotation = 1.5708
+scale = Vector2(5, 1)
+
+[node name="UnderSmall10" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(-7840, 5328)
+rotation = 1.5708
+scale = Vector2(5, 1)
+
+[node name="UnderSmall11" parent="." instance=ExtResource("13_yp6j4")]
+position = Vector2(-7840, 2320)
+rotation = 1.5708
+scale = Vector2(5, 1)
+
 [editable path="MovingPlatform"]
 [editable path="MovingPlatform2"]
 [editable path="MovingPlatform3"]
+[editable path="InteractableCompanion"]
