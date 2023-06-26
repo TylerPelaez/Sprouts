@@ -948,6 +948,7 @@ position = Vector2(2624, 4336)
 scale = Vector2(0.6, 0.5)
 
 [node name="AirLeft16" parent="." instance=ExtResource("11_ho1cw")]
+modulate = Color(1, 1, 1, 0.721569)
 position = Vector2(2080, 5200)
 scale = Vector2(0.6, 0.2)
 
